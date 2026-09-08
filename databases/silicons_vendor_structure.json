@@ -1,0 +1,560 @@
+[
+  {
+    "id": "Infineon",
+    "silicon_vendor": "Infineon",
+    "series": ["XC800","XC200","XE166","C166","C167","XE166","XE2000","XMC1000","XMC4000","XMC7000","PSoC 1","PSoC 3","PSoC 4","PSoC 5","PSoC 6","TRAVEO T2G","FM0+", "FM3", "FM4","AURIX TC2","AURIX TC3","AURIX TC4"],
+    "children": [
+      {
+        "id": "AURIX TC2",
+        "serie": "AURIX TC2",
+        "families": ["TC21xL","TC22xL", "TC23xL", "TC23xLA", "TC23xLX", "TC26xD","TC26xDA", "TC27xT", "TC29xT","TC29xTA", "TC29xTT", "TC29xTX"],
+        "children": [
+          {
+            "id": "TC21xL",
+            "family":"TC21xL",
+            "derivatives":[ "TC212L","TC213L", "TC214L", "TC214LS"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC22xL",
+            "family":"TC22xL",
+            "derivatives":["TC222L","TC222LS","TC223L","TC223LS","TC224L","TC224LS"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC23xL",
+            "family":"TC23xL",
+            "derivatives":["TC233L","TC234L","TC237L"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC23xLA",
+            "family":"TC23xLA",
+            "derivatives":[ "TC234LA"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC23xLX",
+            "family":"TC23xLX",
+            "derivatives":[ "TC234LX"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC26xD",
+            "family":"TC26xD",
+            "derivatives":[ "TC264D","TC265D","TC267D"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC26xDA",
+            "family":"TC26xDA",
+            "derivatives":[ "TC264DA"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC27xT",
+            "family":"TC27xT",
+            "derivatives":[ "TC270T","TC275T","TC277T"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC29xTA",
+            "family":"TC29xTA",
+            "derivatives":[ "TC297TA"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC29xTT",
+            "family":"TC29xTT",
+            "derivatives":[ "TC297TT"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC29xTX",
+            "family":"TC29xTX",
+            "derivatives":[ "TC297TX","TC299TX"],
+            "children": [
+            ]
+          }, 
+          {
+            "id": "TC29xT",
+            "family":"TC29xT",
+            "derivatives":[ "TC290T","TC297T","TC298T","TC299T"],
+            "children": [
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AURIX TC3",
+        "serie": "AURIX TC3",
+        "families": ["TC32xLP","TC33xDA","TC33xLP","TC35xTA","TC35xTH","TC36xDP","TC37xTP","TC37xTx","TC38xQP","TC38xTP","TC39xTM","TC39xXA","TC39xXM","TC39xXX","TC3Ex"],
+        "children": [
+          {
+            "id": "TC32xLP",
+            "family":"TC32xLP",
+            "derivatives":[ "TC322LP","TC323LP","TC324LP","TC327LP"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC33xDA",
+            "family":"TC33xDA",
+            "derivatives":["TC336DA","TC337DA"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC33xLP",
+            "family":"TC33xLP",
+            "derivatives":["TC332LP","TC333LP","TC334LP","TC336LP","TC337LP"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC35xTA",
+            "family":"TC35xTA",
+            "derivatives":[ "TC356TA","TC357TA"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC35xTH",
+            "family":"TC35xTH",
+            "derivatives":[ "TC356TH","TC357TH"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC36xDP",
+            "family":"TC36xDP",
+            "derivatives":[ "TC364DP","TC365DP","TC366DP","TC367DP"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC37xTP",
+            "family":"TC37xTP",
+            "derivatives":[ "TC375TP","TC377TP"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC37xTx",
+            "family":"TC37xTx",
+            "derivatives":["TC377TX", "TC377Tx"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC38xQP",
+            "family":"TC38xQP",
+            "derivatives":[ "TC387QP","TC389QP"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC38xTP",
+            "family":"TC38xTP",
+            "derivatives":[ "TC387TP"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC39xTM",
+            "family":"TC39xTM",
+            "derivatives":[ "TC397TM"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC39xXA",
+            "family":"TC39xXA",
+            "derivatives":[ "TC397XA"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "TC39xXM",
+            "family":"TC39xXM",
+            "derivatives":[ "TC397XM"],
+            "children": [
+            ]
+          }, 
+          {
+            "id": "TC39xXX",
+            "family":"TC39xXX",
+            "derivatives":[ "TC397XX","TC397XP"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC3Ex",
+            "family":"TC3Ex",
+            "derivatives":[ "TC3E7"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC3x",
+            "family":"TC3x",
+            "derivatives":[ "TC367V","TC397QA","TC399XP","TC399XX","TC377VS","TC375TE"],
+            "children": [
+            ]
+          }           
+        ]
+      },
+      {
+        "id": "AURIX TC4",
+        "serie": "AURIX TC4",
+        "families": ["TC4Dx","TC49x"],
+        "children": [
+          {
+            "id": "TC4Dx",
+            "family":"TC4Dx",
+            "derivatives":[ "TC4D7XP","TC4D9XP"],
+            "children": [
+            ]
+          },
+          {
+            "id": "TC49x",
+            "family":"TC49x",
+            "derivatives":[],
+            "children": [
+            ]
+          }          
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NXP",
+    "silicon_vendor": "NXP",
+    "series": ["LPC","MCX","Kinetis","i.MX RT","S32K","S32G","S32N","S32M","S32R","S32Z","i.MX","MCX DSP/HiFi"],
+    "children": [
+      {
+        "id": "S32K",
+        "serie": "S32K",
+        "families": ["S32K1","S32K3","S32K5"],
+        "children": [
+          {
+            "id": "S32K1",
+            "family":"S32K1",
+            "derivatives":[ "S32K116", "S32K118", "S32K142", "S32K142W","S32K144","S32K144W","S32K146","S32K148","S32K1xx"],
+            "children": [
+            ]
+          },
+          {
+            "id": "S32K3",
+            "family":"S32K3",
+            "derivatives":["S32K310","S32K311","S32K312","S32K314","S32K322","S32K24","S32K341","S32K342","S32K344","S32K364","S32K366","S32K374","S32K376","S32K394","S32K396","S32K328","S32K338","S32K348","S32K358","S32K388","S32K389","S32K3xx"],
+            "children": [
+            ]
+          },
+          {
+            "id": "S32K5",
+            "family":"S32K5",
+            "derivatives":[ "S32K5xx"],
+            "children": [
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S32G",
+        "serie": "S32G",
+        "families": ["S32G2","S32G3"],
+        "children": [
+          {
+            "id": "S32G2",
+            "family":"S32G2",
+            "derivatives":[ "S32G234M", "S32G233A", "S32G254A", "S32G274A"],
+            "children": [
+              {
+                "id": "S32G274",
+                "derivative":"S32G274",
+                "a5x_cluster":"4 x Arm Cortex-A53",
+                "a7x_cluster": null,
+                "rx_cluster": null,
+                "mx_cluster": "3 x Arm Cortex-M7",
+                "a5x_clock": null,
+                "a7x_clock": null,
+                "rx_clock": null,
+                "mx_clock": null,
+                "execution_mode":"lockstep",
+                "asil_level":"ASIL-D",
+                "mcal_vendors":[""],
+                "mcal_versions":[""],
+                "compiler_names":[""],
+                "compiler_versions":[""]
+              }
+            ]
+          },
+          {
+            "id": "S32G3",
+            "family":"S32G3",
+            "derivatives":["S32G399A","S32G398A","S32G379A","S32G378A"],
+            "children": [
+            ]
+          }        
+        ]
+      },
+      {
+        "id": "S32N",
+        "serie": "S32N",
+        "families": ["S32N5","S32N7","S32N9"],
+        "children": [
+          {
+            "id": "S32N5",
+            "family":"S32N5",
+            "derivatives":[ "S32N55", "S32N5x"],
+            "children": [
+            ]
+          },
+          {
+            "id": "S32N7",
+            "family":"S32N7",
+            "derivatives":["S32N7x"],
+            "children": [
+            ]
+          },
+          {
+            "id": "S32N9",
+            "family":"S32N9",
+            "derivatives":["S32N9x"],
+            "children": [
+            ]
+          }           
+        ]
+      },
+      {
+        "id": "S32M",
+        "serie": "S32M",
+        "families": ["S32M2"],
+        "children": [
+          {
+            "id": "S32M2",
+            "family":"S32M2",
+            "derivatives":[ "S32M24x", "S32M27x"],
+            "children": [
+            ]
+          }
+        ]
+      },      
+      {
+        "id": "S32R",
+        "serie": "S32R",
+        "families": ["S32R2","S32R3","S32R4"],
+        "children": [
+          {
+            "id": "S32R2",
+            "family":"S32R2",
+            "derivatives":[ "S32R26", "S32R27","S32R2294","S32R2x"],
+            "children": [
+            ]
+          },
+          {
+            "id": "S32R3",
+            "family":"S32R3",
+            "derivatives":["S32R37","S32R3x"],
+            "children": [
+            ]
+          },
+          {
+            "id": "S32R4",
+            "family":"S32R4",
+            "derivatives":["S32R41","S32R43","S32R45","S32R47","S32R4x"],
+            "children": [
+            ]
+          }           
+        ]
+      },
+      {
+        "id": "S32Z",
+        "serie": "S32Z",
+        "families": ["S32Z2","S32E2"],
+        "children": [
+          {
+            "id": "S32Z2",
+            "family":"S32Z2",
+            "derivatives":[ "S32Z27", "S32Z2x"],
+            "children": [
+            ]
+          },
+          {
+            "id": "S32E2",
+            "family":"S32E2",
+            "derivatives":["S32E27","S32E2x"],
+            "children": [
+            ]
+          }       
+        ]
+      },
+      {
+        "id": "i.MX/iMX",
+        "serie": "S32Z",
+        "families": ["i.MX2","i.MX3","i.MX5","i.MX6","i.MX7","i.MX8","i.MX9","i.MX9","i.MXRT"],
+        "children": [
+          {
+            "id": "i.MX8",
+            "family":"i.MX8",
+            "derivatives":[ "i.MX8x"],
+            "children": [
+            ]
+          }      
+        ]
+      }      
+    ]
+  },
+  {
+    "id": "Renesas",
+    "silicon_vendor": "Renesas",
+    "series": ["RL78","RX100","RX200","RX600","RX700","RA2","RA4","RA6","RA0","Synergy","RZ/A","RZ/G","RZ/T","RISC-V","RH850","78K","H8","R8C","R-Car"],
+    "children": [
+      {
+        "id": "RH850",
+        "serie": "RH850",
+        "families": ["RH850/F","RH850/P","RH850/E","RH850/C","RH850/D","RH850/U2A","RH850/U2B"],
+        "children": [
+          {
+            "id": "RH850C",
+            "family":"RH850C",
+            "commercial_name":"RH850/C Series",
+            "derivatives":[ "RH850/C1M"],
+            "children": [
+            ]
+          },         
+          {
+            "id": "RH850/D",
+            "family":"RH850/D",
+            "commercial_name":"RH850/D Series",
+            "derivatives":[ "RH850/D"],
+            "children": [
+            ]
+          },
+          {
+            "id": "RH850/E",
+            "family":"RH850/E",
+            "commercial_name":"RH850/E Series",
+            "derivatives":[ "RH850/Ex"],
+            "children": [
+            ]
+          },           
+          {
+            "id": "RH850/F",
+            "family":"RH850/F",
+            "commercial_name":"RH850/F Series",
+            "derivatives":[ "RH850/F1KM-S1", "RH850/F1KM-S2", "RH850/F1KM-S4", "RH850/F1KH-D8"],
+            "children": [
+            ]
+          },
+          {
+            "id": "RH850/P",
+            "family":"RH850/P",
+            "commercial_name":"RH850/P Series",
+            "derivatives":["RH850Px"],
+            "children": [
+            ]
+          },
+          {
+            "id": "RH850/U2A",
+            "family":"RH850/U2A",
+            "commercial_name":"RH850/U2A Series",
+            "derivatives":[ "RH850/U2A16","RH850/U2A8","RH850/U2A6"],
+            "children": [
+            ]
+          },
+          {
+            "id": "RH850/U2B",
+            "family":"RH850/U2B",
+            "commercial_name":"RH850/U2B Series",
+            "derivatives":["RH850/U2B16","RH850/U2B8","RH850/U2B6"],
+            "children": [
+            ]
+          }          
+        ]
+      },
+      {
+        "id": "R-Car",
+        "serie": "R-Car",
+        "families": ["E1", "H1", "L1", "M1A/M1S","H2", "M2", "V2H","E3", "H3", "M3", "D3", "V3","S4x", "V4x", "V4H", "V4M"],
+        "children": [
+          {
+            "id": "M3",
+            "family":"M3",
+            "commercial_name":"R-Car M3",
+            "derivatives":[ "R-Car M3","R-Car M3-W(R8A7796)", "R-Car M3e", "R-Car M3e-2G","R-Car M3N","R-Car M3Ne","R-Car M3Ne-2G"],
+            "children": [
+            ]
+          },
+          {
+            "id": "H1",
+            "family":"H1",
+            "commercial_name":"R-Car H1",
+            "derivatives":[ "R-Car H1(R8A7779)"],
+            "children": [
+            ]
+          },          
+          {
+            "id": "H3",
+            "family":"H3",
+            "commercial_name":"R-Car H3",
+            "derivatives":[ "R-Car H3(R8A7795)", "R-Car H3e","R-Car H3e-2G","R-Car H3N","R-Car H3Ne","R-Car H3Ne-1.7G"],
+            "children": [
+            ]
+          },
+          {
+            "id": "V3",
+            "family":"V3",
+            "commercial_name":"R-Car V3",
+            "derivatives":[ "R-Car V3M(R8A77970)","R-Car V3H2","R-Car V3H(R8A77980)"],
+            "children": [
+            ]
+          }
+        ]
+      },
+      {
+        "id": "R8",
+        "serie": "R8",
+        "families": ["R8A7779","R8A7778","R8A7790","R8A7791","R8A7793","R8A7792","R8A7794","R8A7795","R8A7796","R8A7795x"],
+        "children": [
+          {
+            "id": "M3",
+            "family":"M3",
+            "commercial_name":"R-Car M3",
+            "derivatives":[ "R-Car M3", "R-Car M3e", "R-Car M3e-2G","R-Car M3N","R-Car M3Ne","R-Car M3Ne-2G"],
+            "children": [
+            ]
+          },         
+          {
+            "id": "H3",
+            "family":"H3",
+            "commercial_name":"R-Car H3",
+            "derivatives":[ "R-Car H3", "R-Car H3e","R-Car H3e-2G","R-Car H3N","R-Car H3Ne","R-Car H3Ne-1.7G"],
+            "children": [
+            ]
+          },
+          {
+            "id": "V3",
+            "family":"V3",
+            "commercial_name":"R-Car V3",
+            "derivatives":[ "R-Car V3M","R-Car V3H2","R-Car V3H"],
+            "children": [
+            ]
+          }
+        ]
+      }            
+    ]
+  }
+]
+

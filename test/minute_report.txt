@@ -1,0 +1,41 @@
+Hereafter the meeting report with my customer Lukas, Mobileye company is a Tier1 company , I'm Bruno Abou:
+
+----------------------------------------------------------------------------------------------------------------------
+
+Bonjour Lukas,
+
+Here are the meeting notes for your checking before we move to your required Non Binding Price Indication for an upfront payment (License model).
+
+Participants :
+April 30th, Mobileye Koblenz, Germany
+Lukas Malmann, Head of SW R&D for Mobileye (lukas@me.com)
+Fabrice Zappulla, BSA at Elektrobit
+Bruno Abou Head of Product Sales at Elektrobit
+Anne Joubert, Sales Manager at Elektrobit
+
+
+As discussed, you would like us to quote the following project, if my notes are correct :
+You are yourself consulted by VW OEM on their MLB Evo car platform (RFQ). SOP date : July 2027. RFM date one year ahead.
+
+The ECU type is a Radar system and the MCU you would like to use is a S32K344 from NXP.
+So far, the only information you have received from VW is that this ECU is ASIL-D in term of Safety Level.
+
+The compiler has not been selected so far.
+
+
+The ECU is connected on both CAN-FD and LIN buses.
+It does not require any Software update operating mode.
+
+It requires to be compliant with the VW Security requirements. But does not need any HSM firmware from EB but HSE from NXP.
+
+You also would like to know the costs of the total Basic Software including 1 year of maintenance after SOP.
+And you would need 10 seats of tresos Studio tooling (Single user permanent license enough, no floating needed)
+
+Mobileye would also like to know the cost of 1 on-site support engineer for 3-months at project start (July 2025).
+
+Lukas, we will come back to you very shortly when the Price Indication has been finalized and approved !
+Wishing you a lovely day…
+
+Regards, Bruno
+
+----------------------------------------------------------------------------------------------------------------------

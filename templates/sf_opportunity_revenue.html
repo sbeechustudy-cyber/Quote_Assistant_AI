@@ -1,0 +1,21 @@
+<div class="slds-p-around_medium">
+  <h2 class="slds-text-heading_small">Revenue Schedule</h2>
+  <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+    <thead>
+      <tr class="slds-line-height_reset">
+        <th>Period</th>
+        <th>Planned Revenue</th>
+        <th>Actual Revenue</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in revenue_schedule %}
+      <tr>
+        <td>{{ r.period }}</td>
+        <td>{{ r.planned }}</td>
+        <td>{{ r.actual }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🧠 EB Products Quote Assistant - Help Guide</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #005b96;
+    }
+    h1 {
+      border-bottom: 2px solid #005b96;
+      padding-bottom: 5px;
+    }
+    ul {
+      margin: 10px 0 20px 40px;
+    }
+    .note {
+      background: #f0f8ff;
+      border-left: 4px solid #005b96;
+      padding: 10px 15px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    code {
+      background: #f8f8f8;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 90%;
+    }
+    .auto-figure {
+      display: block;
+      margin: 15px auto;
+      text-align: center;
+    }
+    .auto-figure img {
+      max-width: 50%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .auto-figure figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 5px;
+    }
+    #toc {
+      background: #f5f8fa;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+    }
+    #toc a {
+      color: #005b96;
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    .clickable-img {
+        cursor: pointer;  /* show pointer on hover */
+    }    
+    img {
+        display: block;
+        margin: 1rem auto; /* top/bottom = 1rem, left/right = auto = centré */
+        max-width: 50%;
+        width: 50%;
+        height: auto;
+        cursor: pointer;
+    }    
+    .left-img {
+        display: block;
+        margin: 1rem 0;
+        max-width: 20%;
+        width: 20%
+    }       
+    .right-img {
+        display: block;
+        margin: 1rem 0 1rem auto;
+    }
+    .center-img {
+        display: block;
+        margin: 1rem auto;  /* auto left/right → centered */
+    }
+
+    /* Optional: responsive size for all images */
+    .left-img, .right-img, .center-img {
+        max-width: 90%;
+        height: auto;
+    }        
+    /* The Modal (background) */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1000; 
+      padding-top: 60px; 
+      left: 0; top: 0; right: 0; bottom: 0;
+      width: 100%; height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.9); 
+      align-items: center;
+      justify-content: center;      
+    }
+
+    /* Modal Image */
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90vw;     /* use viewport width */
+      max-height: 90vh;    /* use viewport height */
+      width: auto;          /* let it scale naturally */
+      height: auto;
+      align-items: center;
+      justify-content: center;       
+      transition: transform 0.3s ease;
+    }
+
+    /* Caption */
+    #caption {
+      margin: auto;
+      text-align: center;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    /* Close Button */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }    
+    .styled-quote {
+      font-style: italic;
+      font-size: 1.2em;
+      margin: 1.5em auto;
+      padding: 1em 1.5em;
+      border-left: 4px solid #888;
+      background: #f9f9f9;
+      max-width: 50vw;
+    }
+    .text-figure {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      text-align: left;
+    }
+    .text-box {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1em;
+      background: #f9f9f9;
+      white-space: pre-line;
+      width: 60vw;
+    }
+
+    .text-footer {
+      display: block;
+      text-align: right;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.3em;
+      width: 60vw;
+    }
+    ul {
+        margin: 0;
+        padding-left: 60px; /* indentation pour les sous-listes */
+    }
+    li {
+        margin: 0;
+        padding: 2px 0; /* petit espace vertical */
+        list-style: disc; /* remet les bullets */
+    }
+    ul ul {
+        padding-left: 40px;
+    }
+    li a {
+        display: block;
+        line-height: 1.2;
+        padding: 2px 0;
+    }
+ 
+  </style>
+</head>
+<body>
+<a id="top"></a>
+
+<img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" style="height: 20%; width: 20%; cursor: default;" class="left-img">
+<h1>🧠 EB Products Quote Assistant</h1>
+
+<script>
+    const clientId = '{{ client_id }}';
+    console.log('Client ID:', clientId);
+</script>
+
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="fullImage">
+  <div id="caption"></div>
+</div>
+
+<div id="toc">
+  <h2>📑 Table of Contents</h2>
+  <ul>
+    <li><a href="#tool-purpose">🎯 Purpose of the tool</a></li>
+    <li><a href="#how-it-works">⚙️ How It Works</a></li>
+    <li><a href="#quotation-generation">📝 Quotation Generation</a></li>
+    <li>
+        <a href="#tool-overview">🛠️ Tool Overview</a>
+        <ul>
+            <li><a href="#ai-analyzer">🤖 AI Analyzer Tab</a></li>
+            <li><a href="#ai-responses">📋 AI Responses Tab</a></li>
+            <li><a href="#price-list-extract">📄 EB Price List Extract Tab</a></li>
+            <li><a href="#quote-result">💰 Price Indication Tab</a></li>
+        </ul>
+    </li>
+    <li><a href="#recommendations-for-use">💡 Recommendations for Use</a></li>
+    <li><a href="#report-examples">📜 Examples of Inputs to be Analysed</a></li>
+    <li><a href="#future-enhancements">🚀 Future Enhancements</a></li>
+    <li><a href="#troubleshooting">📬 Troubleshooting</a></li>
+    <li><a href="#versionHistory">📌 Version History</a></li>
+  </ul>
+</div>
+
+<h2 id="tool-purpose">🎯 Purpose of the tool</h2>
+
+<p>
+  The EB Products Quote Assistant is designed to be both simple and powerful, providing essential support
+  to sales managers by enabling them to quickly and easily generate a price indication for the RTC
+  products range: <strong>Tresos 8, Tresos 9, Zoneo, and Zentur</strong>.
+</p>
+
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h2 id="how-it-works">⚙️ How It Works</h2>
+
+<p>
+  Based on a meeting report, customer's email or simple key words, the Assistant analyzes the content and generates a price indication according
+  to various criteria:
+</p>
+<ul>
+  <li>Type of company</li>
+  <li>Type of project</li>
+  <li>OEMs</li>
+  <li>The µC or SoC with its compiler and MCAL</li>
+  <li>Required ASIL level</li>
+  <li>Communication, security, update features, etc.</li>
+</ul>
+
+<p>
+  From the provided elements, the tool identifies the company within Salesforce, confirming the <strong>currency,
+  sales region, and responsible account</strong>. It then determines the appropriate license type for the
+  quotation and compares it with what is stated in the report. Currently, only upfront payment licenses are supported;
+  royalty model support will be available in a future release.
+</p>
+
+<p>
+  Once the license is determined, the Assistant estimates porting effort for <strong>Tresos</strong> (Zentur and Zoneo are not yet supported).
+  Using the µC/SoC, compiler, and MCAL triplet, it applies a <em>T-shirt sizing approach</em> (from
+  extra-small = off-the-shelf to extra-large = completely new µC/SoC). This estimation is based on the
+  <em>Unified Hardware List</em>, containing all supported and soon-to-be-supported configurations.
+</p>
+
+<p>
+  Later releases will also provide a timeline for porting different packages. Currently, Zoneo and Zentur
+  hardware are not yet included.
+</p>
+
+<p>
+  After identifying the license and porting effort, the tool moves on to product item identification. 
+  It essentially does the shopping for you by compiling your product list, managing inter-package dependencies, 
+  ensuring consistency (no mutually exclusive packages), and including all related packages automatically.
+</p>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/overview.png') }}" alt="EB Products Quote Assistant Overview" class="img">
+  <figcaption>EB Products Quote Assistant main screen overview</figcaption>
+</figure>
+
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h2 id="quotation-generation">📝 Quotation Generation</h2>
+
+<p>
+  Once license and porting effort are determined, the tool compiles the product list automatically:
+</p>
+<ul>
+  <li>Manages inter-package dependencies</li>
+  <li>Ensures consistency (no mutually exclusive packages)</li>
+  <li>Includes all related packages</li>
+</ul>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/quote-generation.png') }}" alt="Quotation Workflow Example" class="img">
+  <figcaption>Workflow from license identification to quotation</figcaption>
+</figure>
+
+<p>
+  The quotation is then generated based on:
+</p>
+<ul>
+  <li>Product item list</li>
+  <li>Sales region and currency</li>
+  <li>License type and application (development, maintenance, cybersecurity, LTS, IP/QP, etc.)</li>
+  <li>Official price list</li>
+</ul>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/price-indication.png') }}" alt="Quotation Generation Example" class="img">
+  <figcaption>Quotation assembly example</figcaption>
+</figure>
+
+<p>
+  Data sources used:
+</p>
+<ul>
+  <li>Salesforce</li>
+  <li>Unified Hardware List</li>
+  <li>Latest Price List</li>
+</ul>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h2 id="tool-overview">🛠️ Tool Overview</h2>
+<p>When accessing the EB Products Quote Assistant, you will find the following tabs:</p>
+<ul>
+  <li><strong>🤖 AI Analyzer</strong> tab: Launch analysis of your meeting report</li>
+  <li><strong>💰 Price Indication</strong> tab: Generated quotation</li>
+  <li><strong>📋 AI Responses</strong> tab: Review and edit extracted answers</li>
+  <li><strong>📄 EB Price List Extract</strong> tab: View potential product items</li>
+  <li><strong>🐞 Debug</strong> tab: Internal logs and troubleshooting info</li>
+  <li><strong>📘 Guideline</strong> tab: This guide</li>
+</ul>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/tabs-overview.png') }}" alt="Tabs Overview" class="img">
+  <figcaption>Tabs overview in the EB Products Quote Assistant</figcaption>
+</figure>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h3 id="ai-analyzer">🤖 AI Analyzer Tab</h3>
+<p>Paste your meeting report into the text field, then click <code>Analyze Minute Report</code>.
+The progress window shows analysis steps. You cannot stop the process once started—either let it complete
+or reload the page.</p>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/ai-analyzer.png') }}" alt="AI Analyzer Example" class="img">
+  <figcaption>AI Analyzer input example</figcaption>
+</figure>
+
+<p>Steps include:</p>
+<ul>
+  <li>Report review</li>
+  <li>License type identification and comparison</li>
+  <li>Porting effort estimation (T-shirt sizing) based on µC/SoC, compiler, and MCAL</li>
+</ul>
+
+  <p>
+    Once the report review is complete, the Assistant identifies the license type and compares it with the reported one, then evaluates the porting effort. 
+    Results are shown using green checks (supported), red crosses (unsupported, requires porting), 
+    or question marks (requires further validation).
+  </p>
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/license-identification.png') }}" alt="AI Analyzer Example" class="img">
+  <figcaption>License identification</figcaption>
+</figure>  
+ 
+<p>Next, the tool evaluates the porting effort based on the µC, compiler, and MCAL information. 
+   Using the T-shirt sizing method, it provides two lists</p>
+<ul>
+  <li>Closest candidate configurations matching the client request</li>
+  <li>All supported configurations for the specified µC/SoC</li>
+</ul>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/porting-effort.png') }}" alt="Porting Effort Estimation" class="img">
+  <figcaption>Porting effort estimation with T-shirt sizes</figcaption>
+</figure>
+
+<p>Column indicators:</p>
+<ul>
+  <li>✅ Green check: fully supported</li>
+  <li>❌ Red cross: not supported, porting required</li>
+  <li>❓ Question mark: potentially supported, requires verification</li>
+</ul>
+
+<p>The last column shows the T-shirt size (effort estimate).  
+At the bottom, product items relevant to the request are listed.</p>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/product-items-identified.png') }}" alt="Porting Effort Estimation" style="height: 30%; width: 30%" class="img">
+  <figcaption>Product Items identified according to AI analysis</figcaption>
+</figure>
+
+<div class="note">Note: The <code>Clear Logs</code> button clears the “Analysis” window.</div>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h3 id="quote-result">💰️ Price Indication Tab</h3>
+<p>
+  This tab shows the commercial proposal, summarizing the currency, sales region, and licenses.
+</p>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/price-indication.png') }}" alt="Price Indication Example" class="img">
+  <figcaption>Price Indication tab example</figcaption>
+</figure>
+<p>
+  A download link is available for exporting the quotation in CSV format for further refinement or adaptation. 
+  Currently, quantities are not supported, and product items are not duplicated (as is sometimes the case with Zoneo transceivers).
+</p>
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/download-button-price-indication.png') }}" alt="EB Price List Extract Example" style="height: 20%; width: 20%" class="img">
+  <figcaption>Link for downloading the price indication</figcaption>
+</figure>
+
+<div class="note">Note: Quantities are not yet supported. Items are not duplicated (e.g., Zoneo transceivers).</div>
+<div class="note">Note: The <code>Clear List</code> button clears the list.</div>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+
+<h3 id="ai-responses">📋 AI Responses Tab</h3>
+<p>
+  This tab provides a detailed view of the assistant’s answers to the questions that shape the quotation.
+  This is particularly useful for modifying answers and regenerating a new quotation without requiring 
+  a new report analysis—saving time and boosting efficiency. For example, you can test different ASIL levels or OEM types.
+</p>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/ai-responses.png') }}" alt="AI Responses Example" class="img">
+  <figcaption>AI Responses tab example</figcaption>
+</figure>
+
+<p>
+  Key information is shown in <strong>bold</strong>. If missing, the assistant makes assumptions, indicated
+  by “flag assumption”.
+</p>
+
+<p>
+  After editing, click <code>Update Price Indication</code>. The updated quotation will appear automatically in
+  the <strong>Price Indication</strong> tab.
+</p>
+<p>
+  <code>Initial Price Indication</code> allows you to reload the latest Assistant's analysis and regenerate automatically the associated price indication.
+</p>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h3 id="price-list-extract">📄 EB Price List Extract Tab</h3>
+<p>
+  Displays an extract of the price list with all potential product items relevant for the quotation, with references, validity dates, and currency.
+</p>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/price-list-extract.png') }}" alt="EB Price List Extract Example" class="img">
+  <figcaption>EB Price List Extract tab example</figcaption>
+</figure>
+
+<p>
+  A link at the bottom of the table allows CSV export.
+</p>
+
+<figure class="auto-figure">
+  <img src="{{ url_for('static', filename='images/download-button-price-list-extract.png') }}" alt="EB Price List Extract Example" style="height: 20%; width: 20%" class="img">
+  <figcaption>Link for downloading the extracted price list</figcaption>
+</figure>
+
+<div class="note">Note: The <code>Clear List</code> button clears the list.</div>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h2 id="recommendations-for-use">💡 Recommendations for Use</h2>
+<ul>
+  <li>Input format is flexible, no pattern or template but avoid implicit information. Be explicit and unambiguous to ensure the AI analysis is as accurate and complete as possible.</li>
+  <li>If the assistant misidentifies information from your input, then go to <strong>AI Responses</strong> tab, edit Assistant's answers, and regenerate a new price indication
+      with <code>Update Price Indication</code>—no need to modify the original report and request a new analysis.</li>
+  <li>The tool uses our internal AI, based on Ollama and Mistra. As a result, its processing capacity is limited 
+      and cannot handle a high number of simultaneous requests.</li>
+
+  <li>Do not refresh your browser page—this will not speed things up but will instead overload the server unnecessarily.
+      Be patient: analysis may take between 1–2 minutes, or up to 5+ minutes..</li>
+  <li>Validate the results carefully. Users remain responsible for shared information with his or her customer.</li>
+  <li>The tool is under development. Report feedback,requests or issues, see <a href="#troubleshooting">Troubleshooting</a> section.</li>
+</ul>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h3 id="report-examples">📜 Examples of Inputs to be Analysed</h3>
+
+<!-- 
+<blockquote class="styled-quote">
+Regards, Bruno
+  <footer>— Minute Report Example 1</footer>
+</blockquote>
+--> 
+
+<figure class="text-figure">
+    <div class="text-box">
+    Hereafter the meeting report with my customer Lukas, Mobileye company is a Tier1 company , I'm Bruno Abou:
+
+    ----------------------------------------------------------------------------------------------------------------------
+
+    Bonjour Lukas,
+
+    Here are the meeting notes for your checking before we move to your required Non Binding Price Indication for an upfront payment (License model).
+
+    Participants :
+    April 30th, Mobileye Koblenz, Germany
+    Lukas Malmann, Head of SW R&D for Mobileye (lukas@me.com)
+    Fabrice Zappulla, BSA at Elektrobit
+    Bruno Abou Head of Product Sales at Elektrobit
+    Anne Joubert, Sales Manager at Elektrobit
+
+
+    As discussed, you would like us to quote the following project, if my notes are correct :
+    You are yourself consulted by VW OEM on their MLB Evo car platform (RFQ). SOP date : July 2027. RFM date one year ahead.
+
+    The ECU type is a Radar system and the MCU you would like to use is a S32K344 from NXP.
+    So far, the only information you have received from VW is that this ECU is ASIL-D in term of Safety Level.
+
+    The compiler has not been selected so far.
+
+
+    The ECU is connected on both CAN-FD and LIN buses.
+    It does not require any Software update operating mode.
+
+    It requires to be compliant with the VW Security requirements. But does not need any HSM firmware from EB but HSE from NXP.
+
+    You also would like to know the costs of the total Basic Software including 1 year of maintenance after SOP.
+    And you would need 10 seats of tresos Studio tooling (Single user permanent license enough, no floating needed)
+
+    Mobileye would also like to know the cost of 1 on-site support engineer for 3-months at project start (July 2025).
+
+    Lukas, we will come back to you very shortly when the Price Indication has been finalized and approved !
+    Wishing you a lovely day…
+
+    Regards, Bruno
+    </div>
+    <figcaption class="text-footer">- Example 1: Sales Manager's minute report</figcaption>
+</figure>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+<figure class="text-figure">
+    <div class="text-box">
+
+Hi,
+
+My name is Fabrice Santos, Software Architect at Continental company, in the BU powertrains.
+For my project, we must design a new ECU empowered by a µC from NXP, S32K358. This is ASIL-D project, we need CAN and Ethernet Buses (NXP TJA1044GT and NXP TJA1101), security (TLS). Bootloader is required which need to be updated (Bootloader Updater).
+SoP date is Q3 2028, SoD is Q3 2025, we will produce 200K units/year during 4 years, for 3 OEMs (Volvo, Renault and the last one cannot be disclosed), I need a project license, 2 years of extension development maintenance, 3 years of LTS maintenance. Qualification packages are required, I need also startup packages for both Bootloader and Application.
+
+roberto@toto.com, I need studio, no cyber maintenance, compiler not yet known
+
+a PI is expected by end of next week.
+
+Thanks in advance for considering my request
+    </div>
+    <figcaption class="text-footer">- Example 2: Customer's email.</figcaption>
+</figure>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+<figure class="text-figure">
+    <div class="text-box">
+Dear Carl McConor,
+
+I appreciate your reaching out to us regarding the setup of a new ECU for three OEMs at Mobileye Company in Germany, where you serve as Chief Architect. Your contact details are carl.mcconor@me.com and +3364545780.
+
+The ECU we will be working on is an ADAS system built around Infineon TC323LP using Infineon version TC3xx_2.10, along with HighTec compiler version 4.9. Our focus is on implementing multicore support for executing BSW modules, and we'll utilize only CAN bus communication (partial networking) as the primary means of interaction. It should be noted that only one CAN transceiver will be used, and the hardware has not been finalized yet.
+
+Regarding licensing, we recommend a product line license model without any royalties. The project must adhere to ASIL-D level standards, and AUTOSAR version 4.4 is required. However, we do not need to incorporate Fail operational features. We will provide HSM with Secure Boot, as well as a Bootloader equipped with a boot updater. Our SW update strategy will be based on flash bootloader and does not include V2G functionality.
+
+With regards to the timeline, the development phase will span 2 years, with the SOP date for the first vehicle set for Q3 2028, RFM date scheduled for Q1 2028, SOD slated for Q3 2025, FC on 26/05/2026, and the ECU's SOP planned for July 2027. We do not require LTS or cyber security maintenance during this period.
+
+Lastly, we will provide you with 20 seats for Tresos Studio tooling in a floating license with subscription. Please note that the Proposal Information (PI) must be completed by the end of this week.
+
+Thank you, Carl, for your cooperation and collaboration.
+    </div>
+    <figcaption class="text-footer">-Example 3 : customer's email.</figcaption>
+</figure>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+<figure class="text-figure">
+    <div class="text-box">
+General Project and Timeline
+ECU Name/Domain: I/O Expander
+OEM Platform: Multiple (Heavy duty, bus)
+OEM SOP: End 2027 - Beginning 2028
+ECU SOP: Not explicitly listed
+SW Feature Completion (FC): December / January 2025–2026
+Hardware:
+µC Manufacturer: NXP
+µC Derivatives: S32K312 (Single Core), S32K324 (Multicore)
+Cores: Mixed (324 Multicore, 312 Single Core)
+BSW Distribution: yes for S32K324
+Hardware Accelerators: No
+Virtualization / Hypervisor: No
+Compiler: Windriver diab compiler
+ASIL-B
+Need to support Post Build Loadable
+Communication: CAN/CAN-FD, LIN (Master) and Ethernet
+transceivers: TCAN1043, TLIN1021A-Q1, DP83TD545
+Security Event logging	yes
+IPsec			no
+MACsec			TBD
+TLS or DTLS		yes
+Do you need to build a fail-operational system?				no
+Which private bus shall be fail-operational?				None
+In which ECU sample the fail-operational bus shall be available?				None
+
+	Software update strategy						
+		Dual bank-capable FBL required			yes		1. OTA A/B
+		External memory device			no		
+		Slaves to be updated			no		
+		Bootloader Updater required			yes		
+		Boot Manager			yes		
+		Secure Boot required			yes
+    </div>
+    <figcaption class="text-footer">- Example 4 : Only with key words.</figcaption>
+</figure>
+        
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+<h2 id="future-enhancements">🚀 Future Enhancements</h2>
+<ul>
+  <li>Direct connection to Salesforce, Unified Hardware DB, JIRA Queue, and AAV ERP</li>
+  <li>Support for Elektrobit’s full portfolio</li>
+  <li>Automated Salesforce opportunity creation with revenue schedule</li>
+  <li>Automated JIRA ticket creation in EBACQ</li>
+  <li>Possible automated QBS creation in AAVerp or its sucessor</li>
+  <li>AI optimization with Elektrobit-specific knowledge</li>
+  <li>A summary of the request including points to clarify/confirm and possible options</li>
+  <li>Request summary with clarifications and options</li>
+</ul>
+
+<h3>Wishes list</h3>
+<ul>
+  <li>Verification if a NDA is already in place with the client</li>
+  <li>List similar demands in SF (past or ongoing opp)</li>
+  <li>Connection with the delivery system for checking and make proposals of upgrade</li>
+</ul>
+
+
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+
+
+<h3 id="troubleshooting">📬 Troubleshooting</h3>
+
+<p>Please reach out to <a href="https://teams.microsoft.com/l/chat/0/0?users=fabrice.zappulla@elektrobit.com&message={{ 'EB Product quote Assistant support required for Client ID: ' + (client_id or 'unknown') }}" target="_blank">Fabrice Zappulla through Microsoft Teams</a> or send an email to <a href="mailto:fabrice.zappulla@elektrobit.com?subject={{ 'EB AI Assistant Quote Request (session ID: ' + (client_id or 'unknown') + ')' }}">fabrice.zappulla@elektrobit.com</a>.</p>
+<p>Any remarks of improvements, new features or feedback are welcome, don't hesitate! The tool is your, feel free to propose what you want!</p>
+
+<p>For any technical matters, please provide the session ID <strong>{{ client_id or 'present into AI analysis logs'}}</strong>.</p>
+<p>Less user friendly, you can also attach debug's log and download AI response file (download link is present into the debug log).</p>
+
+
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+<section id="version-history">
+  <h3 id="versionHistory">📌 Version History</h3>
+  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead style="background-color: #f2f2f2; text-align: left;">
+      <tr>
+        <th style="width: 15%;">Version</th>
+        <th style="width: 20%;">Date</th>
+        <th>Changes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.0.0</td>
+        <td>2025-09-01</td>
+        <td>Initial release of the quote assistant with core features.</td>
+      </tr>
+      <tr>
+        <td>1.0.1</td>
+        <td>2025-09-05</td>
+        <td>Internal improvements (stability and robustness).</td>
+      </tr>
+      <tr>
+        <td>1.0.2</td>
+        <td>2025-09-11</td>
+        <td>Add ability to filter logs in AI Analyzor tab. Internal improvements.</td>
+      </tr>
+      <tr>
+        <td>1.0.3</td>
+        <td>2025-09-13</td>
+        <td>Add abort button for stopping AI agent. Fix bugs when sales regions or country is unknown.</td>
+      </tr>
+      <tr>
+        <td>1.0.4</td>
+        <td>2025-09-20</td>
+        <td>
+        All files are now stored securely and encrypted with a common secret. However, users can choose to keep their own secret by toggling the option in the AI Analysis tab. Fixed some alignment issues in product selection and resolved bugs occurring when sales regions or countries are unknown.
+        </td>
+      </tr>
+      <tr>
+        <td>1.1.0</td>
+        <td>2025-11-20</td>
+        <td>
+        Connection with Sales Force, opportunity creation within the sand box including product items & revenue schedule.<br>
+        Fix minor issues.
+        </td>
+      </tr>  
+      <tr>
+        <td>1.1.1</td>
+        <td>2025-11-26</td>
+        <td>
+        Fix crashes whose occured after AI analysis.<br>
+        </td>
+      </tr>
+      <tr>
+        <td>1.1.2</td>
+        <td>2026-02-17</td>
+        <td>
+        Automatic pricelist selection for Aumovio/Continental account.<br>
+        Add EB tresos 9 Bootloader and FOTA Handler for Essentials.<br>
+        Add support of new licenses for LTS & Cybersecurity Monitoring defined in pricelist from februrary 2026.<br>
+        Internal improvements for server deploiment.<br>
+        </td>
+      </tr>
+      <tr>
+        <td>1.2</td>
+        <td>2026-06-23</td>
+        <td>
+        Add quote template generation.<br>
+        Enable Saleforce Opportunity update within the sandbox.<br>
+        Internal improvements for server deploiment.<br>
+        </td>
+      </tr>       
+      <tr>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<p style="text-align:right;">
+  <a href="#top">⬆ Back to Top</a>
+</p>
+<p>Client ID: {{ client_id or 'unknown' }}</p>
+<script>
+// Get modal elements
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("fullImage");
+const captionText = document.getElementById("caption");
+
+// Add click event to all images with class 'clickable-img'
+document.querySelectorAll(".clickable-img").forEach(img => {
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+});
+document.querySelectorAll(".img").forEach(img => {
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+});
+// Close modal when clicking on <span> (x)
+document.querySelector(".close").onclick = function() { 
+  modal.style.display = "none";
+}
+
+// Optional: close modal when clicking outside the image
+modal.onclick = function(event) {
+  if(event.target === modal) modal.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const figures = document.querySelectorAll(".auto-figure");
+  figures.forEach((fig, index) => {
+    const caption = fig.querySelector("figcaption");
+    caption.innerHTML = `Figure ${index + 1} – ${caption.innerHTML}`;
+  });
+
+  const isLocalFile = window.location.protocol === "file:";
+
+  document.querySelectorAll("img").forEach(img => {
+    let src = img.getAttribute("src");
+    if (!src) return;
+    
+    if (isLocalFile) {
+      const match = src.match(/filename=['"]([^'"]+)['"]/);
+      if (match) {
+        img.src = "../static/" + match[1];
+    
+        console.log("Local load, replaced img src:", img.src);
+        return;
+      }
+      console.warn("❌ Error Local load, not able to replace img src to local, got:", img.src);
+    } else {
+        console.log("Flask server running, keep src to", img.src);
+    }
+  });
+});
+</script>
+</body>
+</html>

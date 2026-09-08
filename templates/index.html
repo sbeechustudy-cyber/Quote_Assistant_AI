@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>🧠 EB Products Quote Assistant</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <style>
+        body {
+          font-family: "Segoe UI", sans-serif;
+          padding: 10px 20px 20px 20px;
+          background: #f8f9fa;
+          font-size: 14px;
+        }
+        h2 {
+          margin-top: 0;
+          padding-top: 0;
+        }        
+        h3 {
+          margin-top: -10px;
+          padding-top: 0;
+          margin-bottom: 0;
+          padding-bottom: 0;          
+        }          
+        .tab-container {
+          display: flex;
+          flex-direction: column;
+        }
+        .tab-buttons {
+          display: flex;
+          margin-bottom: 10px;
+        }
+        .tab-buttons button {
+          padding: 8px 16px;
+          margin-right: 6px;
+          border: none;
+          background-color: #e0e0e0;
+          cursor: pointer;
+          font-weight: bold;
+          border-radius: 4px 4px 0 0;
+        }
+        .tab-buttons button.active {
+          background-color: #fff;
+          border-bottom: 2px solid #fff;
+        }
+        .tab-content {
+          display: none;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-top: none;
+          padding: 20px;
+          border-radius: 0 0 6px 6px;
+        }
+        .tab-content.active {
+          display: block;
+        }
+        .output-box {
+          font-family: Consolas, Menlo, monospace;
+          white-space: pre;
+          overflow-x: auto;
+          overflow-y: auto;
+          background: #f1f1f1;
+          border: 1px solid #ccc;
+          padding: 10px;
+          border-radius: 6px;
+          margin-top: 10px;
+        }
+        .clear-button {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          padding: 6px 10px;
+          font-size: 13px;
+          cursor: pointer;
+        }
+
+        .clear-button.small {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          padding: 1px 10px;
+          font-size: 13px;
+          cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #expand-collapse-buttons {
+            margin-bottom: 15px;
+        }
+        #expand-collapse-buttons button {
+            margin-right: 8px;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 1px solid #007bff;
+            background-color: white;
+            color: #007bff;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        #expand-collapse-buttons button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        /* Question tree styling */
+        #question-tree {
+            margin-top: 0;
+        }
+        .question-group {
+            margin-left: 20px;
+            border-left: 3px solid #dee2e6;
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+        .question-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .question-header .toggle-icon {
+            transition: transform 0.2s ease;
+            display: inline-block;
+            width: 16px;
+        }
+        .collapsed > .question-content {
+            display: none;
+        }
+        .collapsed > .question-header .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .question-block {
+            margin-bottom: 10px;
+        }
+        .mandatory {
+            font-weight: bold;
+            color: #212529;
+        }    
+        
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 50px;
+          height: 14px;
+        }
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          background-color: #ccc;
+          border-radius: 12px;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          transition: .4s;
+        }
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 9px;
+          width: 9px;
+          left: 3px;
+          bottom: 3px;
+          background-color: white;
+          border-radius: 50%;
+          transition: .4s;
+        }
+        input:checked + .slider {
+          background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+          transform: translateX(26px);
+        }        
+        
+        @keyframes dots {
+          0%, 20% { content: ''; }
+          40% { content: '.'; }
+          60% { content: '..'; }
+          80%, 100% { content: '...'; }
+        }
+
+        .animated-dots::after {
+          content: '';
+          display: inline-block;
+          width: 1ch;
+          text-align: left;
+          animation: dots 1s steps(3,end) infinite;
+        }     
+
+        #maintenance-banner {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: #ffcc00;
+          color: #000;
+          text-align: center;
+          padding: 12px;
+          font-weight: bold;
+          font-family: sans-serif;
+          z-index: 9999;
+        }        
+  </style>
+</head>
+<body>
+
+<div id="maintenance-banner">
+  ⚠️ The server is currently under maintenance. don't refresh your page for keeping current session active when server is back.
+</div>
+
+<h2 style="position: relative; padding-right: 100px; line-height: 1.2;">
+  🧠 EB Products Quote Assistant
+  <img src="{{ url_for('static', filename='images/logo.png') }}" 
+       alt="Logo" 
+       style="position: absolute; top: 0; right: 0; height: 80px; object-fit: contain;">
+</h2>
+<div class="tab-container">
+  <div class="tab-buttons">
+    <button class="tab-btn active" onclick="switchTab('tab-config')">🤖 AI Analyzor</button>
+    <button class="tab-btn" onclick="switchTab('tab-price_indication')">💰 Price Indication</button>
+    <div style="width: 20px;"></div>
+    <button class="tab-btn" onclick="switchTab('tab-price_lis_textract')">📄 EB Price List Extract</button>
+    <button class="tab-btn" onclick="switchTab('tab-questions')">📋 AI Responses</button>
+    <button id="btn-tab-salesforce" class="tab-btn" onclick="switchTab('tab-salesforce')" style="display:none;">💼 Salesforce</button>
+    <button id="btn-tab-jira" class="tab-btn" onclick="switchTab('tab-jira')" style="display:none;">📌 Jira Ticket</button>
+    <div style="margin-left: auto; margin-right: 90px;">
+      <button class="tab-btn" onclick="switchTab('tab-debug')">🐞 Debug</button>
+      <button class="tab-btn" onclick="switchTab('tab-help')">📘 Guideline</button>
+    </div>
+  </div>
+
+  <div id="tab-config" class="tab-content active">
+    <h3>Minute Report</h3>
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:0;">
+      <div style="display:flex; gap:10px;">
+        <button class="clear-button" onclick="submitReportToServer()">🛠️ Analyse Minute Report</button> 
+        <button id="btn-abort-analysis" class="clear-button" onclick="abort()">🛑 Abort Analysis</button> 
+      </div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span>🕵️🌐 Privacy Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="privacyToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    <textarea id="user-input" placeholder="Past your text here..." style="width: 99.5%; height:20vh;"></textarea>
+    <div style="margin-top: 10px;">    
+    </div>    
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <h3 style="margin: 0; line-height: 1;">Analysis</h3>
+      <h3 id="progress" style="margin: 0; line-height: 1; color: gray; display: flex; align-items: center;">
+        <span id="progress-text">(initializing...)</span>
+        <span id="dots"></span>
+      </h3>
+      <div style="margin-left: auto;">
+        <button class="clear-button small" onclick="clearTab('tab-config')">🧹 Clear Analysis Log</button>
+        <button id="toggleBtn">🔘 Mode: All logs</button>
+      </div>
+    </div>
+    <div id="main" class="output-box" style="height:52vh;"></div>
+  </div>
+
+  <div id="tab-questions" class="tab-content">
+    <div id="expand-collapse-buttons">
+      <button onclick="toggleAllGroups(true)">Expand All</button>
+      <button onclick="toggleAllGroups(false)">Group All</button>
+    </div>
+     <button class="clear-button" onclick="clearTab('tab-questions')">🧹 Clear Responses</button>
+    <div id="question-tree" style="margin-top: 20px;height:68vh; overflow-y:auto;"></div>
+    <button class="clear-button" id="submitUpdate-button" onclick="submitUpdateToServer()">💾 Update Price Indication</button>
+    <button class="clear-button" id="submitReset-button" onclick="submitResetToAiResults()">📋 Initial Price Indication</button>
+  </div>
+
+  <div id="tab-price_lis_textract" class="tab-content">
+    <h3>EB Price List Extract Items</h3>
+    <button class="clear-button" onclick="clearTab('tab-price_lis_textract')">🧹 Clear List</button>
+    <div id="price-list-extract" class="output-box" style="height:75vh;"></div>
+  </div>
+
+  <div id="tab-price_indication" class="tab-content">
+    <h3>Price Indication</h3>
+    <button class="clear-button" onclick="clearTab('tab-price_indication')">🧹 Clear List</button>
+    <div id="price-indication" class="output-box" style="height:75vh;"></div>
+  </div>
+  <div id="tab-salesforce" class="tab-content">
+    <iframe id="frame-salesforce"
+        data-actual-src="/sf_opportunity" 
+        style="width:100%; height:84vh; border:none; overflow-y:auto; display:none;" 
+        scrolling="yes">
+    </iframe>
+  </div> 
+  <div id="tab-jira" class="tab-content">
+    <iframe id="frame-jira"
+        data-actual-src="/jira_issue" 
+        style="width:100%; height:84vh; border:none; overflow-y:auto; display:none;" 
+        scrolling="yes">
+    </iframe>    
+  </div>
+  <div id="tab-debug" class="tab-content">
+    <h3>Debug Info</h3>
+    <button class="clear-button" onclick="clearTab('tab-debug')">🧹 Clear Debug Log</button>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 5px; margin-bottom: 0px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span>Disable AI</span>
+        <label class="switch">
+          <input type="checkbox" id="myToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <span>AI Quote assistant version 1.2a</span>
+    </div>
+    <div id="debug" class="output-box" style="height:73.5vh;"></div>
+  </div>  
+  <div id="tab-help" class="tab-content">
+    <iframe 
+        id="helpIframe"
+        src="/help" 
+        style="width:100%; height:84vh; border:none; overflow-y:auto;" 
+        scrolling="yes">
+    </iframe>
+  </div>  
+</div>
+
+<script>
+function switchTab(tabId) {
+  document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+  
+  document.getElementById(tabId).classList.add("active");
+  
+  document.querySelector(`.tab-btn[onclick="switchTab('${tabId}')"]`)?.classList.add("active");
+}
+
+function clearTab(tabId) {
+  if (tabId === 'tab-config') {
+    //document.getElementById('user-input').value = "";
+    document.getElementById('main').innerHTML = "";
+    allMessages.length = 0;
+  } else if (tabId === 'tab-price_lis_textract') {
+    document.getElementById('price-list-extract').textContent = "";
+  } else if (tabId === 'tab-price_indication') {
+    document.getElementById('price-indication').textContent = "";
+  } else if (tabId === 'tab-questions') {
+    document.getElementById('question-tree').innerHTML = "";
+  } else if (tabId === 'tab-debug') {
+    document.getElementById('debug').textContent = "";
+  }
+}
+
+const sampleData = [
+  {
+    id: "1",
+    key_name: "open_Q_multi_c",
+    key_value: ["orange", "bleu"],
+    ai_understanding: "Preferred colors",
+    possible_answers: ["rouge", "vert", "bleu","roug","kjhjhk","ioioioi","jkjkjkj"],
+    open_question: true,
+    multiple_choice: true
+  },
+  {
+    id: "12",
+    key_name: "close_Q_multi_c",
+    key_value: ["large","medium"],
+    ai_understanding: "Preferred size",
+    possible_answers: ["small", "medium", "large"],
+    open_question: false,
+    multiple_choice: true
+  },  
+  {
+    id: "2",
+    key_name: "open_Q_single_c",
+    key_value: "big",
+    ai_understanding: "Preferred size",
+    possible_answers: ["small", "medium", "large"],
+    open_question: true,
+    multiple_choice: false
+  },
+  {
+    id: "21",
+    key_name: "close_Q_single_c",
+    key_value: "large",
+    ai_understanding: "Preferred size",
+    possible_answers: ["small", "medium", "large"],
+    open_question: false,
+    multiple_choice: false
+  },  
+  {
+    id: "3",
+    key_name: "comment",
+    key_value: "Custom text",
+    ai_understanding: "Free comment",
+    possible_answers: null,
+    open_question: true,
+    multiple_choice: false
+  }
+];
+    function renderQuestions(data) {
+        const container = document.getElementById("question-tree");
+        container.innerHTML = "";
+
+        data.forEach(item => {
+            container.appendChild(createGroupElement(item));
+        });
+    }
+
+    function createGroupElement(item) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "question-group collapsed";
+
+        const header = document.createElement("div");
+        header.className = "question-header";
+
+        const icon = document.createElement("span");
+        icon.className = "toggle-icon";
+        icon.textContent = "\u25BC"; // ▼
+
+        const label = document.createElement("span");
+        label.innerHTML = (item.mandatory ? `<span class="mandatory">` : "") +
+                          (item.question || item.information || "Group") +
+                          (item.mandatory ? `</span>` : "");
+
+        header.appendChild(icon);
+        header.appendChild(label);
+        wrapper.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "question-content";
+        content.style.marginLeft = "10px";
+
+        if ("key_value" in item || "ai_understanding" in item) {
+            content.appendChild(createQuestionInputs(item));
+        }
+
+        if (Array.isArray(item.children)) {
+            item.children.forEach(child => {
+                content.appendChild(createGroupElement(child));
+            });
+        }
+
+        wrapper.appendChild(content);
+
+        header.onclick = () => {
+            wrapper.classList.toggle("collapsed");
+        };
+
+        return wrapper;
+    }
+
+    function createQuestionInputs(item) {
+        const value = item.key_value ?? "";
+        const container = document.createElement("div");
+        container.className = "question-block";
+        container.dataset.id = item.id;
+        container.dataset.keyname = item.key_name;
+        container.dataset.multiple = false;
+
+        // Information line (input or select)
+        const infoLine = document.createElement("div");
+        infoLine.className = "line";
+
+        const labelInfo = document.createElement("span");
+        labelInfo.className = "label";
+        labelInfo.textContent = "Information:";
+        infoLine.appendChild(labelInfo);
+
+        const answers = item.possible_answers ?? item.possible_answers2;
+      
+        let keyValueElement;
+        if (answers && Array.isArray(answers) && answers.length > 0) {
+      
+            const openQuestion = "open_question" in item ? item.open_question : false;
+            const multipleChoice = "multiple_choice" in item ? item.multiple_choice : false;
+            
+            container.dataset.multiple = multipleChoice
+        
+            if (openQuestion && multipleChoice) {
+                const wrapper = document.createElement("div");
+                  wrapper.style.flex = "1";
+
+                  const selectedValues = Array.isArray(value) ? [...value] : [value];
+                  const uniqueValues = new Set(answers);
+
+                  const dropdown = document.createElement("select");
+                  dropdown.className = "key_value";
+                  dropdown.multiple = true;
+                  dropdown.size = Math.min(answers.length + 1, 6);
+                  dropdown.dataset.id = item.id;
+                  dropdown.dataset.keyname = item.key_name;
+
+                  answers.forEach(val => {
+                    const opt = document.createElement("option");
+                    opt.value = val;
+                    opt.textContent = val;
+                    if (selectedValues.includes(val)) opt.selected = true;
+                    dropdown.appendChild(opt);
+                  });
+
+                  // Ajout des valeurs personnalisées non listées
+                  selectedValues.forEach(v => {
+                    if (!uniqueValues.has(v)) {
+                      const customOpt = document.createElement("option");
+                      customOpt.value = v;
+                      customOpt.textContent = v + " (initial value)";
+                      customOpt.selected = true;
+                      dropdown.appendChild(customOpt);
+                    }
+                  });
+
+                  const otherInput = document.createElement("input");
+                  otherInput.type = "text";
+                  otherInput.placeholder = "Add new entries with a comma as separator";
+                  otherInput.className = "key_value";
+                  otherInput.dataset.id = item.id;
+                  otherInput.dataset.keyname = item.key_name;
+
+                  const selectedList = document.createElement("ul");
+                  selectedList.className = "selected-values";
+
+                  function updateSelectedView() {
+                    const selectedOptions = Array.from(dropdown.selectedOptions).map(o => o.value);
+                    selectedList.innerHTML = "";
+                    selectedList.dataset.values = selectedOptions.join(",");
+                    selectedOptions.forEach(val => {
+                      const li = document.createElement("li");
+                      li.textContent = val;
+                      selectedList.appendChild(li);
+                    });
+                  }
+
+                  dropdown.addEventListener("change", updateSelectedView);
+
+                  otherInput.addEventListener("change", () => {
+                    otherInput.value.split(",").map(v => v.trim()).forEach(v => {
+                      if (v && ![...dropdown.options].some(o => o.value === v)) {
+                        const opt = document.createElement("option");
+                        opt.value = v;
+                        opt.textContent = v + " (added)";
+                        opt.selected = true;
+                        dropdown.appendChild(opt);
+                      }
+                    });
+                    otherInput.value = "";
+                    updateSelectedView();
+                  });
+
+                  updateSelectedView();
+
+                  wrapper.appendChild(dropdown);
+                  wrapper.appendChild(otherInput);
+                  wrapper.appendChild(selectedList);
+                  selectedList.hidden = true;
+                  keyValueElement = wrapper;              
+        
+            } else if (openQuestion && multipleChoice === false) {
+        
+                const select = document.createElement("select");
+                select.className = "key_value";
+                select.dataset.id = item.id;
+                select.dataset.keyname = item.key_name;
+
+                answers.forEach(opt => {
+                  const option = document.createElement("option");
+                  option.value = opt;
+                  option.textContent = opt;
+                  if (opt === value) option.selected = true;
+                  select.appendChild(option);
+                });
+
+                const autreOption = document.createElement("option");
+                autreOption.value = "__autre__";
+                autreOption.textContent = "Free entry...";
+                select.appendChild(autreOption);
+
+                //infoLine.appendChild(select);
+                keyValueElement = select;
+
+                const otherInput = document.createElement("input");
+                otherInput.type = "text";
+                otherInput.placeholder = "Type a new entry";
+                otherInput.className = "key_value";
+                otherInput.dataset.id = item.id;
+                otherInput.dataset.keyname = item.key_name;
+                otherInput.style.display = "none";
+
+                const valuesSet = new Set(answers);
+                if (!valuesSet.has(value) && value !== "") {
+                  select.value = "__autre__";
+                  otherInput.style.display = "inline-block";
+                  otherInput.value = value;
+                }
+
+                select.addEventListener("change", () => {
+                  if (select.value === "__autre__") {
+                    otherInput.style.display = "inline-block";
+                    otherInput.focus();
+                  } else {
+                    otherInput.style.display = "none";
+                  }
+                });
+                infoLine.appendChild(otherInput);
+
+            } else if (openQuestion === false && multipleChoice === true) {
+                const wrapper = document.createElement("div");
+                wrapper.style.flex = "1";
+
+                const selectedValues = Array.isArray(value) ? [...value] : [value];
+                const uniqueValues = new Set(answers);
+
+                const dropdown = document.createElement("select");
+                dropdown.className = "key_value";
+                dropdown.multiple = true;
+                dropdown.size = Math.min(answers.length + 1, 6);
+                dropdown.dataset.id = item.id;
+                dropdown.dataset.keyname = item.key_name;
+
+                answers.forEach(val => {
+                  const opt = document.createElement("option");
+                  opt.value = val;
+                  opt.textContent = val;
+                  if (selectedValues.includes(val)) opt.selected = true;
+                  dropdown.appendChild(opt);
+                });
+
+                const selectedList = document.createElement("ul");
+                selectedList.className = "selected-values";
+
+                function updateSelectedView() {
+                  const selectedOptions = Array.from(dropdown.selectedOptions).map(o => o.value);
+                  selectedList.innerHTML = "";
+                  selectedList.dataset.values = selectedOptions.join(",");
+                  selectedOptions.forEach(val => {
+                    const li = document.createElement("li");
+                    li.textContent = val;
+                    selectedList.appendChild(li);
+                  });
+                }
+
+                dropdown.addEventListener("change", updateSelectedView);
+                updateSelectedView();
+
+                wrapper.appendChild(dropdown);
+                wrapper.appendChild(selectedList);
+                selectedList.hidden = true;
+
+                keyValueElement = wrapper;
+            
+            } else {
+      
+                const select = document.createElement("select");
+                select.classList.add("key_value");
+                select.dataset.id = item.id;
+                select.dataset.keyname = item.key_name;
+
+                answers.forEach(optVal => {
+                    const opt = document.createElement("option");
+                    opt.value = optVal;
+                    opt.textContent = optVal;
+                    if (optVal === (item.key_value ?? "")) opt.selected = true;
+                    select.appendChild(opt);
+                });
+
+                keyValueElement = select;
+            }
+        } else {
+            const input = document.createElement("input");
+            input.type = "text";
+            input.classList.add("key_value");
+            input.value = item.key_value ?? "";
+            input.dataset.id = item.id;
+            input.dataset.keyname = item.key_name;
+            keyValueElement = input;
+        }
+        keyValueElement.classList.add("key_value");
+        keyValueElement.style.flex = "1";
+        keyValueElement.style.padding = "6px";
+        infoLine.appendChild(keyValueElement);
+        container.appendChild(infoLine);
+
+        // AI Understanding (readonly text)
+        const aiLine = document.createElement("div");
+        aiLine.className = "line";
+
+        const labelAI = document.createElement("span");
+        labelAI.className = "label";
+        labelAI.textContent = "AI Understanding:";
+        aiLine.appendChild(labelAI);
+
+        const aiText = document.createElement("span");
+        aiText.className = "readonly-text";
+        aiText.textContent = item.ai_understanding || "";
+        aiLine.appendChild(aiText);
+
+        container.appendChild(aiLine);
+
+        // flag_assumptions display
+        if (typeof item.flag_assumptions === "boolean") {
+            const flag = document.createElement("div");
+            flag.textContent = `flag_assumptions: ${item.flag_assumptions}`;
+            flag.style.fontSize = "12px";
+            flag.style.color = "#555";
+            container.appendChild(flag);
+        }
+
+        return container;
+    }
+    
+    function createQuestionInputsOld(item) {
+        const container = document.createElement("div");
+        container.className = "question-block";
+
+        // Ligne: Information + input
+        const infoLine = document.createElement("div");
+        infoLine.style.display = "flex";
+        infoLine.style.alignItems = "center";
+        infoLine.style.gap = "10px";
+
+        const labelInfo = document.createElement("span");
+        labelInfo.textContent = "Information:";
+        labelInfo.style.fontWeight = "bold";
+        labelInfo.style.minWidth = "120px";
+        infoLine.appendChild(labelInfo);
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = item.key_value ?? item.default_answer ?? "";
+        input.placeholder = "key_value";
+        input.dataset.id = item.id;
+        input.dataset.keyname = item.key_name;
+        input.className = "key_value";
+        input.style.flex = "1";
+        infoLine.appendChild(input);
+
+        container.appendChild(infoLine);
+
+        // Ligne: AI Understanding + texte non modifiable
+        const aiLine = document.createElement("div");
+        aiLine.style.display = "flex";
+        aiLine.style.alignItems = "center";
+        aiLine.style.gap = "10px";
+
+        const labelAI = document.createElement("span");
+        labelAI.textContent = "AI Understanding:";
+        labelAI.style.fontWeight = "bold";
+        labelAI.style.minWidth = "120px";
+        aiLine.appendChild(labelAI);
+
+        const aiText = document.createElement("span");
+        aiText.textContent = item.ai_understanding || "";
+        aiText.style.flex = "1";
+        aiText.style.padding = "6px 8px";
+        aiText.style.background = "#f1f1f1";
+        aiText.style.border = "1px solid #ccc";
+        aiText.style.borderRadius = "4px";
+        aiLine.appendChild(aiText);
+
+        container.appendChild(aiLine);
+
+        // Dropdown si possible_answers
+        if (item.possible_answers && Array.isArray(item.possible_answers)) {
+            const select = document.createElement("select");
+            select.style.marginTop = "10px";
+            item.possible_answers.forEach(ans => {
+                const opt = document.createElement("option");
+                opt.value = ans;
+                opt.textContent = ans;
+                if (ans === item.default_answer) opt.selected = true;
+                select.appendChild(opt);
+            });
+            container.appendChild(select);
+        }
+
+        // flag_assumptions (affichage simple)
+        if (typeof item.flag_assumptions === "boolean") {
+            const flag = document.createElement("div");
+            flag.className = "flag";
+            flag.textContent = `flag_assumptions: ${item.flag_assumptions}`;
+            container.appendChild(flag);
+        }
+
+        return container;
+    }
+
+    let clientId = "";
+
+    function submitReportToServer() {
+        const inputText = document.getElementById("user-input").value;
+        const noAIFlag = document.getElementById("myToggle").checked;
+        
+        if (!inputText && noAIFlag == false) {
+            alert("Please paste a minute report");
+            return;
+        }        
+        
+        if(!checkConditions()) {
+            return;
+        }
+        
+        const payload = { input: inputText, noAIFlag: noAIFlag, client_id: clientId, privacy_secret: privacySecret };
+
+        console.log(`✅ fetch run AI analysis. noAIFlag: ${noAIFlag} privacySecret: ${privacySecret}`);
+        
+        fetch("/submit_report_to_server", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        })
+        .then(res => {
+            if (res.status === 503) {
+                showMaintenanceBanner();
+                return null;
+            } 
+            else {
+                hideMaintenanceBanner();
+            }        
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.text();
+        })
+        .then(msg => {
+            if (msg !== null) {
+                console.log("✅ Server Response Text:", msg);
+                let msg2 = `✅ Server Response Ok: AI Analisis ongoing ! noAIFlag: ${noAIFlag}` 
+                if(!openStreams(clientId,"submit_report_to_server",msg2)) {
+                    alert("Network error unable to open streams and get server feedback!");
+                    return;
+                }
+            } else {
+                console.log(`⚠️ Server unavailable!`);
+            }
+        })
+        .catch(error => {
+            console.error("❌ Network Error :", error);
+            errorServer(`⚠️ Server is not reachable!`,"❌ AI Analysis not started! Network error while posting request to server.");
+        });          
+    }
+
+    function abortAnalysis() {
+        
+        if(!checkAbortConditions("submit_report_to_server")) {
+            return;
+        }
+        
+        const payload = { client_id: clientId };
+
+        console.log("✅ fetch Abort AI analysis.");
+        
+        fetch("/abort_request", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        })
+        .then(res => {
+            if (res.status === 503) {
+                showMaintenanceBanner();
+                return null;
+            } 
+            else {
+                hideMaintenanceBanner();
+            }        
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.text();
+        })
+        .then(msg => {
+            if (msg !== null) {
+                console.log("✅ Server Response Text:", msg);
+            } else {
+                console.log(`⚠️ Server unavailable!`);
+            }
+        })
+        .catch(error => {
+            console.error("❌ Network Error :", error);
+            errorServer(`⚠️ Server is not reachable!`,"❌ AI Analysis not started! Network error while posting request to server.");
+        });          
+    }
+    
+    function submitUpdateToServer() {
+        const responses = [];
+        const blocks = document.querySelectorAll(".question-block");
+        blocks.forEach(block => {
+            const id = block.dataset.id;
+            const keyname = block.dataset.keyname;
+            const isMultiple = block.dataset.multiple === "true";
+            let key_value = null;
+
+            if (isMultiple) {
+                const ul = block.querySelector("ul.selected-values");
+                if (ul) {
+                    key_value = ul.dataset.values.split(",").map(v => v.trim()).filter(Boolean);
+                    console.log("📤 Données:", key_value);
+                } else {
+                    key_value = [];
+                }                
+            } else {
+                const inputs = block.querySelectorAll(".key_value");
+                inputs.forEach(input => {
+                if (input.style.display !== "none" && input.value !== "__autre__") {
+                    key_value = input.value;
+                }
+                });
+            }
+
+            responses.push({ id: block.dataset.id, key_name: block.dataset.keyname, key_value });
+        });
+
+        if (responses.length === 0){
+            alert("No Analysis performed yet!");
+            return;
+        }   
+        
+        if(!checkConditions()) {
+            return;
+        }
+        
+        console.log("📤 fetch submit update to server, data:", responses);
+        
+        const payload = { updated_data: responses, client_id: clientId, privacy_secret: privacySecret };
+        
+        fetch(`/submit_update_to_server?client_id=${clientId}`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(payload)
+        })
+        .then(res => {
+            if (res.status === 503) {
+                showMaintenanceBanner();
+                return null;
+            } 
+            else {
+                hideMaintenanceBanner();
+            }         
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.text();
+        })
+        .then(msg => {
+            if (msg !== null) {
+                console.log("✅ Server Response Text:", msg);
+                if(!openStreams(clientId,"submit_update_to_server","✅ Server Response Ok: Update ongoing !")) {
+                    alert("Network error unable to open streams and get server feedback!");
+                    return;
+                }
+                switchTab("tab-config");
+            }
+        })
+        .catch(error => {
+            console.error("❌ Network Error :", error);
+            errorServer(`⚠️ Server is not reachable!`,"❌ Update Price Indication not started! Network error while posting request to server.");
+        });         
+    }
+
+    function submitResetToAiResults() {
+
+        const container = document.getElementById("question-tree");
+        const noAIFlag = document.getElementById("myToggle").checked;
+        
+        if (container.children.length === 0){
+            alert("No Analysis performed yet!");
+            return;
+        } 
+        
+        if(!checkConditions()) {
+            return;
+        }
+        
+        const payload = { noAIFlag: noAIFlag, client_id: clientId, privacy_secret: privacySecret };
+        
+        console.log(`✅ fetch for reset to AI results. noAIFlag: ${noAIFlag} privacySecret: ${privacySecret}`);
+        
+        fetch("/reset_data_to_ai_results", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(res => {
+            if (res.status === 503) {
+                showMaintenanceBanner();
+                return null;
+            } 
+            else {
+                hideMaintenanceBanner();
+            }         
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.text();
+        })
+        .then(msg => {
+            if (msg !== null) {
+                console.log("✅ Server Response Text:", msg);
+                if(!openStreams(clientId,"reset_data_to_ai_results","✅ Server Response Ok: Reset to initial result ongoing !")) {
+                    alert("Network error unable to open streams and get server feedback!");
+                    return;
+                }
+                switchTab("tab-config");
+            }
+        })
+        .catch(error => {
+            console.error("❌ Network Error :", error);
+            errorServer(`⚠️ Server is not reachable!`,"❌ Reset data to previous AI not started! Network error while posting request to server.");
+        });          
+    }
+ 
+    let heartbeatTimer = null;
+    
+    function startHeartbeat() {
+
+        if (heartbeatTimer) return;
+        
+        if(!checkConditions()) {
+            return;
+        }
+        
+        const payload = { client_id: clientId };
+        
+        console.log("✅ fetch for heartbeat.");
+    
+        heartbeatTimer = setInterval(() => {
+                            fetch("/heartbeat", {
+                              method: "POST",
+                              headers: { "Content-Type": "application/json" },
+                              body: JSON.stringify({ client_id: clientId })
+                            })
+                            .then(res => {
+                                if (res.status === 503) {
+                                    showMaintenanceBanner();
+                                    return null;
+                                } 
+                                else {
+                                    hideMaintenanceBanner();
+                                }
+                                
+                                if (!res.ok) {
+                                    throw new Error(`HTTP error! status: ${res.status}`);
+                                }
+                                
+                                return res.text();
+                            })
+                            .then(msg => {
+                                if (msg !== null) {
+                                    console.log("💓 Heartbeat OK:", msg);
+                                    if(!openStreams(clientId,"heartbeat","✅ Server Response Ok: Heartbeat registration ongoing !")) {
+                                        alert("💔 Network error unable to open streams and get server feedback!");
+                                        return;
+                                    }
+                                }
+                            })
+                            .catch(err => {
+                                console.error("💔 Heartbeat not started! Network Error :", err);
+                                errorServer(`⚠️ Server is not reachable!`,`💔 Heartbeat cannot start! Network error while posting request to server.`);              
+                            });
+                            }, 300000);
+    }
+
+    function stopHeartbeat() {
+        if (heartbeatTimer) {
+            clearInterval(heartbeatTimer);
+            heartbeatTimer = null;
+            console.log("⏹️ Heartbeat stopped");
+        }
+    }
+    
+    function toggleAllGroups(expand) {
+        document.querySelectorAll('.question-group').forEach(group => {
+            if (expand) {
+                group.classList.remove('collapsed');
+            } else {
+                group.classList.add('collapsed');
+            }
+        });
+    }
+
+    window.addEventListener("beforeunload", () => {
+        navigator.sendBeacon(`/disconnect?client_id=${clientId}`);
+        stopHeartbeat();
+        closeStreams();
+    });
+
+    window.addEventListener("load", () => {
+        fetch("/register_client")
+        .then(res => {
+            if (!res.ok) {
+                console.error("❌ Unable to register to server! HTTP status:", res.status);
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then(data => {
+            clientId = data.client_id;
+            print_debug(`✅ Got client ID : ${clientId}`)
+            const helpIframe = document.getElementById('helpIframe');
+            helpIframe.src = `/help?client_id=${clientId}`;
+            updateProgress("ready")
+            startHeartbeat();
+        })
+        .catch(error => {
+            console.error("❌ Could not connect to the server! Network Error :", error);
+            errorServer(`⚠️ Server is not reachable!`,`❌ Impossible to register client! Network error while posting request to server.`);
+        });            
+    });
+    
+    let privacySecret = '';
+    
+    document.getElementById("privacyToggle").addEventListener("change", function() {
+        const checkbox = this;
+        console.log("✅ Change privacy mode.");
+        
+        if(!checkConditions()) {
+            checkbox.checked = !checkbox.checked
+            return;
+        }
+        
+        const state = checkbox.checked; // true ou false
+        const payload = { privacy_state: state, client_id: clientId, privacy_secret: privacySecret};        
+        
+        fetch("/change_privacy", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        })
+        .then(res => {
+            if (res.status === 503) {
+                showMaintenanceBanner();
+                checkbox.checked = false;
+                return null;
+            } 
+            else {
+                hideMaintenanceBanner();
+            }
+            
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            
+            return res.json();
+        })
+        .then(data => {
+            if (data) {
+                checkbox.checked = data.privacy_state
+                privacySecret = data.privacy_secret;
+                
+                if (data.privacy_state) {
+                    print_debug(`✅ Got secret ${privacySecret} for client ID : ${clientId}`)
+                    print_main(`✅ Private mode enabled with secret: ${privacySecret} for client ID : ${clientId}`)
+                } else {
+                    print_debug(`✅ Privacy mode disabled for client ID : ${clientId}`)
+                    print_main(`✅ Privacy mode disabled for client ID : ${clientId}`)
+                }
+            }
+        })
+        .catch(error => {
+            console.error("❌ Could not connect to the server! Network Error :", error);
+            errorServer(`⚠️ Server is not reachable!`,`❌ Impossible to register client! Network error while posting request to server.`);
+        }); 
+    });   
+    
+    function print_debug(msg) {
+        console.log(msg)
+        const debugDiv = document.getElementById("debug");
+        debugDiv.innerHTML += msg + "<br>";
+        debugDiv.scrollTop = debugDiv.scrollHeight;      
+    };
+    
+    function print_main(msg) {
+        console.log(msg)
+        handleIncoming(msg)
+        <!--const mainDiv = document.getElementById("main");-->
+        <!--mainDiv.innerHTML += msg + "<br>";-->
+        <!--mainDiv.scrollTop = mainDiv.scrollHeight;-->
+    };    
+
+    function updateProgress(status) {
+      const textEl = document.getElementById('progress-text');
+      const dotsEl = document.getElementById('dots');
+
+      if (!textEl || !dotsEl) return;
+
+      textEl.textContent = `(${status})`;
+
+      if (status.toLowerCase() === 'running') {
+        dotsEl.classList.add('animated-dots');
+      } else {
+        dotsEl.classList.remove('animated-dots');
+      }
+    }  
+    
+    function operationComplete() {
+        operationInProgress = false;
+        if (fetchInProgress !== "heartbeat") {
+            switchTab("tab-price_indication");
+            updateProgress("complete")
+            fetchInProgress = "";
+        }
+        else {
+            updateProgress("ready")
+        }
+        startHeartbeat()
+    }
+    
+    function operationFailed() {
+        operationInProgress = false;
+        switchTab("tab-config");
+        updateProgress("failed!");
+        startHeartbeat();
+        alert(`❌ Operation ${fetch_cmds[fetchInProgress]} failed!`);
+        fetchInProgress = "";
+    }
+
+    function operationAborted() {
+        operationInProgress = false;
+        if (fetchInProgress !== "heartbeat") {
+            switchTab("tab-config");
+            updateProgress("aborted")
+            alert(`✅ Operation ${fetch_cmds[fetchInProgress]} stopped!`);
+            fetchInProgress = "";
+        }
+        else {
+            updateProgress("ready")
+        }
+        startHeartbeat()
+    }
+    
+    function isHeartBeatOn() {
+        if (fetchInProgress === "heartbeat") {
+            return true;
+        }
+        return false;
+    }
+    
+    function errorServer(msg1,msg2) {
+        let msgConcat = `${msg1}\n${msg2}`
+        print_debug(msgConcat);
+        print_main(msgConcat);
+        clientId = "";
+        stopHeartbeat();
+        operationInProgress = false;
+        fetchInProgress = "";
+        closeStreams();
+        updateProgress("server is down!!")
+        switchTab("tab-config");
+        alert(msg2);
+    }
+        
+    let mainStream, debugStream, priceListExtractStream, priceIndicationStream;
+    let operationInProgress = false;
+    let fetchInProgress = ""
+    
+    let fetch_cmds = {
+      "submit_report_to_server": "Analyze Minute Report",
+      "abort_request" : "Abort operation",
+      "submit_update_to_server": "Update Price Indication",
+      "reset_data_to_ai_results": "Initial Price Indication",
+      "heartbeat": "Heart Beat"
+    };
+    let streamsStatus = {
+        main: false,
+        debug: false,
+        priceListExtractStream: false,
+        priceIndicationStream: false
+    };    
+    
+    function checkConditions() {
+        if (!clientId) {
+            alert("No Client ID. Please Reload the page.");
+            return false;
+        }      
+        
+        return isStreamsOpened();
+    }
+    
+    function checkAbortConditions(fetchToAbort) {
+        if (!clientId) {
+            alert("No Client ID. Please Reload the page.");
+            return false;
+        }      
+        
+        if (operationInProgress) {
+            if(fetchToAbort !== fetchInProgress) {
+                alert(`⚠️ ${fetch_cmds[fetchInProgress]} already stopped!!`);
+                return false;
+            }
+            
+            return true;
+        }
+        
+        alert("⚠️ No operation!");
+        return false;
+    }
+    
+    function isStreamsOpened() {
+    
+        if (operationInProgress) {
+           alert("⏳ operation already ongoing, please wait...");
+           return false; // On bloque la nouvelle ouverture
+        }
+        return true;
+    }
+    
+    function closeStreams() {
+        operationInProgress = false;
+        if (mainStream) mainStream.close();
+        if (debugStream) debugStream.close();
+        if (priceListExtractStream) priceListExtractStream.close();
+        if (priceIndicationStream) priceIndicationStream.close();
+        mainStream=null;
+        debugStream=null;
+        priceListExtractStream=null;
+        priceIndicationStream=null;
+    }
+    
+    function openStreams(clientId,fetchCmd, msg) {
+        if (operationInProgress && isHeartBeatOn() === false) {
+            alert("⏳ operation already ongoing, please wait...");
+            return false;
+        }
+        if(isHeartBeatOn()) {
+            console.log("⚠️ Heartbeat cmd discarded for " + fetchCmd);
+        }
+        operationInProgress = true;
+        fetchInProgress = fetchCmd
+
+        const streamConfigs = {
+            main: { divId: "main" },
+            debug: { divId: "debug" },
+            priceListExtractStream: { divId: "price-list-extract" },
+            priceIndicationStream: { divId: "price-indication" }
+        };
+        streamsStatus = {};
+        for (let key in streamConfigs) {
+            streamsStatus[key] = false;
+        }
+        
+        streamsErrorCounter = {};
+        for (let key in streamConfigs) {
+            streamsErrorCounter[key] = 0;
+        }        
+
+        function areAllStreamsDead(MAX_ERRORS) {
+            for (let key in streamsErrorCounter) {
+                if (streamsErrorCounter[key] < MAX_ERRORS) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        // Fermer les anciens streams si encore ouverts
+        if (mainStream) mainStream.close();
+        if (debugStream) debugStream.close();
+        if (priceListExtractStream) priceListExtractStream.close();
+        if (priceIndicationStream) priceIndicationStream.close();
+
+        function checkAllStreamsEnded() {
+            if (Object.values(streamsStatus).every(Boolean)) {
+                //operationInProgress = false;
+                console.log("✅ All streams are terminated, clientId:", clientId);
+                return true;
+            }
+            return false;
+        }
+        
+        function createStream(name, divId,maxRetries = 3) {
+            const es = new EventSource(`/stream/${name}?client_id=${clientId}`);
+
+            es.onmessage = (e) => {
+                if (name === "debug") {
+                    if (e.data.includes("__PROCESS_DONE_FETCH_DATA_END__")) {
+                        console.log("✅ __PROCESS_DONE_FETCH_DATA_END__ received, clientId:", clientId);
+                        fetch(`/get_json_data?client_id=${clientId}`)
+                            .then(res => res.json())
+                            .then(data => renderQuestions(data));
+                        operationComplete();
+                        return;
+                    } else if (e.data.includes("__PROCESS_DONE_END__")) {
+                        console.log("✅ __PROCESS_DONE_END__ received, clientId:", clientId);
+                        operationComplete();
+                        return;
+                    } else if (e.data.includes("__PROCESS_FAILED_END__")) {
+                        console.log("❌ __PROCESS_FAILED_END__ received, clientId:", clientId);
+                        operationFailed();
+                        return;
+                    } else if (e.data.includes("__PROCESS_ABORTED_END__")) {
+                        console.log("✅ __PROCESS_ABORTED_END__ received, clientId:", clientId);
+                        operationAborted();
+                        return;
+                    } else if (e.data.includes("__PROCESS_REJECTED_BUSY_END__")) {
+                        console.warn(`⚠️ __PROCESS_REJECTED_BUSY_END__ received, clientId:`, clientId);
+                        alert("⚠️ An ongoing operation is already being processed by the server!")
+                        return;                        
+                    } else if (e.data.includes("__PROCESS_HEARTBEAT_DONE_END__")) {
+                        console.log("✅ __PROCESS_HEARTBEAT_DONE_END__ server maintains the session alive until its internal timeout, clientId:", clientId);
+                        operationComplete();
+                        return;
+                    } else if (e.data.includes("__SERVER_STOP_NTF__")) {
+                        console.log("✅ __SERVER_STOP_NTF__ is going to shutdown, clientId:", clientId);
+                        errorServer(`⚠️ Server is going to stop service!`,`⚠️ Service is now unavailable.`);
+                        return;
+                    }
+                }
+
+                if (e.data.includes("__END__")) {
+                    es.close();
+                    streamsStatus[name] = true;
+                    console.log(`✅ ${name}Stream is being closed by server, request complete`);
+                    checkAllStreamsEnded();
+                } else if (e.data.includes("__HELLO__")) {
+                    console.log(`✅ ${name}Stream is opened, server is going to execute request.`);
+                    if (fetchInProgress !== "heartbeat") {
+                        updateProgress("running")
+                    }
+                } else if (e.data.includes("__LISTENING__")) {
+                    console.log(`✅ ${name}Stream is opened and ready at client side, waiting for message from Server.`);
+                } else if (e.data.includes("__SERVER_STILL_WORKING_ON__")) {
+                    console.log(`✅ ${name}Server is still working on the request, waiting for message from Server until completion.`);
+                }else {
+                    const div = document.getElementById(divId);
+                    if (divId === "main") {
+                        handleIncomingPayload(e.data)
+                    } else {
+                        div.innerHTML += e.data + "<br>";
+                        div.scrollTop = div.scrollHeight;
+                    }
+                }
+            };
+
+            es.onopen = () => {
+                console.log(`✅ ${name}Stream opened, ready for server`);
+                streamsErrorCounter[name] = 0;
+            }
+            es.onerror = (err) => {
+                streamsStatus[name] = true;
+                
+                console.log(`❌ ${name}Stream onerror: resources freed, error: ${err} State: ${es.readyState}`);
+                
+                let ret = checkAllStreamsEnded();
+                
+                if (es.readyState === EventSource.CONNECTING) {
+                    streamsErrorCounter[name] = (streamsErrorCounter[name] || 0) + 1;
+                    
+                    console.warn(`⚠️ ${name} tentative #${streamsErrorCounter[name]}`);
+                    
+                    let ret2= areAllStreamsDead(maxRetries)
+                    
+                    if (ret2) {
+                        console.error(`💔 ${name}Stream failed after ${maxRetries} retries. Giving up.`);
+                        es.close();
+                        errorServer(`⚠️ Server cut connection!`,`💔 Cannot connect to Server stream ${name} after ${maxRetries} attempts!`);
+                    }
+                }
+                else if (es.readyState === EventSource.OPEN) {
+                    streamsErrorCounter[name] = 0;
+                    console.log(`✅ ${name} reconnected, compteur reset.`);
+                } 
+                else if (es.readyState === EventSource.CLOSED) {
+                    console.log(`❌ ${name}Stream has been closed by server.`);
+                    if (ret ) {
+                        errorServer(`⚠️ Server cut connection!`,`⚠️ Server brutally closed the connection!`);
+                    }
+                }       
+            };
+            es.onclose = () => {
+                console.log(`✅ ${name}Stream resources freed`);
+                streamsStatus[name] = true;
+                checkAllStreamsEnded();
+            };
+
+            return es;
+        }
+
+        // Ouverture des streams
+        console.log("✅ Opening Streams...");
+        debugStream = createStream("debug", "debug");
+        print_debug(msg)
+        if (fetchInProgress !== "heartbeat") {
+            mainStream = createStream("main", "main");
+            priceListExtractStream = createStream("priceListExtractStream", "price-list-extract");
+            priceIndicationStream = createStream("priceIndicationStream", "price-indication");
+            stopHeartbeat();
+            updateProgress("waiting server")
+        }
+        else {
+            streamsStatus["main"] = true;
+            streamsStatus["priceListExtractStream"] = true;
+            streamsStatus["priceIndicationStream"] = true;
+            updateProgress("ready")
+        }
+        
+        return true;
+    }
+
+    const div = document.getElementById("main");
+    const toggleBtn = document.getElementById("toggleBtn");
+    const wantedTag = "show";
+    let filterOn = false;
+    let allMessages = []; 
+    
+    function extractFromPayload(payloadStr){
+        let text = '';
+        let tag = null;
+        let html_format = false;
+        try {
+            const obj = JSON.parse(payloadStr);
+            tag         = obj.tag;
+            html_format = obj.html;
+            text        = obj.text;
+        } catch(e){
+            text = payloadStr;
+        }
+        return { text, tag, html_format };
+    }
+
+    function handleIncomingPayload(payloadStr){
+        const { text, tag, html_format } = extractFromPayload(payloadStr);
+        const m = { text: text, tag: tag, html: html_format }
+        allMessages.push(m);
+        if (!filterOn){
+            if (!m.html) {
+                div.innerHTML += m.text + "<br>";
+            } else {
+                div.innerHTML += m.text;
+            }
+            div.scrollTop = div.scrollHeight
+        } else {
+            if (m.tag && String(m.tag).toLowerCase() === wantedTag){
+                if (!m.html) {
+                    div.innerHTML += m.text + "<br>";
+                } else {
+                    div.innerHTML += m.text;
+                }
+                div.scrollTop = div.scrollHeight
+            }
+        }
+    }  
+    
+    function handleIncoming(msg) {
+        const m = { text: msg, tag: null, html: false }
+        allMessages.push(m);
+        if (!filterOn){
+            div.innerHTML += m.text + "<br>";
+            div.scrollTop = div.scrollHeight
+        } 
+    }
+    
+    function render(){
+        div.innerHTML = '';
+        for (const m of allMessages){
+            if (!filterOn){
+                if (!m.html) {
+                    div.innerHTML += m.text + "<br>";
+                } else {
+                    div.innerHTML += m.text;
+                }
+            } else {
+                if (m.tag && String(m.tag).toLowerCase() === wantedTag){
+                    if (!m.html) {
+                        div.innerHTML += m.text + "<br>";
+                    } else {
+                        div.innerHTML += m.text;
+                    }
+                }
+            }
+        }
+        div.scrollTop = div.scrollHeight
+    }    
+   
+    function showMaintenanceBanner() {
+        console.warn("⚠️ Server in maintenance mode!");
+        updateProgress("server under maintenance")    
+        document.getElementById("maintenance-banner").style.display = "block";
+    }
+
+    function hideMaintenanceBanner() {
+      document.getElementById("maintenance-banner").style.display = "none";
+    }   
+    
+    const jiraFrame = document.getElementById("frame-jira");
+    const sfFrame = document.getElementById("frame-salesforce");
+    const jiraTab = document.getElementById("btn-tab-jira");
+    const sfTab = document.getElementById("btn-tab-salesforce");
+    
+    function setVisibility(show) {
+        jiraTab.style.display = show ? "block" : "none";
+        sfTab.style.display = show ? "block" : "none";   
+
+        jiraFrame.style.display = show ? "block" : "none";
+        sfFrame.style.display = show ? "block" : "none";
+
+        jiraFrame.src = show ? jiraFrame.dataset.actualSrc : "";
+        sfFrame.src = show ? sfFrame.dataset.actualSrc : "";
+    }
+    
+    // toggle bouton
+    toggleBtn.addEventListener("click", () => {
+      filterOn = !filterOn;
+      toggleBtn.textContent = filterOn ? "🔘 Mode: Filtered logs" : "🔘 Mode: All logs";
+      render();
+    });
+    
+    document.getElementById("myToggle").addEventListener("change", function() {
+        setVisibility(this.checked)
+        if (this.checked) {
+            console.log("Toggle activé");
+        } else {
+            console.log("Toggle désactivé");
+        }
+    });
+<!--renderQuestions(sampleData);-->
+<!--rawListDiv.textContent += e.data + "\n";-->
+<!-- updateProgress('running'); -->
+</script>
+
+</body>
+</html>

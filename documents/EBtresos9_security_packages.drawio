@@ -1,0 +1,102 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.2 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.2">
+  <diagram name="Page-1" id="m8EanoVn_1rXUl2wwwXH">
+    <mxGraphModel dx="2276" dy="961" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ICzhsE7e17p2Ac7wbBwV-11" target="ICzhsE7e17p2Ac7wbBwV-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="160" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-7" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ICzhsE7e17p2Ac7wbBwV-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-2" value="Does &quot;EB Tresos 9&quot;&amp;nbsp; product required?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-32.5" y="230" width="265" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ICzhsE7e17p2Ac7wbBwV-2" target="ICzhsE7e17p2Ac7wbBwV-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="520" as="sourcePoint" />
+            <mxPoint x="750" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-6" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ICzhsE7e17p2Ac7wbBwV-3">
+          <mxGeometry y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-5" value=" Does Customer needs cybersecurity standards, functionality for secure Ethernet communication (TLS, IPSec) and IdSM?&#xa;&#xa;" style="rhombus;html=1;whiteSpace=wrap;spacing=0;spacingLeft=0;spacingRight=12;spacingBottom=-23;" vertex="1" parent="1">
+          <mxGeometry x="-293.75" y="420" width="787.5" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-8" value="Select product item &quot;EB tresos 9 - AutoCore Generic Security Package&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="710" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ICzhsE7e17p2Ac7wbBwV-5" target="ICzhsE7e17p2Ac7wbBwV-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="600" as="sourcePoint" />
+            <mxPoint x="330" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-10" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ICzhsE7e17p2Ac7wbBwV-9">
+          <mxGeometry x="-0.05" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-11" value="Start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-12" value="End" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="50" y="930" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ICzhsE7e17p2Ac7wbBwV-18" target="ICzhsE7e17p2Ac7wbBwV-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-180" y="820" as="sourcePoint" />
+            <mxPoint x="-130" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ICzhsE7e17p2Ac7wbBwV-2" target="ICzhsE7e17p2Ac7wbBwV-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="310" as="sourcePoint" />
+            <mxPoint x="100" y="820" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="290" />
+              <mxPoint x="660" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-15" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ICzhsE7e17p2Ac7wbBwV-14">
+          <mxGeometry x="-0.1565" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ICzhsE7e17p2Ac7wbBwV-5" target="ICzhsE7e17p2Ac7wbBwV-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="530" as="sourcePoint" />
+            <mxPoint x="100" y="820" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="600" y="525" />
+              <mxPoint x="600" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-17" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ICzhsE7e17p2Ac7wbBwV-16">
+          <mxGeometry x="-0.4203" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-18" value="Select product item &quot;EB tresos 9 - SOP Qualification Package for AutoCore Generic Security&quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-165" y="810" width="530" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ICzhsE7e17p2Ac7wbBwV-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="ICzhsE7e17p2Ac7wbBwV-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="771" as="sourcePoint" />
+            <mxPoint x="330" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

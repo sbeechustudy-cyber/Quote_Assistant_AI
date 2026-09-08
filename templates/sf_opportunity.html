@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔹 Salesforce Opportunity</title>
+  <!-- SLDS Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.19.0/styles/salesforce-lightning-design-system.min.css">
+  <style>
+    body {
+      font-family: "Salesforce Sans", Arial, sans-serif;
+      background: #f4f6f9;
+    }
+    .slds-tabs_default__item a {
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 75vh;
+      border: none;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="slds-page-header slds-p-around_medium slds-m-bottom_medium" style="background:#fff;">
+    <h1 class="slds-page-header__title slds-truncate" title="Opportunity Name">
+      🌟 Opportunity: {{ opportunity.Name }}
+    </h1>
+    <p class="slds-text-body_small">Account: {{ opportunity.AccountName }}</p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="slds-tabs_default">
+    <ul class="slds-tabs_default__nav" role="tablist">
+      <li class="slds-tabs_default__item slds-is-active" role="presentation">
+        <a class="slds-tabs_default__link" role="tab" aria-selected="true" onclick="switchTab('details')">Details</a>
+      </li>
+      <li class="slds-tabs_default__item" role="presentation">
+        <a class="slds-tabs_default__link" role="tab" aria-selected="false" onclick="switchTab('products')">Products</a>
+      </li>
+      <li class="slds-tabs_default__item" role="presentation">
+        <a class="slds-tabs_default__link" role="tab" aria-selected="false" onclick="switchTab('revenue')">Revenue Schedule</a>
+      </li>
+    </ul>
+
+    <!-- Tab contents -->
+    <div class="slds-tabs_default__content slds-show" id="tab-details" role="tabpanel">
+      <iframe src="/sf_opportunity/details/{{ opportunity.Id }}"></iframe>
+    </div>
+    <div class="slds-tabs_default__content slds-hide" id="tab-products" role="tabpanel">
+      <iframe src="/sf_opportunity/products/{{ opportunity.Id }}"></iframe>
+    </div>
+    <div class="slds-tabs_default__content slds-hide" id="tab-revenue" role="tabpanel">
+      <iframe src="/sf_opportunity/revenue/{{ opportunity.Id }}"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll(".slds-tabs_default__content").forEach(el => el.classList.add("slds-hide"));
+      document.querySelectorAll(".slds-tabs_default__item").forEach(el => el.classList.remove("slds-is-active"));
+
+      document.getElementById("tab-" + tab).classList.remove("slds-hide");
+      document.querySelector(`[onclick="switchTab('${tab}')"]`).parentElement.classList.add("slds-is-active");
+    }
+  </script>
+</body>
+</html>

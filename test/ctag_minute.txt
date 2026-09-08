@@ -1,0 +1,23 @@
+company CTAG
+customer name is diego bernadez 
+customer email is diego.bernardez@ctag.com
+µC Manufacturer name is NXP
+µC Family is  S32K3
+µC derivative is S32K344
+compiler is Green Hills
+MCAL version NXP SW32K3
+single core
+communication Ethernet and CAN
+Ethernet driver required
+no hardware acceleration required
+Concept license
+Invoice entity EB-FR
+currency EUR
+no bootloader 
+no FOTA
+no software update
+Safety level is QM
+BSP yes
+Qualification Package (QP) No
+tresos studio required for one seat (single-user license) and annual subscription
+start up package application for essentials

@@ -1,0 +1,2261 @@
+[
+  {
+    "id": "56969d7c-ae90-43fe-a42c-de1cfeb5b015",
+    "key_name": "customer_information",
+    "key_value": null,
+    "ai_understanding": "",
+    "flag_assumptions": true,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "open_question": false,
+    "information": "Customer Information",
+    "children": [
+      {
+        "id": "C1",
+        "question": "What is the customer's full name ?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "customer_name",
+        "key_value": "Rheinmetall",
+        "ai_understanding": "Rheinmetall",
+        "flag_assumptions": false,
+        "mandatory": true,
+        "open_question": true,
+        "information": "customer name"
+      },
+      {
+        "id": "C2",
+        "question": "What is the customer's company name ?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "company_name",
+        "key_value": "Rheinmetall AG",
+        "ai_understanding": "Rheinmetall AG",
+        "flag_assumptions": false,
+        "mandatory": true,
+        "open_question": true,
+        "information": "company's name"
+      },
+      {
+        "id": "C3",
+        "question": "What is the company's location?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "company_location",
+        "key_value": "Germany (assumed from the company name)",
+        "ai_understanding": "Germany (assumed from the company name)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": true,
+        "information": "company's location"
+      },
+      {
+        "id": "C4",
+        "question": "What is the customer's job title?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "customer_job_title",
+        "key_value": "Unknown",
+        "ai_understanding": "Not Specified",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "customer's job title"
+      },
+      {
+        "id": "C5",
+        "question": "What is the customer's department name?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "customer_department",
+        "key_value": "Automotive Technology or R&D (based on the nature of the request)",
+        "ai_understanding": "Automotive Technology or R&D (based on the nature of the request)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "customer's department"
+      },
+      {
+        "id": "C6",
+        "question": "What is the customer's email address?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": "check email address if valid",
+        "key_name": "customer_email",
+        "key_value": "No",
+        "ai_understanding": "Not Applicable (email was not provided in the report)",
+        "flag_assumptions": true,
+        "mandatory": true,
+        "open_question": true,
+        "information": "customer's email address"
+      },
+      {
+        "id": "C7",
+        "question": "What is the customer's phone number?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": "not use email address if no phone number has been found",
+        "key_name": "customer_phone_number",
+        "key_value": "No",
+        "ai_understanding": "Not Applicable (phone number was not provided in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": true,
+        "information": "customer's phone number"
+      },
+      {
+        "id": "C8",
+        "question": "What is the company's type?",
+        "possible_answers": [
+          "OEM",
+          "Supplier",
+          "Other",
+          "Semiconductors",
+          "University"
+        ],
+        "default_answer": "Unknown",
+        "instruction": "determine the company type based on the company name or if clearly mentionned into the report",
+        "key_name": "company_type",
+        "key_value": "OEM",
+        "ai_understanding": "OEM (Original Equipment Manufacturer)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "company's type"
+      },
+      {
+        "id": "C9",
+        "question": "What the general comments about company and customer?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "company_customer_comments",
+        "key_value": "Rheinmetall is interested in developing a new generation of remotely steerable trucks with advanced safety systems.",
+        "ai_understanding": "Rheinmetall is interested in developing a new generation of remotely steerable trucks with advanced safety systems.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": false,
+        "information": "General comment about customer or company"
+      }
+    ]
+  },
+  {
+    "id": "b4ea2872-687b-4367-82bf-9daf39bb9496",
+    "key_name": "project_information",
+    "key_value": "Fail-operational Steer-by-Wire System with Advanced Driver Assistance Systems (ADAS) for Remote Controlled Trucks",
+    "ai_understanding": "Fail-operational Steer-by-Wire System with Advanced Driver Assistance Systems (ADAS) for Remote Controlled Trucks",
+    "flag_assumptions": false,
+    "possible_answers": null,
+    "default_answer": null,
+    "information": "Project Information",
+    "open_question": false,
+    "mandatory": false,
+    "children": [
+      {
+        "id": "P1",
+        "question": "How many ECUs are involved for this quotation?",
+        "possible_answers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "Platform"
+        ],
+        "default_answer": "1",
+        "instruction": "shall consider 1 ECU if the information is not provided",
+        "key_name": "project_nb_ecu_to_quote",
+        "key_value": "1",
+        "ai_understanding": "1 (Micro Controller and Micro Processor integrated in a Single Chip (SoC))",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Number of ECUs"
+      },
+      {
+        "id": "P2",
+        "question": "What is the ECU type?",
+        "possible_answers2": [
+          "ABS",
+          "ACC",
+          "ACM",
+          "AHC",
+          "AHCM",
+          "ASCM",
+          "ATSC",
+          "AWC",
+          "BCM",
+          "BCM/EBCM",
+          "BMS",
+          "BSD",
+          "CCM",
+          "CTM",
+          "DCM",
+          "ECM",
+          "EIS",
+          "EOC",
+          "EPS",
+          "ESC",
+          "FCW",
+          "FIC",
+          "FPCM",
+          "GEM",
+          "HVAC",
+          "LCA",
+          "LDW",
+          "LKA",
+          "NSC",
+          "PACM",
+          "PCM",
+          "RCC",
+          "RKE",
+          "RSC",
+          "SAS",
+          "SCM",
+          "SWM",
+          "TAC",
+          "TC",
+          "TCM",
+          "TCM",
+          "TPMS"
+        ],
+        "default_answer": "ECU1",
+        "instruction": "shall consider 1 ECU if the information is not provided",
+        "key_name": "project_ecu_name",
+        "key_value": "TC",
+        "ai_understanding": "Micro Controller (TC397) and Micro Processor (Traveo II)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "ECU type"
+      },
+      {
+        "id": "P3",
+        "question": "What are the OEM(s) name(s)?",
+        "possible_answers2": [
+          "Audi",
+          "Citroen",
+          "Peugeot",
+          "VW",
+          "PSA",
+          "Stellantis",
+          "Ford",
+          "Iveco",
+          "Seat",
+          "Skoda",
+          "Renault",
+          "Nissan",
+          "Toyota",
+          "Ds",
+          "Fiat",
+          "Ferrari",
+          "Volvo",
+          "Jlr",
+          "Honda",
+          "Essentials"
+        ],
+        "default_answer": "Essentials",
+        "force_default_answer": true,
+        "instruction": null,
+        "key_name": "project_oem_name",
+        "key_value": "Essentials",
+        "ai_understanding": "Rheinmetall",
+        "flag_assumptions": false,
+        "mandatory": true,
+        "open_question": true,
+        "multiple_choice": true,
+        "information": "OEM(s) name(s)"
+      },
+      {
+        "id": "P3bis",
+        "question": "How many OEMs are targeted?",
+        "possible_answers2": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "Unknown",
+          "tbd",
+          "All"
+        ],
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "project_nb_oems",
+        "key_value": "1",
+        "ai_understanding": "1",
+        "flag_assumptions": false,
+        "mandatory": true,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "Number of OEM(s) involved"
+      },
+      {
+        "id": "P4",
+        "question": "What are the OEM car(s) platform(s)?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "project_oem_car_platform",
+        "key_value": "No",
+        "ai_understanding": "Not Applicable (as it's a truck platform)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": true,
+        "information": "OEM car(s) Platform(s) name"
+      },
+      {
+        "id": "P4bis",
+        "question": "How many OEMs car platform are targeted?",
+        "possible_answers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "Unknown",
+          "tbd",
+          "All"
+        ],
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "project_nb_oem_car_platform",
+        "key_value": "1",
+        "ai_understanding": "1",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "Number of OEM car(s) Platform(s) involved"
+      },
+      {
+        "id": "P5",
+        "question": "Do you know customer project's milestones?",
+        "possible_answers": [
+          "Yes",
+          "No"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "project_milestones_known",
+        "key_value": "Yes",
+        "ai_understanding": "(Yes):",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Project milestones are known",
+        "children": [
+          {
+            "id": "P6",
+            "question": "when is it planned the vehicle SOP date? (Start of production)",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "project_sop_date",
+            "key_value": "Unknown",
+            "ai_understanding": "Not Specified (as it's a new generation vehicle)",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Date of Vehicle Start of Production (SOP)"
+          },
+          {
+            "id": "P7",
+            "question": "Do you have insights regarding ECU's start of production (ECU SOP)?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": "Validate that it's earlier than vehicle SOP",
+            "key_name": "project_ecu_production_date",
+            "key_value": "Unknown",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Date of ECU start of production (ECU SOP)"
+          },
+          {
+            "id": "P8",
+            "question": "When ECU sw must be ready for manufacturing (RFM)?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": "Validate that it's earlier than ECU SOP",
+            "key_name": "project_ecu_sw_rfm",
+            "key_value": "Unknown",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Date of Software Ready for Manufacturing (RFM)"
+          },
+          {
+            "id": "P9",
+            "question": "When ECU sw features completion date (FC) is planned?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": "Validate that it's earlier than ECU RFM",
+            "key_name": "project_ecu_sw_fc",
+            "key_value": "Unknown",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Date of Software features completion date (FC)"
+          },
+          {
+            "id": "P10",
+            "question": "When does Customer start the development (SoD)?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": "Validate that it's earlier than Feature Complete date",
+            "key_name": "project_ecu_sw_sod",
+            "key_value": "Unknown",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Date of Start of Development (SoD)"
+          },
+          {
+            "id": "P11",
+            "question": "When does customer need a first delivery?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": "Validate that it's earlier than start of development date",
+            "key_name": "project_ecu_sw_first_delivery_date",
+            "key_value": "Unknown",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Date of First Software Delivery"
+          }
+        ]
+      },
+      {
+        "id": "P12",
+        "question": "Does customer needs a License model or Royalties model?",
+        "possible_answers": [
+          "License model",
+          "Royalty",
+          "Both"
+        ],
+        "default_answer": "License model",
+        "instruction": null,
+        "key_name": "project_license_model",
+        "key_value": "License model",
+        "ai_understanding": "Not Specified (information not found in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "License Model(upfront payment) or Roylty model or both"
+      },
+      {
+        "id": "P13",
+        "question": "What is the ECU(s) production volume planned in total/year?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "project_production_volume",
+        "key_value": "Unknown",
+        "ai_understanding": "Not Specified (information not found in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "ECU production volume planned in total and/or per year"
+      },
+      {
+        "id": "P14",
+        "question": "How many years of production?",
+        "possible_answers": null,
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "project_production_duration",
+        "key_value": "Unknown",
+        "ai_understanding": "Not Specified (information not found in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Number of years of production"
+      },
+      {
+        "id": "P15",
+        "question": "In which project phase is the customer?",
+        "possible_answers": [
+          "Feasibility Study",
+          "PoC",
+          "RFI",
+          "RFQ",
+          "RFP",
+          "Development",
+          "Maintenance",
+          "Unknown"
+        ],
+        "default_answer": "Unknown",
+        "instruction": "elaborate the license: between concept,project, product lince",
+        "key_name": "project_phase",
+        "key_value": "Development",
+        "ai_understanding": "Development",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "Project phase"
+      },
+      {
+        "id": "P16",
+        "question": "What is the project license suitable for the customer usage?",
+        "possible_answers": [
+          "Project License",
+          "Product Line License",
+          "Evaluation License",
+          "Concept License",
+          "OEM-restricted Product Line License",
+          "ECU Cross-Platform License for OEM",
+          "BU License for Tier 1",
+          "OEM-restricted Company License for Tier 1",
+          "Company License for OEM",
+          "Company License for Tier 1",
+          "Unknown"
+        ],
+        "default_answer": "Project License",
+        "instruction": null,
+        "key_name": "project_license_type",
+        "key_value": "Project License",
+        "key_value2": null,
+        "ai_understanding": "Not Specified (information not found in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "License type"
+      },
+      {
+        "id": "P17",
+        "question": "What is the region to use for the quote?",
+        "possible_answers": [
+          "India",
+          "China",
+          "Euro",
+          "North America",
+          "Continental",
+          "Japan",
+          "South Korea"
+        ],
+        "default_answer": "Euro",
+        "instruction": null,
+        "key_name": "project_quote_pricelist",
+        "key_value": "No",
+        "ai_understanding": "Not Applicable (as no pricing information was provided in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Price list region for the quote"
+      },
+      {
+        "id": "P18",
+        "question": "What are customer's remark regarding his project if any?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "project_customer_comments",
+        "key_value": "The micro controller is required to meet ASIL-D requirements, and a decomposition strategy from ASIL-D to ASIL-B will be implemented. Ethernet support, security features, secure diagnostics, an Intrusion Detection and Prevention System (IDPS), a switch, and possibly MacSEC encryption for the Ethernet LAN are required for this project. The micro controller is likely to be a TC397, and the micro processor might be a Traveo II. The system also needs to interface with CAN devices and LIN slaves.",
+        "ai_understanding": "The micro controller is required to meet ASIL-D requirements, and a decomposition strategy from ASIL-D to ASIL-B will be implemented. Ethernet support, security features, secure diagnostics, an Intrusion Detection and Prevention System (IDPS), a switch, and possibly MacSEC encryption for the Ethernet LAN are required for this project. The micro controller is likely to be a TC397, and the micro processor might be a Traveo II. The system also needs to interface with CAN devices and LIN slaves.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment about project"
+      }
+    ]
+  },
+  {
+    "id": "39fd3e96-818b-497b-9ac9-e97d84fe1abd",
+    "key_name": "µc_platform_information",
+    "key_value": null,
+    "ai_understanding": "",
+    "flag_assumptions": true,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "µC Platform Information",
+    "children": [
+      {
+        "id": "T1",
+        "question": "Do you know the µC used for the customer project?",
+        "possible_answers": [
+          "Yes",
+          "No"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "target_known",
+        "key_value": "Yes",
+        "ai_understanding": "(Yes):",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "µC defined",
+        "children": [
+          {
+            "id": "T2",
+            "question": "What is the µC Manufacturer name?",
+            "possible_answers": [
+              "iNDIE",
+              "NXP",
+              "Infineon",
+              "ST",
+              "Ambarella",
+              "Semidrive",
+              "Renesas",
+              "Samsung",
+              "Marvell",
+              "Xilinx",
+              "TI",
+              "Texas Instrument",
+              "Infineon Cypress",
+              "Synopsys",
+              "Black Sesame",
+              "Horizon Robotics"
+            ],
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "target_µC_manufacturer",
+            "key_value": "Renesas",
+            "ai_understanding": "(Renesas):",
+            "flag_assumptions": false,
+            "mandatory": false,
+            "open_question": true,
+            "multiple_choice": false,
+            "information": "µC Manufacturer Name"
+          },
+          {
+            "id": "T3",
+            "question": "What is the µC Family name?",
+            "possible_answers": [
+              "CV3",
+              "TC2",
+              "TC3",
+              "TC4",
+              "CYT2",
+              "CYT4",
+              "S32G2",
+              "S32G3",
+              "S32K1",
+              "S32K2",
+              "S32K3",
+              "S32N",
+              "S32R",
+              "S32Z"
+            ],
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "target_µC_family",
+            "key_value": "TC3",
+            "ai_understanding": "(TC3):",
+            "flag_assumptions": false,
+            "mandatory": false,
+            "open_question": true,
+            "multiple_choice": false,
+            "information": "µC Family Name"
+          },
+          {
+            "id": "T4",
+            "question": "What is the µC Derivative name?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "target_µC_derivative",
+            "key_value": "TC397",
+            "ai_understanding": "(TC397):",
+            "flag_assumptions": false,
+            "mandatory": false,
+            "open_question": true,
+            "multiple_choice": false,
+            "information": "µC Derivative"
+          }
+        ]
+      },
+      {
+        "id": "T5",
+        "question": "Which AUTOSAR Classic Platform version does customer target?",
+        "possible_answers": [
+          "4.2.2",
+          "4.3",
+          "4.3.1",
+          "4.4",
+          "4.4.0",
+          "R21",
+          "Other",
+          "tbd",
+          "Unknown"
+        ],
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "target_autosar_version",
+        "key_value": "Unknown",
+        "ai_understanding": "(Not Specified):",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": true,
+        "multiple_choice": false,
+        "information": "AUTOSAR version"
+      },
+      {
+        "id": "T6",
+        "question": "which mode the operating system will be executed?",
+        "possible_answers": [
+          "lock-step",
+          "split-lock",
+          "Mixed-mode",
+          "Default",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "Default",
+        "instruction": null,
+        "key_name": "target_os_execution_mode",
+        "key_value": "Default",
+        "ai_understanding": "(Not Specified):",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "OS execution mode"
+      },
+      {
+        "id": "T7",
+        "question": "Does customer need an OS supporting Multi-core?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "target_os_multicore_required",
+        "key_value": "No",
+        "ai_understanding": "(Not Specified):",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "OS supporting Multicore"
+      },
+      {
+        "id": "T8",
+        "question": "Does customer plan to distribute BSW module execution on several cores?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "target_bsw_distribution",
+        "key_value": "No",
+        "ai_understanding": "(Not Specified):",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Distribution of BSW modules' execution on several cores is required"
+      },
+      {
+        "id": "T9",
+        "question": "Does customer plan hardware accelerators for communication?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "target_hw_accelerator_for_com",
+        "key_value": "Yes",
+        "ai_understanding": "(Yes, Ethernet support and MacSEC encryption are required):",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Hardware accelerators for communication required"
+      },
+      {
+        "id": "T10",
+        "question": "Does customer plan to execute virtual machines on his ECU(s)?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "target_embedded_hypervisor",
+        "key_value": "No",
+        "ai_understanding": "(Not Specified):",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Virtual Machines executed on ECU or hypervisor is required"
+      },
+      {
+        "id": "T11",
+        "question": "Does customer need to virtualize his ECU?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "target_ecu_virtualization",
+        "key_value": "No",
+        "ai_understanding": "(Not Specified):",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "ECU virtualization required"
+      },
+      {
+        "id": "T12",
+        "question": "Does customer define the compiler?",
+        "possible_answers": [
+          "No",
+          "Yes"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "target_compiler_known",
+        "key_value": "No",
+        "ai_understanding": "(Not Specified):",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Compiler known",
+        "children": [
+          {
+            "id": "T13",
+            "possible_answers": [
+              "Green Hills",
+              "GH",
+              "Gcc",
+              "Tasking",
+              "Wind River",
+              "tbd",
+              "Need Assistance",
+              "HighTec",
+              "IAR",
+              "Linaro"
+            ],
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "target_compiler_vendor",
+            "key_value": "Unknown",
+            "ai_understanding": "",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "open_question": true,
+            "multiple_choice": false,
+            "information": "Compiler Vendor Name"
+          },
+          {
+            "id": "T14",
+            "question": "What is the compiler's version?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "target_compiler_version",
+            "key_value": "Unknown",
+            "ai_understanding": "",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "open_question": true,
+            "multiple_choice": false,
+            "information": "Compiler Version"
+          }
+        ]
+      },
+      {
+        "id": "T15",
+        "question": "Does customer define the MCAL to use?",
+        "possible_answers": [
+          "No",
+          "Yes"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "target_mcal_known",
+        "key_value": "No",
+        "ai_understanding": "(Not Specified):",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "MCAL known",
+        "children": [
+          {
+            "id": "T16",
+            "question": "What is the MCAL's vendor name?",
+            "possible_answers": [
+              "NXP",
+              "Infineon",
+              "Elektrobit",
+              "Vector",
+              "Renesas",
+              "tbd",
+              "Need Assistance"
+            ],
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "target_mcal_vendor_name",
+            "key_value": "Unknown",
+            "ai_understanding": "",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "open_question": true,
+            "multiple_choice": false,
+            "information": "MCAL Vendor Name"
+          },
+          {
+            "id": "T17",
+            "question": "What is the MCAL's version?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "target_mcal_vendor_version",
+            "key_value": "Unknown",
+            "ai_understanding": "",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "open_question": true,
+            "multiple_choice": false,
+            "information": "MCAL Version"
+          }
+        ]
+      },
+      {
+        "id": "T18",
+        "question": "What are the customer's comment related to µC platform information?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "target_customer_comments",
+        "key_value": "The micro controller is expected to be a Renesas TC397, and the micro processor could potentially be a Traveo II. The system needs to comply with ASIL-D requirements and support ASIL-B for decomposition. It requires Ethernet support, security features, secure diagnostics, IDPS, a switch, and possibly MacSEC encryption of the whole Ethernet LAN. Interfacing with CAN devices, some of which may have limited functionality, and LIN slaves is also necessary.",
+        "ai_understanding": "The micro controller is expected to be a Renesas TC397, and the micro processor could potentially be a Traveo II. The system needs to comply with ASIL-D requirements and support ASIL-B for decomposition. It requires Ethernet support, security features, secure diagnostics, IDPS, a switch, and possibly MacSEC encryption of the whole Ethernet LAN. Interfacing with CAN devices, some of which may have limited functionality, and LIN slaves is also necessary.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment about platform"
+      }
+    ]
+  },
+  {
+    "id": "820db0df-10bf-44a7-b098-7822477893d6",
+    "key_name": "ecu_communication",
+    "key_value": null,
+    "ai_understanding": "",
+    "flag_assumptions": true,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "ECU Communication",
+    "children": [
+      {
+        "id": "COM1",
+        "question": "Do you have identified the Bus system(s)?",
+        "possible_answers": [
+          "No",
+          "Yes"
+        ],
+        "default_answer": "Yes",
+        "instruction": null,
+        "key_name": "ecu_com_system_present",
+        "key_value": "Yes",
+        "ai_understanding": "",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Communication Buses are identified (Yes or No)"
+      },
+      {
+        "id": "COM2",
+        "question": "Does customer require CAN or CAN-FD bus?",
+        "possible_answers": [
+          "No",
+          "Yes"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "ecu_com_can_present",
+        "key_value": "Yes",
+        "ai_understanding": "(Yes):",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "CAN bus required",
+        "children": [
+          {
+            "id": "COM3",
+            "question": "How many different CAN / CAN-FD transceiver(s) ?",
+            "possible_answers": null,
+            "default_answer": "1",
+            "instruction": null,
+            "key_name": "ecu_com_can_nb_transceivers",
+            "key_value": "1",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Number of different CAN transceivers"
+          },
+          {
+            "id": "COM4",
+            "question": "Which CAN Transceiver does customer want to use?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "ecu_com_can_transceivers_list",
+            "key_value": "Unknown",
+            "ai_understanding": "",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "CAN Transceivers references"
+          },
+          {
+            "id": "COM5",
+            "question": "Does customer need partial networking?",
+            "possible_answers": [
+              "No",
+              "Yes",
+              "tbd"
+            ],
+            "default_answer": "No",
+            "instruction": null,
+            "key_name": "ecu_com_can_partial_networking",
+            "key_value": "No",
+            "ai_understanding": "",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Partial Networking required"
+          }
+        ]
+      },
+      {
+        "id": "COM6",
+        "question": "Does customer require FlexRay bus?",
+        "possible_answers": [
+          "No",
+          "Yes"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "ecu_com_flexray_present",
+        "key_value": "No",
+        "ai_understanding": "(No):",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "FlexRay Bus required",
+        "children": [
+          {
+            "id": "COM7",
+            "question": "How many different FlexRay transceiver(s)?",
+            "possible_answers": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "default_answer": "0",
+            "instruction": null,
+            "key_name": "ecu_com_flexray_nb_transceivers",
+            "key_value": "0",
+            "ai_understanding": "",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Number of different FlexRay transceivers"
+          },
+          {
+            "id": "COM8",
+            "question": "Which FlexRay Transceiver does customer want to use?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "ecu_com_flexray_transceivers_list",
+            "key_value": "Unknown",
+            "ai_understanding": "",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "FlexRay Transceivers references"
+          }
+        ]
+      },
+      {
+        "id": "COM9",
+        "question": "Does customer require LIN bus?",
+        "possible_answers": [
+          "No",
+          "Yes"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "ecu_com_lin_present",
+        "key_value": "Yes",
+        "ai_understanding": "(Yes):",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "LIN bus required",
+        "children": [
+          {
+            "id": "COM10",
+            "question": "How many LIN bus(es)?",
+            "possible_answers": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "default_answer": "0",
+            "instruction": null,
+            "key_name": "ecu_com_lin_nb_transceivers_template",
+            "key_value": "0",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Number of different Lin transceivers"
+          }
+        ]
+      },
+      {
+        "id": "COM11",
+        "question": "Does customer require Ethernet bus?",
+        "possible_answers": [
+          "No",
+          "Yes"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "ecu_com_ethernet_present",
+        "key_value": "Yes",
+        "ai_understanding": "(Yes):",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Ethernet bus required",
+        "children": [
+          {
+            "id": "COM12",
+            "question": "How many Ethernet transceiver does customer need?",
+            "possible_answers": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "default_answer": "0",
+            "instruction": null,
+            "key_name": "ecu_com_ethernet_nb_transceivers",
+            "key_value": "0",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Number of different Ethernet transceivers"
+          },
+          {
+            "id": "COM13",
+            "question": "Which Ethernet Transceiver does customer want to use?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "ecu_com_ethernet_transceivers_list",
+            "key_value": "No",
+            "ai_understanding": "Not Applicable (As the specific model is not mentioned)",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Ethernet Transceivers references"
+          },
+          {
+            "id": "COM14",
+            "question": "Which Ethernet Driver does customer want to use?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "ecu_com_ethernet_driver_required",
+            "key_value": "Yes",
+            "ai_understanding": "Yes",
+            "flag_assumptions": false,
+            "mandatory": false,
+            "information": "Ethernet driver required"
+          },
+          {
+            "id": "COM15",
+            "question": "Does customer need Ethernet QoS?",
+            "possible_answers": [
+              "Yes",
+              "No",
+              "tbd"
+            ],
+            "default_answer": "No",
+            "instruction": null,
+            "key_name": "ecu_com_ethernet_qos_required",
+            "key_value": "Depends on the Ethernet requirements and usage in the system",
+            "ai_understanding": "Depends on the Ethernet requirements and usage in the system",
+            "flag_assumptions": false,
+            "mandatory": false,
+            "information": "Ethernet QoS required"
+          }
+        ]
+      },
+      {
+        "id": "COM16",
+        "question": "Does customer plan to use an Ethernet Switch?",
+        "possible_answers": [
+          "No",
+          "Yes"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "ecu_com_ethernet_switch_present",
+        "key_value": "Yes",
+        "ai_understanding": "(Yes):",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Ethernet switch required",
+        "children": [
+          {
+            "id": "COM17",
+            "question": "What is the reference of customer's Ethernet Switch?",
+            "possible_answers": null,
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "ecu_com_ethernet_switch_reference",
+            "key_value": "Unknown",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Ethernet switch reference"
+          }
+        ]
+      },
+      {
+        "id": "COM18",
+        "question": "What are the customer's comments regarding ECU communication?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "ecu_com_customer_comment",
+        "key_value": "The communication system should support Ethernet, secure diagnostics, IDPS, MacSEC encryption for the Ethernet LAN, and interface with CAN devices and LIN slaves. The microcontroller is likely an TC397, and the microprocessor possibly a Traveo II. The report suggests a possible ASIL-D to ASIL-B decomposition strategy for the micro controller.",
+        "ai_understanding": "The communication system should support Ethernet, secure diagnostics, IDPS, MacSEC encryption for the Ethernet LAN, and interface with CAN devices and LIN slaves. The microcontroller is likely an TC397, and the microprocessor possibly a Traveo II. The report suggests a possible ASIL-D to ASIL-B decomposition strategy for the micro controller.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment about communication"
+      }
+    ]
+  },
+  {
+    "id": "bf32506f-86e8-4fec-a567-ab9da0c3a709",
+    "key_name": "ecu_functional_safety",
+    "key_value": "Yes",
+    "ai_understanding": "Yes",
+    "flag_assumptions": false,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "ECU Functional Safety",
+    "children": [
+      {
+        "id": "SAF1",
+        "question": "Does customer need consultancy for safety design or architecture required?",
+        "possible_answers": [
+          "Yes",
+          "No",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "safety_consultancy_required",
+        "key_value": "Yes",
+        "ai_understanding": "Yes",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Consultancy for safety design or architecture required"
+      },
+      {
+        "id": "SAF2",
+        "question": "Which is the safety level required for customer project?",
+        "possible_answers": [
+          "QM",
+          "ASIL-A",
+          "ASIL-B",
+          "ASIL-C",
+          "ASIL-D",
+          "tbd"
+        ],
+        "default_answer": "QM",
+        "instruction": null,
+        "key_name": "safety_project_level",
+        "key_value": "ASIL-D",
+        "ai_understanding": "ASIL-D (for the micro controller) and ASIL-B for the decomposition (from ASIL-D to ASIL-B)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Project Safety Level compliance"
+      },
+      {
+        "id": "SAF3",
+        "question": "Does customer explicitly request a certified OS with ASIL-A or ASIL-B compliance?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "Need Assistance",
+          "Optional",
+          "tbd"
+        ],
+        "default_answer": "No",
+        "instruction": "answer 'No' if there is no explicit mention of requirement about a certified OS required by the customer. A certified OS is NOT mandatory for ASIL-A or ASIL-B.",
+        "key_name": "safety_certified_OS_required_ASIL_B",
+        "key_value": "No",
+        "ai_understanding": "Not Specified (The report doesn't mention if a certified OS is required)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Certified OS required"
+      },
+      {
+        "id": "SAF4",
+        "question": "What safety level is required for customer's Ethernet switch firmware?",
+        "possible_answers": [
+          "QM",
+          "ASIL-A",
+          "ASIL-B",
+          "Need Assistance",
+          "Optional",
+          "tbd"
+        ],
+        "default_answer": "QM",
+        "instruction": null,
+        "key_name": "safety_ethernet_switch_level",
+        "key_value": "QM",
+        "ai_understanding": "Not Specified (The report only mentions the need for an Ethernet switch and MacSEC encryption, but doesn't specify the safety level)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Ethernet Switch Safety Level compliance required"
+      },
+      {
+        "id": "SAF5",
+        "question": "Does customer need to build a fail-operational system?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "safety_fail_op_required",
+        "key_value": "Yes",
+        "ai_understanding": "Yes",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Fail operational required",
+        "children": [
+          {
+            "id": "SAF6",
+            "question": "Which private bus shall be fail-operational?",
+            "possible_answers": [
+              "CAN",
+              "CAN-FD",
+              "CAN/CAN-FD",
+              "Ethernet",
+              "tbd",
+              "Need Assistance"
+            ],
+            "default_answer": "No",
+            "instruction": null,
+            "key_name": "safety_fail_op_bus",
+            "key_value": "No",
+            "ai_understanding": "Not Specified (The report mentions that the steering system needs to interface with CAN devices, but doesn't specify if this is for fail-operational purposes)",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "bus for fail operational"
+          },
+          {
+            "id": "SAF7",
+            "question": "In which ECU sample the fail-operational bus shall be available?",
+            "possible_answers": [
+              "None",
+              "Sample-A",
+              "Sample-B",
+              "Sample-C",
+              "tbd",
+              "Need Assistance",
+              "n/a"
+            ],
+            "default_answer": "None",
+            "instruction": null,
+            "key_name": "safety_fail_op_sample",
+            "key_value": "None",
+            "ai_understanding": "Not Specified (The report doesn't mention if any ECU samples are available)",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "ECU sample available"
+          },
+          {
+            "id": "SAF8",
+            "question": "In which ECU sample the fail-operational bus shall be available?",
+            "possible_answers": [
+              "No",
+              "Yes",
+              "tbd",
+              "Need Assistance",
+              "n/a"
+            ],
+            "default_answer": "No",
+            "instruction": null,
+            "key_name": "safety_fail_op_consultancy_required",
+            "key_value": "Yes",
+            "ai_understanding": "Yes",
+            "flag_assumptions": false,
+            "mandatory": false,
+            "information": "consultancy required"
+          }
+        ]
+      },
+      {
+        "id": "SAF9",
+        "question": "What are the customer's remark regarding functional safety?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "safety_customer_comment",
+        "key_value": "The system requires a micro controller that meets ASIL-D requirements, and it needs to be decomposed from ASIL-D to ASIL-B. Ethernet support, security features, secure diagnostics, IDPS, switch, and possibly MacSEC encryption are required for the Ethernet LAN. The report suggests the use of a TC397 micro controller and a Traveo II micro processor, but it doesn't specify if they meet the safety requirements or not. The system also needs to interface with CAN devices and possibly LIN slaves.",
+        "ai_understanding": "The system requires a micro controller that meets ASIL-D requirements, and it needs to be decomposed from ASIL-D to ASIL-B. Ethernet support, security features, secure diagnostics, IDPS, switch, and possibly MacSEC encryption are required for the Ethernet LAN. The report suggests the use of a TC397 micro controller and a Traveo II micro processor, but it doesn't specify if they meet the safety requirements or not. The system also needs to interface with CAN devices and possibly LIN slaves.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment about functional Safety"
+      }
+    ]
+  },
+  {
+    "id": "ae0addb9-40ba-4c0b-b7cd-3ca1b545d3fe",
+    "key_name": "ecu_security",
+    "key_value": "Required (as stated in the report)",
+    "ai_understanding": "Required (as stated in the report)",
+    "flag_assumptions": false,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "ECU Security",
+    "children": [
+      {
+        "id": "SEC1",
+        "question": "Does customer plan security feature?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_features_required",
+        "key_value": "Yes",
+        "ai_understanding": "Yes (Security features such as IDPS, secure diagnostics, and potentially MacSEC encryption are required)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Security feature(s) is required"
+      },
+      {
+        "id": "SEC2",
+        "question": "Does Security Event logging required?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_event_logging_required",
+        "key_value": "Yes",
+        "ai_understanding": "Yes (Event logging is a part of secure diagnostics which is required)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Event logging or IdsM is required"
+      },
+      {
+        "id": "SEC3",
+        "question": "Does customer need IPsec?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_ipsec_required",
+        "key_value": "No",
+        "ai_understanding": "",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "IPsec is required"
+      },
+      {
+        "id": "SEC4",
+        "question": "Does customer need MACsec?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_macsec_required",
+        "key_value": "Potentially (MacSEC encryption of the whole Ethernet LAN is mentioned as a possibility)",
+        "ai_understanding": "Potentially (MacSEC encryption of the whole Ethernet LAN is mentioned as a possibility)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "MACsec is required"
+      },
+      {
+        "id": "SEC5",
+        "question": "Does customer need TLS or DTLS?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_tls_dtls_required",
+        "key_value": "No",
+        "ai_understanding": "",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "TLS or DTLS is required"
+      },
+      {
+        "id": "SEC6",
+        "question": "Does customer need Post-quantum algorithm?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_post_quantum_algo_requiredsecurity_post_quantum_algo_required",
+        "key_value": "No",
+        "ai_understanding": "",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Post-quantum algorithm is required"
+      },
+      {
+        "id": "SEC7",
+        "question": "Does customer need advanced cybersecurity protection in your MCU?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_cyber_protection_mcu",
+        "key_value": "Yes",
+        "ai_understanding": "Yes (An IDPS is required for the micro controller)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Advanced cybersecurity protection for CAN (CAN IDPS) is required"
+      },
+      {
+        "id": "SEC8",
+        "question": "Does customer need advanced cybersecurity protection in your Ethernet Switch?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_cyber_protection_eth_switch",
+        "key_value": "No",
+        "ai_understanding": "Potentially (An IDPS is required, and a switch is mentioned, but no specific mention of Ethernet IDPS)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Advanced cybersecurity protection for Ethernet Switch (Ethernet IDPS) is required"
+      },
+      {
+        "id": "SEC9",
+        "question": "Does customer need security hardware accelerations (HSM or HSE)?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_hsm_required",
+        "key_value": "No",
+        "ai_understanding": "",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Hardware security acceleration (HSM or HSE) is required"
+      },
+      {
+        "id": "SEC10",
+        "question": "What are the customer's comments regarding security?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "security_customer_comments",
+        "key_value": "The micro controller needs to fulfill ASIL-D requirements and ASIL-B to realize a ASIL-D to ASIL-B decomposition, indicating a high level of security concern for this system. The micro controller will likely be an TC397, and the micro processor possibly a Traveo II. The steering system also needs to interface with supporting CAN devices, some of which may have very limited functionality, and even LIN slaves.",
+        "ai_understanding": "The micro controller needs to fulfill ASIL-D requirements and ASIL-B to realize a ASIL-D to ASIL-B decomposition, indicating a high level of security concern for this system. The micro controller will likely be an TC397, and the micro processor possibly a Traveo II. The steering system also needs to interface with supporting CAN devices, some of which may have very limited functionality, and even LIN slaves.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment about security"
+      }
+    ]
+  },
+  {
+    "id": "fa5d42f3-35ae-43f1-884c-292c68aeeb21",
+    "key_name": "ecu_software_update",
+    "key_value": "Yes (As per the report, software update is required for the microcontroller)",
+    "ai_understanding": "Yes (As per the report, software update is required for the microcontroller)",
+    "flag_assumptions": false,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "ECU Software Update",
+    "children": [
+      {
+        "id": "SWU1",
+        "question": "Does customer plan to perform software updates operation?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_required",
+        "key_value": "Yes",
+        "ai_understanding": "Yes",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Software Update required"
+      },
+      {
+        "id": "SWU2",
+        "question": "Which bus will be used for performing software updates?",
+        "possible_answers": [
+          "CAN/CAN-FD",
+          "CAN",
+          "CAN-FD",
+          "Lin (Master)",
+          "LIN",
+          "Ethernet",
+          "FlexRay",
+          "Other",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_bus_used",
+        "key_value": "Ethernet",
+        "ai_understanding": "Ethernet (Based on the requirement mentioned in the report)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Bus used for software update operation"
+      },
+      {
+        "id": "SWU3",
+        "question": "What is customer's strategy for updating ECU?",
+        "possible_answers": [
+          "Flash Bootloader (FBL)",
+          "FOTA (DUAL Bank)",
+          "Both (FBL&FOTA)",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "Unknown",
+        "instruction": null,
+        "key_name": "swu_strategy",
+        "key_value": "Unknown",
+        "ai_understanding": "Not Specified (FOTA or Flash Bootloader or Both not explicitly mentioned, but given the use of Ethernet and potential need for remote steering, FOTA might be implied)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Software update strategy"
+      },
+      {
+        "id": "SWU4",
+        "question": "Does Dual bank-capable FBL is required?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_dual_bank_capable",
+        "key_value": "No",
+        "ai_understanding": "Not Applicable (As dual bank is usually associated with Flash Bootloaders, and the strategy is not specified)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Dual bank-capable FBL required"
+      },
+      {
+        "id": "SWU5",
+        "question": "Does customer plan to use external memory device?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_external_memory",
+        "key_value": "No",
+        "ai_understanding": "Not Specified (Not explicitly mentioned in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "External memory device required"
+      },
+      {
+        "id": "SWU6",
+        "question": "Does customer plan to update ECU Slaves?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_update_slaves",
+        "key_value": "Yes",
+        "ai_understanding": "Yes (LIN slaves are mentioned in the report)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Slaves to be updated required"
+      },
+      {
+        "id": "SWU7",
+        "question": "Does customer need a Bootloader Updater?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_bootloader_updater_required",
+        "key_value": "No",
+        "ai_understanding": "Not Applicable (Bootloader updater is usually associated with Flash Bootloaders, and the strategy is not specified)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Bootloader Updater required"
+      },
+      {
+        "id": "SWU8",
+        "question": "Does customer need a Boot Manager?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_boot_manager_required",
+        "key_value": "No",
+        "ai_understanding": "Not Specified (Not explicitly mentioned in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Bootmanager required"
+      },
+      {
+        "id": "SWU9",
+        "question": "Does customer need a Secure Boot?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "Monolithic Secure Boot",
+          "Chained Secure Boot",
+          "Measured Boot with Trusted Platform Module",
+          "Other",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_secure_boot_required",
+        "key_value": "Yes",
+        "ai_understanding": "Yes (Given the ASIL-D requirements)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Secure Boot required"
+      },
+      {
+        "id": "SWU10",
+        "question": "Does customer need extension package for Bootloader?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_extension_package_bootloader",
+        "key_value": "No",
+        "ai_understanding": "Not Applicable (As the Bootloader strategy is not specified)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Extension package for Bootloader required"
+      },
+      {
+        "id": "SWU11",
+        "question": "Does customer need extension package for FOTA?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "swu_extension_package_fota",
+        "key_value": "No",
+        "ai_understanding": "Not Specified (Not explicitly mentioned in the report)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Extension package for FOTA required"
+      },
+      {
+        "id": "SWU12",
+        "question": "What are the customer's remarks regarding software update topic?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "swu_customer_comments",
+        "key_value": "The system requires secure diagnostics and an Intrusion Detection and Prevention System (IDPS). Also, it seems that Ethernet security features like MacSEC encryption might be necessary.",
+        "ai_understanding": "The system requires secure diagnostics and an Intrusion Detection and Prevention System (IDPS). Also, it seems that Ethernet security features like MacSEC encryption might be necessary.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment about software update"
+      }
+    ]
+  },
+  {
+    "id": "67782b7b-62a3-4190-9baa-19d213c90a61",
+    "key_name": "additional_features",
+    "key_value": null,
+    "ai_understanding": "",
+    "flag_assumptions": true,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "Additional Features",
+    "children": [
+      {
+        "id": "AddOn1",
+        "question": "Does customer need V2G feature?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "addon_v2g_required",
+        "key_value": "No",
+        "ai_understanding": "(Not Specified)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "V2G feature required",
+        "children": [
+          {
+            "id": "AddOn2",
+            "question": "Which Standards does customer need to support?",
+            "possible_answers": [
+              "Asian",
+              "European",
+              "Both",
+              "tbd",
+              "Need Assistance"
+            ],
+            "default_answer": "Unknown",
+            "instruction": null,
+            "key_name": "addon_v2g_standards",
+            "key_value": "No",
+            "ai_understanding": "(Not Applicable)",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Standards required"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a6fbea22-c5be-4b9c-9445-4184da43a65f",
+    "key_name": "maintenance_&_tools",
+    "key_value": null,
+    "ai_understanding": "",
+    "flag_assumptions": true,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "Maintenance & Tools",
+    "children": [
+      {
+        "id": "MT1",
+        "question": "How many years of development does customer plan?",
+        "possible_answers": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "default_answer": "0",
+        "instruction": null,
+        "key_name": "dev_maintenance_extension_nb_years",
+        "key_value": "The report does not provide information about the number of years for the extension of development maintenance.",
+        "ai_understanding": "The report does not provide information about the number of years for the extension of development maintenance.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Number of years of extension of development maintenance"
+      },
+      {
+        "id": "MT2",
+        "question": "How many years of long term maintenance does customer need?",
+        "possible_answers": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "default_answer": "0",
+        "instruction": null,
+        "key_name": "maintenance_lts_nb_years",
+        "key_value": "No details were given regarding the number of years for long-term maintenance.",
+        "ai_understanding": "No details were given regarding the number of years for long-term maintenance.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Number of years of long term maintenance"
+      },
+      {
+        "id": "MT3",
+        "question": "How many years of cybersecurity maintenance does customer need?",
+        "possible_answers": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "default_answer": "0",
+        "instruction": null,
+        "key_name": "maintenance_cybersecurity_maintenance_nb_years",
+        "key_value": "The report does not contain data on the duration of cybersecurity maintenance.",
+        "ai_understanding": "The report does not contain data on the duration of cybersecurity maintenance.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "open_question": false,
+        "multiple_choice": false,
+        "information": "Number of years of cybersecurity maintenance"
+      },
+      {
+        "id": "MT4",
+        "question": "Does customer have interest in EB tresos Studio?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "tools_eb_tresos_studio_required",
+        "key_value": "No",
+        "ai_understanding": "It is suggested that EB tresos studio may be required for this project, but no confirmation was provided in the report.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "EB tresos studio required",
+        "children": [
+          {
+            "id": "MT5",
+            "question": "How many seat does customer need at the same time?",
+            "possible_answers": null,
+            "default_answer": "1",
+            "instruction": null,
+            "key_name": "tools_nb_seats",
+            "key_value": "1",
+            "ai_understanding": "Not Specified",
+            "flag_assumptions": true,
+            "mandatory": false,
+            "information": "Number of seat required"
+          },
+          {
+            "id": "MT6",
+            "question": "Does customer need a permanent license?",
+            "possible_answers": [
+              "Permanent",
+              "Annual Subscription",
+              "Both",
+              "tbd"
+            ],
+            "default_answer": "Annual Subscription",
+            "instruction": null,
+            "key_name": "tools_license_type",
+            "key_value": "The license type is not mentioned in the report.",
+            "ai_understanding": "The license type is not mentioned in the report.",
+            "flag_assumptions": false,
+            "mandatory": false,
+            "information": "License type"
+          },
+          {
+            "id": "MT7",
+            "question": "What kind of license does customer need?",
+            "possible_answers": [
+              "Floating License",
+              "Single-User License",
+              "Dongled License",
+              "Partner License",
+              "tbd"
+            ],
+            "default_answer": "Floating License",
+            "instruction": null,
+            "key_name": "tools_license_mode",
+            "key_value": "No information about the license mode was provided.",
+            "ai_understanding": "No information about the license mode was provided.",
+            "flag_assumptions": false,
+            "mandatory": false,
+            "information": "License mode"
+          }
+        ]
+      },
+      {
+        "id": "MT8",
+        "question": "What are the customer's remarks regarding maintenance and tools topic?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "maintenance_customer_comments",
+        "key_value": "The report indicates that Ethernet support, secure diagnostics, an Intrusion Prevention System (IDPS), a switch, and potentially MacSEC encryption for the Ethernet LAN will be necessary in the maintenance of this project. Additionally, it is mentioned that the system needs to interface with CAN devices and even LIN slaves, which may have limited functionality. It is important to note that more details about the tools required and their specific configurations may need to be determined during the project's development.",
+        "ai_understanding": "The report indicates that Ethernet support, secure diagnostics, an Intrusion Prevention System (IDPS), a switch, and potentially MacSEC encryption for the Ethernet LAN will be necessary in the maintenance of this project. Additionally, it is mentioned that the system needs to interface with CAN devices and even LIN slaves, which may have limited functionality. It is important to note that more details about the tools required and their specific configurations may need to be determined during the project's development.",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment about maintenance and tools"
+      }
+    ]
+  },
+  {
+    "id": "071ea705-bd90-4c78-9a13-a9226c4dab2c",
+    "key_name": "platform_services",
+    "key_value": "The report discusses the development of a new generation of trucks capable of remote steering, which includes creating a fail-operational steering system with Advanced Driver Assistance Systems (ADAS) features. This system will be built on a System-on-Chip (SoC) with a microprocessor and a microcontroller.",
+    "ai_understanding": "The report discusses the development of a new generation of trucks capable of remote steering, which includes creating a fail-operational steering system with Advanced Driver Assistance Systems (ADAS) features. This system will be built on a System-on-Chip (SoC) with a microprocessor and a microcontroller.",
+    "flag_assumptions": false,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "Platform Services",
+    "children": [
+      {
+        "id": "PS0",
+        "question": "Does customer have interest in board support packages (BSP)?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "Yes",
+        "instruction": null,
+        "key_name": "platform_service_bsp",
+        "key_value": "Yes",
+        "ai_understanding": "Not Specified (Since the report does not mention whether there is an interest in Board Support Packages, it's unclear if they are required or not.)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Interest in Board Support packages (BSP) identified"
+      },
+      {
+        "id": "PS1",
+        "question": "Does customer have interest in qualification packages?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "Yes",
+        "instruction": null,
+        "key_name": "platform_service_qp",
+        "key_value": "Yes",
+        "ai_understanding": "Yes (The micro controller needs to fulfill ASIL-D requirements, which typically involves using a qualification package to ensure compliance with automotive safety standards.)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Interest in Qualification packages (QP) identified"
+      },
+      {
+        "id": "PS2",
+        "question": "Does customer have interest in our EB tresos Startup Package Application?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "platform_service_start_up_package",
+        "key_value": "No",
+        "ai_understanding": "Not Specified (The report does not mention the need for an Application startup package explicitly.)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Interest in Startup package for Application identified"
+      },
+      {
+        "id": "PS3",
+        "question": "Does customer have interest in our EB tresos Startup Package Bootloader?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "platform_service_bootloader_start_up_package",
+        "key_value": "No",
+        "ai_understanding": "Not Specified (The report does not mention the need for a Bootloader startup package explicitly.)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Interest in Startup package for Bootloader identified"
+      },
+      {
+        "id": "PS4",
+        "question": "Does customer have interest in our EB tresos Startup Package FOTA?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "platform_service_fota_start_up_package",
+        "key_value": "No",
+        "ai_understanding": "Not Applicable (There is no discussion about Over-the-Air (FOTA) updates in the report, so there's no need for a corresponding startup package.)",
+        "flag_assumptions": true,
+        "mandatory": false,
+        "information": "Interest in Startup package for FOTA identified"
+      },
+      {
+        "id": "PS5",
+        "question": "Does customer have interest in Elektrobit modules (SWCs)?",
+        "possible_answers": [
+          "No",
+          "Yes",
+          "tbd",
+          "Need Assistance"
+        ],
+        "default_answer": "No",
+        "instruction": null,
+        "key_name": "platform_service_elektrobit_modules_swc",
+        "key_value": "No",
+        "ai_understanding": "Possibly (The report mentions interfacing with CAN devices and LIN slaves, which might involve using software modules or SWCs, but it does not explicitly state this requirement.)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "Interest in Software modules or SWCs identified"
+      },
+      {
+        "id": "PS6",
+        "question": "What are the customer's remarks regarding platform service topic?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "platform_service_customer_comments",
+        "key_value": "The platform services required for this project include a microcontroller capable of meeting ASIL-D requirements (with a potential ASIL-B to ASIL-D decomposition), Ethernet support with security features and secure diagnostics, an Intrusion Detection and Prevention System (IDPS), an Ethernet switch, and possibly MacSEC encryption for the Ethernet LAN. The microcontroller under consideration is TC397, and the microprocessor might be a Traveo II. It's also worth noting that the system needs to interface with CAN devices, some of which may have limited functionality, and LIN slaves. (The report provides an overview of the required platform services for the remote steering system project, mentioning the need for various components such as the microcontroller, Ethernet support, IDPS, switch, encryption, and interfacing with CAN devices and LIN slaves.)",
+        "ai_understanding": "The platform services required for this project include a microcontroller capable of meeting ASIL-D requirements (with a potential ASIL-B to ASIL-D decomposition), Ethernet support with security features and secure diagnostics, an Intrusion Detection and Prevention System (IDPS), an Ethernet switch, and possibly MacSEC encryption for the Ethernet LAN. The microcontroller under consideration is TC397, and the microprocessor might be a Traveo II. It's also worth noting that the system needs to interface with CAN devices, some of which may have limited functionality, and LIN slaves. (The report provides an overview of the required platform services for the remote steering system project, mentioning the need for various components such as the microcontroller, Ethernet support, IDPS, switch, encryption, and interfacing with CAN devices and LIN slaves.)",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment about platform services"
+      }
+    ]
+  },
+  {
+    "id": "a8a52f2f-a26c-41dc-b3cf-b2f2e30bde2d",
+    "key_name": "end_section",
+    "key_value": "Rheinmetall wants to build a new generation of trucks that shall be possible to steer remotely. Therefore, a fail-operational steering system with ADAS features needs to be constructed on an SoC with a micro processor and a micro controller.\\nThe micro controller needs to fulfill ASIL-D requiremends. The micro controller needs to fulfill ASIL-B to realize a ASIL-D to ASIL-B decomposition.\\nEthernet support and security features are required. secure diagnostics are required. An IDPS is required, as well as a switch and possibly MacSEC encryption of the whole Ethernet LAN.\\nThe micro controller will likely be an TC397, and the micro processor possibly a Traveo II.\\nThe steering system also needs to interface with supporting CAN devices, some of which may have very limited functionality, and even LIN slaves.",
+    "ai_understanding": "",
+    "flag_assumptions": true,
+    "possible_answers": null,
+    "default_answer": null,
+    "mandatory": false,
+    "information": "Summary Section",
+    "children": [
+      {
+        "id": "E1",
+        "question": "Does customer have any final comment or requests after reaching out to the end of this questionnaire?",
+        "possible_answers": null,
+        "default_answer": "None",
+        "instruction": null,
+        "key_name": "end_general_comment",
+        "key_value": ":",
+        "ai_understanding": ":",
+        "flag_assumptions": false,
+        "mandatory": false,
+        "information": "General comment or request"
+      }
+    ]
+  }
+]

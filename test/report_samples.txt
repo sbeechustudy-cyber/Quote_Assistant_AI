@@ -1,0 +1,200 @@
+I'm sales manager, please analyze my minute report:
+
+I'm sales manager, please analyze my minute report (lukas@me.com, consider AUTOSAR 4.4, compiler/MCAL defined later on, BSW runs on single core, lockstep mode): 
+
+I'm sales manager, please analyze my minute report:
+I'm sales manager, please analyze my minute report (assumptions from sales manager: lukas@me.com, consider AUTOSAR 4.4, compiler/MCAL defined later on, BSW runs on single core, lockstep mode): 
+
+I'm sales manager, please analyze my minute report:
+Hi
+
+I'm sales manager.
+
+Hereafter my meeting report with a customer, and check if you got all mandatory information for a quote:
+
+Bonjour Lukas,
+
+Here are the meeting notes for your checking before we move to your required Non Binding Price Indication
+
+Participants :
+April 30th, Mobileye Koblenz, Germany
+Lukas Malmann, Head of SW R&D for Mobileye (lukas@me.com)
+Fabrice Zappulla, BSA at Elektrobit
+Bruno Abou Head of Product Sales at Elektrobit
+Anne Joubert, Sales Manager at Elektrobit
+
+
+As discussed, you would like us to quote the following project, if my notes are correct :
+You are yourself consulted by VW on their MLB Evo platform. SOP date : July 2027. RFM one year ahead.
+
+The ECU is a Radar system and the MCU you would like to use is a S32K344.
+So far, the only information you have received from VW is that this ECU is ASIL-B in term of Safety Level.
+
+The compiler has not been selected so far.
+
+
+The ECU is connected on both CAN-FD and LIN.
+It does not require any Software update operating mode.
+
+It requires to be compliant with the VW Security requirements. But does not need any HSM firmware from EB but HSE from NXP.
+You also would like to know the costs of the total Basic Software including 1 year of maintenance after SOP.
+And you would need 10 seats of tresos Studio tooling (Single user permanent license enough, no floating needed)
+
+Mobileye would also like to know the cost of 1 on-site support engineer for 3-months at project start (July 2025).
+
+Lukas, we will come back to you very shortly when the Price Indication has been finalized and approved !
+Wishing you a lovely day…
+
+Regards, Bruno
+
+
+---------------------
+
+I have two cases, single core and multicore, it is an ASIL-B project for AUDIT OEM,µC TC397 there is Ethernet com, no security, please list all product items required for both cases
+
+I have two cases, single core and multicore with BSW runs on more one core, it is an ASIL-B project for AUDIT OEM,µC TC397 there is Ethernet com, no security, please list all product items required for both cases 
+
+I have two cases, single core and multicore with BSW runs on more one core, it is an ASIL-B project for AUDIT OEM, I don't need a certified OS,µC TC397 there is Ethernet com, no security, please list all product items required for both cases 
+ 
+
+ 
+---------------------
+Hi
+
+I'm Carl McConor, I'm working at Mobileye Company in Germany, I need to setup a new ECU for 3 OEMs (names cannot be disclosed).
+My email address is carl.mcconor@me.com.
+We need to setup a new ECU for ADAS based on NXP S32G399 MCAL RTD5.0, compiler GH v2021.5
+We need multicore for executing BSW, we have only CAN bus with partial networking, we don't use any other buses, only one CAN transceiver, hardware not yet identified
+We want a license model, no royalty
+the project shall comply with ASIL-D level, we don't need Fail operational feature, AUTOSAR version 4.4 is required
+HSM will be required with a Secure Boot, a Bootloader is required with a boot updater, no SW update, No V2G
+2 years of developments, 1st vehicle SOP date is Q3 2028, RFM date is Q1 2028, SOD is Q3 2025, FC 26/05/2026, ECU SOP July 2027
+no LTS and no cybersecirity maintenance
+We need 20 seats for tresos studio tooling, in floating license with subscription
+The PI must be got by end of the week.
+
+Thank you
+Carl
+
+Q1: no CAN transceiver, Q2: DCM is required, Q3 it is a bootloader level2, Q4: for the time being we need a standard secure boot
+
+------------
+
+Hi could you please list all required product items for tresos 9 if ASIL compliance is D and no fail op, I have one ethernet transceiver, 1 can transceiver, BSPs and QPs required, µC is standard, and MCAL is provided, group by license type thanks
+
+---------------------
+
+Hi,
+
+My name is Roberto Santos, Software Architect at Continental company, in the BU powertrains.
+For my project, we must design a new ECU empowered by a µC from NXP, S32K358. This is ASIL-D project, we need CAN and Ethernet Buses, without security. Bootloader is required with also a bootloader updater.
+SoP date is Q3 2028, SoD is Q3 2025, we will produce 200K units/year, for 3 OEMs, I will need to know which license I'll have to use.
+
+a PI is expected by end of next week.
+
+Thanks in advance for considering my request
+
+
+---------------------------------
+
+
+Hi,
+
+My name is Roberto Santos, Software Architect at Continental company, in the BU powertrains.
+For my project, we must design a new ECU empowered by a µC from NXP, S32K358. This is ASIL-D project, we need CAN and Ethernet Buses (NXP TJA1044GT and NXP TJA1101), security (TLS). Bootloader is required with also a bootloader updater.
+SoP date is Q3 2028, SoD is Q3 2025, we will produce 200K units/year, for 3 OEMs, I need a project license, 2 years of extension development maintenance, 3 years of LTS maintenance. Qualification packages are required, I need also start up packages.
+
+roberto@toto.com, I need studio, no cyber maintenance, compiler not yet known
+
+a PI is expected by end of next week.
+
+Thanks in advance for considering my request
+
+
+---------------------------------
+2 ECUs 
+ 1 ECU µC NXP S32K312 
+ 1 ECU µC NXP S32K324 multicore
+
+General Project and Timeline
+ECU Name/Domain: I/O Expander
+OEM Platform: Multiple (Heavy duty, bus)
+OEM SOP: End 2027 - Beginning 2028
+ECU SOP: Not explicitly listed
+SW Feature Completion (FC): December / January 2025–2026
+Hardware:
+µC Manufacturer: NXP
+µC Derivatives: S32K312 (Single Core), S32K324 (Multicore)
+Cores: Mixed (324 Multicore, 312 Single Core)
+BSW Distribution: yes for S32K324
+Hardware Accelerators: No
+Virtualization / Hypervisor: No
+Compiler: Windriver diab compiler
+ASIL-B
+Need to support Post Build Loadable
+Communication: CAN/CAN-FD, LIN (Master) and Ethernet
+transceivers: TCAN1043, TLIN1021A-Q1, DP83TD545
+Security Event logging	yes
+IPsec			no
+MACsec			TBD
+TLS or DTLS		yes
+Do you need to build a fail-operational system?				no
+Which private bus shall be fail-operational?				None
+In which ECU sample the fail-operational bus shall be available?				None
+
+	Software update strategy						
+		Dual bank-capable FBL required			yes		1. OTA A/B
+		External memory device			no		
+		Slaves to be updated			no		
+		Bootloader Updater required			yes		
+		Boot Manager			yes		
+		Secure Boot required			yes		
+
+---------------------------
+customer is Dan Dustinta dan.dustinta@autoliv.com
+from company AUTOLIV it is a tier1
+it is localized in Romania
+ASIL-B project
+no HSM
+Project license
+µC is CYT2B75CADES
+Compiler GHS version MULTI_7.1.4_Comp_2017.1.4_ARM
+
+MCAL version is MCAL-TraveoII_v1.17.0, BL 3.14.0
+
+------------------
+
+customer is NEUMANN David (HELLA) <david.neumann@forvia.com>
+company is Forvia
+OEM is GM
+Located in Czech Republic, region Europe
+OEM restricted license
+µC is CYT2B72DAE 
+compiler Green Hills
+ASIL-B
+bus CAN-FD only with transceiver TCAN1044 or TCAN1057
+SW update FBL and FOTA
+Bootloader updater required
+Boot manager required
+secure boot required
+Security Event Logging
+HSM required
+
+
+-----------------
+
+customer is Dan Dustinta dan.dustinta@autoliv.com
+from company AUTOLIV it is a tier1
+quote region europe
+it is localized in Romania
+ASIL-B project, single core
+no HSM
+bootloader required with extension package
+software update for flash bootloader
+Project license
+µC is CYT2B75CADES
+Compiler GHS version MULTI_7.1.4_Comp_2017.1.4_ARM
+
+MCAL version is MCAL-TraveoII_v1.17.0, BL 3.14.0
+
+

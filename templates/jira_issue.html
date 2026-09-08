@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ issue.key }} – {{ issue.fields.summary }}</title>
+  <style>
+    /* Base Atlassian-like */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f4f5f7;
+      margin: 0;
+      padding: 24px;
+      color: #172B4D;
+    }
+    .issue-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(9,30,66,.15);
+      padding: 24px;
+    }
+    .header {
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .key { font-size: 20px; font-weight: 600; color: #0052CC; }
+    .summary { font-size: 24px; font-weight: 500; margin: 6px 0 16px; }
+
+    .status {
+      display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 600; color: #fff;
+    }
+    .status-Todo { background: #97A0AF; }
+    .status-InProgress { background: #0052CC; }
+    .status-Done { background: #36B37E; }
+    .status-Review { background: #6554C0; }
+
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; color: #5E6C84; margin-bottom: 20px;
+    }
+    .field { margin: 18px 0; }
+    .label { display: block; font-size: 12px; font-weight: 700; color: #42526E; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .02em; }
+    .rendered {
+      background: #F4F5F7; border-radius: 6px; padding: 12px; font-size: 14px; line-height: 1.55;
+    }
+
+    /* Bordures pour tableaux rendus par Jira (description/environment) */
+    .rendered table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+    .rendered table, .rendered th, .rendered td { border: 1px solid #dfe1e6; }
+    .rendered th, .rendered td { padding: 6px 10px; text-align: left; }
+
+    /* Labels */
+    .labels span {
+      background: #DEEBFF; color: #0747A6; font-size: 12px;
+      padding: 4px 8px; border-radius: 3px; margin-right: 6px; display: inline-block;
+    }
+
+    /* Attachments & links & comments */
+    .list-block { margin: 0; padding-left: 18px; }
+    .list-block li { margin: 4px 0; }
+    a { color: #0052CC; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .comment {
+      margin-bottom: 12px; padding: 10px; border-left: 3px solid #0052CC; background: #FAFBFC; border-radius: 4px;
+    }
+    .comment .author { font-weight: 600; }
+    .comment .date { font-size: 12px; color: #6B778C; }
+
+    /* Sub-tasks table */
+    .subtasks-table {
+      width: 100%; border-collapse: collapse; margin-top: 8px;
+    }
+    .subtasks-table th, .subtasks-table td {
+      border: 1px solid #dfe1e6; padding: 8px 10px; text-align: left; font-size: 14px;
+    }
+    .subtasks-table th {
+      background: #F4F5F7; font-weight: 700; color: #42526E;
+    }
+    
+  .section {
+    margin: 14px 0;
+    border: 1px solid #DFE1E6;
+    border-radius: 6px;
+    background: #FAFBFC;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .section-header:hover {
+    background: #EBECF0;
+  }
+  .section-arrow {
+    transition: transform 0.2s;
+    margin-right: 8px;
+    font-size: 14px;
+    color: #42526E;
+  }
+  .section-header.open .section-arrow {
+    transform: rotate(90deg);
+  }
+  .section-title {
+    font-weight: 600;
+    color: #172B4D;
+    font-size: 14px;
+  }
+
+  .section-content {
+    display: none;
+    padding: 8px 16px 12px 32px;
+    border-top: 1px solid #DFE1E6;
+  }  
+  </style>
+</head>
+<body>
+  <div class="issue-container">
+
+    <!-- Header -->
+    <div class="header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div style="display: flex; align-items: center; gap: 4px;">
+          {% if issue.fields.parent %}
+            <a class="parent-key" href="/jira_issue/{{ issue.fields.parent.key }}" target="_self" style="font-size: 14px; color: #42526E;">
+              ← {{ issue.fields.parent.fields.summary }}
+            </a>
+            <span style="color:#5E6C84; ">/</span>
+          {% endif %}    
+
+          <a class="key" href="https://jira.elektrobit.com/browse/{{ issue.key }}" target="_blank">
+            {{ issue.key }}
+          </a>
+      </div>
+      <div class="status status-{{ issue.fields.status.name | replace(' ', '') }}">{{ issue.fields.status.name }}</div>
+    </div>
+    <div class="summary">{{ issue.fields.summary }}</div>
+
+    <!-- Meta -->
+    <div class="meta">
+      <span>👤 {{ issue.fields.assignee.displayName if issue.fields.assignee else "Unassigned" }}</span>
+      <span>🧑‍💼 Reporter: {{ issue.fields.reporter.displayName if issue.fields.reporter else "—" }}</span>
+      <span>🔺 Priority: {{ issue.fields.priority.name if issue.fields.priority else "None" }}</span>
+      <span>📅 Created: {{ issue.fields.created }}</span>
+      <span>🔄 Updated: {{ issue.fields.updated }}</span>
+      <span>📌 {{ issue.fields.issuetype.name }}</span>
+    </div>
+
+    <!-- Labels -->
+    <div class="field">
+      <span class="label">Labels</span>
+      <div class="labels">
+        {% if issue.fields.labels and issue.fields.labels|length > 0 %}
+          {% for label in issue.fields.labels %}<span>{{ label }}</span>{% endfor %}
+        {% else %}
+          <span>None</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Description (HTML Jira) -->
+    <div class="field">
+      <span class="label">Description</span>
+      <div class="rendered">
+        {{ issue.renderedFields.description | safe }}
+      </div>
+    </div>
+
+    <!-- Environment (HTML Jira si présent) -->
+    {% if issue.renderedFields.environment %}
+      <div class="field">
+        <span class="label">Environment</span>
+        <div class="rendered">
+          {{ issue.renderedFields.environment | safe }}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Attachments -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-arrow">▶</span>
+        <span class="section-title">Attachments ({{ issue.fields.attachment|length if issue.fields.attachment else 0 }})</span>
+      </div>
+      <div class="section-content">
+        {% if issue.fields.attachment and issue.fields.attachment|length > 0 %}
+          <ul class="list-block">
+            {% for att in issue.fields.attachment %}
+              <li>📎 <a href="{{ att.content }}" target="_blank">{{ att.filename }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div class="rendered">No attachments</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Issue Links -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-arrow">▶</span>
+        <span class="section-title">
+          Issue Links ({{ issue.fields.issuelinks|length if issue.fields.issuelinks else 0 }})
+        </span>
+      </div>
+      <div class="section-content">
+        {% if issue.fields.issuelinks and issue.fields.issuelinks|length > 0 %}
+          <ul class="list-block">
+            {% for link in issue.fields.issuelinks %}
+              <li>
+                {% if link.outwardIssue %}
+                  🔗 {{ link.type.outward }} :
+                  <a href="/jira_issue/{{ link.outwardIssue.key }}">{{ link.outwardIssue.key }}</a> — {{ link.outwardIssue.fields.summary }}
+                {% elif link.inwardIssue %}
+                  🔗 {{ link.type.inward }} :
+                  <a href="/jira_issue/{{ link.inwardIssue.key }}">{{ link.inwardIssue.key }}</a> — {{ link.inwardIssue.fields.summary }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div class="rendered">No issue links</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Sub-tasks (tableau) -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-arrow">▶</span>
+        <span class="section-title">
+          Sub-tasks ({{ issue.fields.subtasks|length if issue.fields.subtasks else 0 }})
+        </span>
+      </div>
+      <div class="section-content">
+        {% if issue.fields.subtasks and issue.fields.subtasks|length > 0 %}
+          <ul class="list-block">
+            {% for st in issue.fields.subtasks %}
+              <li>
+                🔹 <a href="/jira_issue/{{ st.key }}">{{ st.key }}</a> — {{ st.fields.summary }}
+                <span style="color: #5E6C84; font-size: 12px;">({{ st.fields.status.name }})</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div class="rendered">No sub-tasks</div>
+        {% endif %}
+      </div>
+    </div>
+    <!-- Comments (body converti -> HTML) -->
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span class="section-arrow">▶</span>
+        <span class="section-title">Comments ({{ issue.fields.comment.comments|length if issue.fields.comment else 0 }})</span>
+      </div>
+      <div class="section-content">
+        {% if issue.fields.comment.comments and issue.fields.comment.comments|length > 0 %}
+          {% for c in issue.fields.comment.comments %}
+            <div class="comment">
+              <div class="author">{{ c.author.displayName }}</div>
+              <div class="date">{{ c.created }}</div>
+              <div class="rendered">{{ c.html | safe }}</div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="rendered">No comments</div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</body>
+<script>
+    function toggleSection(header) {
+        const section = header.parentElement;
+        const content = section.querySelector(".section-content");
+        header.classList.toggle("open");
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+    }
+</script>
+</html>

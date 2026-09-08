@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opportunity Details</title>
+  <style>
+    body {
+      font-family: "Salesforce Sans", Arial, sans-serif;
+      margin: 20px;
+      background: #f5f5f5;
+    }
+    .section {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+      font-weight: bold;
+      color: #16325c;
+    }
+    .toggle-icon {
+      margin-right: 8px;
+      font-size: 14px;
+      transition: transform 0.2s ease;
+    }
+    .collapsed .toggle-icon {
+      transform: rotate(-90deg);
+    }
+    .section-content {
+      padding: 12px 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+    .field {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding: 4px 0;
+    }
+    .field-label {
+      font-weight: 600;
+      color: #444;
+    }
+    .field-value {
+      flex: 1;
+      margin-left: 8px;
+      color: #222;
+    }
+    .edit-icon {
+      cursor: pointer;
+      font-size: 14px;
+      color: #0070d2;
+      margin-left: 8px;
+    }
+    .field-input {
+      width: 100%;
+      padding: 2px 4px;
+      font-size: 14px;
+    }    
+  </style>
+</head>
+<body data-opportunity-id="{{ opportunity.Id }}">
+
+  <!-- Section Opportunity Info -->
+  <div class="section" id="section-opportunity">
+    <div class="section-header" onclick="toggleSection('section-opportunity')">
+      <span class="toggle-icon">▼</span> Opportunity Info
+    </div>
+    <div class="section-content">
+      <div class="field">
+        <span class="field-label">Opportunity Number</span>
+        <span class="field-value">{{ opportunity.OpportunityNumber }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Account Manager</span>
+        <span class="field-value">{{ opportunity.AccountManager }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Opportunity Name</span>
+        <span class="field-value">{{ opportunity.Name }}</span>
+        <span class="edit-icon" onclick="editField(this)">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Bid Lead Name</span>
+        <span class="field-value">{{ opportunity.BidLeadName }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Parent Opportunity</span>
+        <span class="field-value">{{ opportunity.ParentOpportunity }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Head of Programs</span>
+        <span class="field-value">{{ opportunity.HeadOfPrograms }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Original Opportunity</span>
+        <span class="field-value">{{ opportunity.OriginalOpportunity }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Technical Bid Responsible</span>
+        <span class="field-value">{{ opportunity.TechnicalBidResponsible }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Account & Group Relation -->
+  <div class="section" id="section-account">
+    <div class="section-header" onclick="toggleSection('section-account')">
+      <span class="toggle-icon">▼</span> Account & Group Relation
+    </div>
+    <div class="section-content">
+      <div class="field">
+        <span class="field-label">Account Name</span>
+        <span class="field-value">{{ opportunity.AccountName }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Tier 1</span>
+        <span class="field-value">{{ opportunity.Tier1 }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">OEM</span>
+        <span class="field-value">{{ opportunity.OEM }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Department at Conti</span>
+        <span class="field-value">{{ opportunity.DepartmentAtConti }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Facts and Figures -->
+  <div class="section" id="section-facts">
+    <div class="section-header" onclick="toggleSection('section-facts')">
+      <span class="toggle-icon">▼</span> Facts and Figures
+    </div>
+    <div class="section-content">
+      <div class="field">
+        <span class="field-label">Amount</span>
+        <span class="field-value">{{ opportunity.Amount }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Probability (%)</span>
+        <span class="field-value">{{ opportunity.Probability }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Stage</span>
+        <span class="field-value">{{ opportunity.StageName }}</span>
+        <span class="edit-icon" onclick="editField(this, {{ opportunity.Stage.options|tojson }})" data-options='{{ opportunity.Stage.options|tojson }}'>✏️</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Market</span>
+        <span class="field-value">{{ opportunity.Market }}</span>
+        <span class="edit-icon">✏️</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".edit-icon").forEach(icon => {
+      icon.addEventListener("click", () => {
+        const options = icon.dataset.options ? JSON.parse(icon.dataset.options) : null;
+        editField(icon, options);
+      });
+    });  
+    
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.classList.toggle("collapsed");
+      const content = section.querySelector(".section-content");
+      const icon = section.querySelector(".toggle-icon");
+
+      if (section.classList.contains("collapsed")) {
+        content.style.display = "none";
+        icon.textContent = "▶";
+      } else {
+        content.style.display = "grid";
+        icon.textContent = "▼";
+      }
+    }
+    
+    async function editField(icon, options = null) {
+      const field = icon.closest(".field");
+      const fieldName = field.dataset.field;
+      const valueEl = field.querySelector(".field-value");
+      const currentValue = valueEl.textContent.trim();
+
+      let input;
+      if (options) {
+        input = document.createElement("select");
+        input.className = "field-input";
+        options.forEach(opt => {
+          const optionEl = document.createElement("option");
+          optionEl.value = opt;
+          optionEl.textContent = opt;
+          if (opt === currentValue) optionEl.selected = true;
+          input.appendChild(optionEl);
+        });
+      } else {
+        input = document.createElement("input");
+        input.type = "text";
+        input.className = "field-input";
+        input.value = currentValue;
+      }
+
+      valueEl.style.display = "none";
+      valueEl.insertAdjacentElement("afterend", input);
+      input.focus();
+
+      input.addEventListener("blur", () => saveField(fieldName, input, valueEl));
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          saveField(fieldName, input, valueEl);
+        }
+      });
+    }
+
+    async function saveField(fieldName, input, valueEl) {
+      const newValue = input.value.trim();
+      const oppId = document.body.dataset.opportunityId;
+      console.log(`Update of field $(fieldName) newValue=${newValue} for oppId ${oppId}`
+      
+      // Mise à jour côté backend Flask
+      const response = await fetch(`/opportunity/${oppId}/update`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ field: fieldName, value: newValue })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        valueEl.textContent = newValue;
+      } else {
+        alert("Erreur de mise à jour: " + result.error);
+      }
+
+      valueEl.style.display = "inline";
+      input.remove();
+    }    
+    function editFieldOld(icon, type = "text", options = []) {
+      const field = icon.closest(".field");
+      const valueEl = field.querySelector(".field-value");
+      const currentValue = valueEl.textContent.trim();
+
+      if (field.querySelector("input, select")) return; // déjà en édition
+
+      let input;
+      if (type === "select") {
+        input = document.createElement("select");
+        input.className = "field-input";
+        options.forEach(opt => {
+          const optionEl = document.createElement("option");
+          optionEl.value = opt;
+          optionEl.textContent = opt;
+          if (opt === currentValue) optionEl.selected = true;
+          input.appendChild(optionEl);
+        });
+      } else {
+        input = document.createElement("input");
+        input.type = "text";
+        input.className = "field-input";
+        input.value = currentValue;
+      }
+
+      // Remplacer valeur par input
+      valueEl.style.display = "none";
+      valueEl.insertAdjacentElement("afterend", input);
+      input.focus();
+
+      // Sauvegarde au blur ou Enter
+      input.addEventListener("blur", () => saveField(input, valueEl));
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          saveField(input, valueEl);
+        }
+      });
+    }
+
+    function saveFieldOld(input, valueEl) {
+      const newValue = input.value.trim();
+      valueEl.textContent = newValue;
+      valueEl.style.display = "inline";
+      input.remove();
+
+      // TODO: envoyer valeur modifiée au backend Flask
+      console.log("Champ modifié:", valueEl.closest(".field").dataset.field, "=", newValue);
+    }    
+  </script>
+
+</body>
+</html>

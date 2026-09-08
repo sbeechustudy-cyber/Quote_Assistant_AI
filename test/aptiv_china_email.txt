@@ -1,0 +1,13 @@
+Dear Chen Bollen,
+
+I appreciate your reaching out to us regarding the setup of a new ECU for three OEMs at Aptiv in China, where you serve as Chief Architect. Your contact details are bollen.chen@aptiv.com and 8619941854612.
+
+The ECU we will be working on is an ADAS system built around Infineon TC323LP using Infineon version TC3xx_2.10, along with HighTec compiler version 4.9. Our focus is on implementing multicore support for executing BSW modules, and we'll utilize only CAN bus communication (partial networking) as the primary means of interaction. It should be noted that only one CAN transceiver will be used, and the hardware has not been finalized yet.
+
+Regarding licensing, we recommend a product line license model without any royalties. The project must adhere to ASIL-D level standards, and AUTOSAR version 4.4 is required. However, we do not need to incorporate Fail operational features. We will provide HSM with Secure Boot, as well as a Bootloader equipped with a boot updater. Our SW update strategy will be based on flash bootloader and does not include V2G functionality.
+
+With regards to the timeline, the development phase will span 2 years, with the SOP date for the first vehicle set for Q3 2028, RFM date scheduled for Q1 2028, SOD slated for Q3 2025, FC on 26/05/2026, and the ECU's SOP planned for July 2027. We do not require LTS or cyber security maintenance during this period.
+
+Lastly, we will provide you with 20 seats for Tresos Studio tooling in a floating license with subscription. Please note that the Proposal Information (PI) must be completed by the end of this week.
+
+Thank you, Chen, for your cooperation and collaboration.

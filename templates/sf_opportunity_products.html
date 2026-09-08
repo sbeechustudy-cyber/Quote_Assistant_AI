@@ -1,0 +1,23 @@
+<div class="slds-p-around_medium">
+  <h2 class="slds-text-heading_small">Products</h2>
+  <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+    <thead>
+      <tr class="slds-line-height_reset">
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in products %}
+      <tr>
+        <td>{{ p.name }}</td>
+        <td>{{ p.quantity }}</td>
+        <td>{{ p.unit_price }}</td>
+        <td>{{ p.total }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

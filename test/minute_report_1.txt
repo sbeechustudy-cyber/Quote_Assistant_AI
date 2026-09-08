@@ -1,0 +1,16 @@
+Hi
+
+I'm Carl McConor, I'm working at Mobileye Company in Germany as Chief Architect, I need to setup a new ECU for 3 OEMs (names cannot be disclosed).
+My email address is carl.mcconor@me.com, phone is +3364545780.
+We need to setup a new ECU for ADAS based on NXP S32G399 with MCAL version RTD5.0, and compiler GH version v2021.5
+We need multicore support for executing BSW modules , about communication we have only CAN bus with support of partial networking, we don't use any other buses, only one CAN transceiver, hardware not yet identified
+We want a license model (certainly a product line license type is suitable), no royalty
+the project shall comply with ASIL-D level, we don't need Fail operational feature, AUTOSAR version 4.4 is required
+HSM will be required with a Secure Boot, a Bootloader is required with a boot updater, SW update strategy is flash bootloader, No V2G
+2 years of developments, 1st vehicle SOP date is Q3 2028, RFM date is Q1 2028, SOD is Q3 2025, FC 26/05/2026, ECU SOP July 2027
+no LTS and no cyber security maintenance are required.
+We need 20 seats for tresos studio tooling, in floating license with subscription
+The PI must be got by end of the week.
+
+Thank you
+Carl

@@ -1,0 +1,12 @@
+Hi,
+
+My name is Fabrice Santos, Software Architect at Continental company, in the BU powertrains.
+For my project, we must design a new ECU empowered by a µC from NXP, S32K358. This is ASIL-D project, we need CAN and Ethernet Buses (NXP TJA1044GT and NXP TJA1101), security (TLS). Bootloader is required which need to be updated (Bootloader Updater).
+SoP date is Q3 2028, SoD is Q3 2025, we will produce 200K units/year during 4 years, for 3 OEMs (Volvo, Renault and the last one cannot be disclosed), I need a project license, 2 years of extension development maintenance, 3 years of LTS maintenance. Qualification packages are required, I need also startup packages for both Bootloader and Application.
+
+roberto@toto.com, I need studio, no cyber maintenance, compiler not yet known
+
+a PI is expected by end of next week.
+
+Thanks in advance for considering my request
+

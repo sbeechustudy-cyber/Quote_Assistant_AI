@@ -1,0 +1,68 @@
+
+tasklist /FI "IMAGENAME eq python.exe"
+
+taskkill /F /IM python.exe /T
+
+python -m pip install MON_package --upgrade --target=C:\Python312\Lib\site-packages
+
+python .\app.py --port=9443 --run --timeOutSSE=-1 --poolsize=15 --pwd=***
+
+python .\product_configurator.py --testReset --noAI --pwd=****
+ 
+python .\app.py --stop --port=9443
+
+python .\decrypt_secret.py --envfile --pwd=your_pwd
+
+python .\encrypt_secret.py --json --pwd=your_pwd
+
+cypher3
+
+//update SF db
+python .\db_sales_force_manager.py --pwd=***
+//test SQL query
+python .\db_sales_force.py --pwd=***
+//generate SF schema
+python sf_schema_generation.py
+//update pricelist
+python .\db_price_list.py
+
+python .\populate.py --pwd=***
+
+python -m pip install pysqlitecipher --upgrade --target=C:\Python312\Lib\site-packages
+python -m pip install pysqlcipher3 --upgrade --target=C:\Python312\Lib\site-packages
+python -m pip install sqlcipher3-wheels --upgrade --target=C:\Python312\Lib\site-packages
+pip install sqlcipher3-wheels
+
+git clone https://github.com/microsoft/vcpkg.git
+.\vcpkg\bootstrap-vcpkg.bat
+.\vcpkg\vcpkg install sqlcipher:x64-windows
+
+pip install pysqlcipher3 --global-option=build_ext --global-option="-IC:\temp\vcpkg\installed\x64-windows\include" --global-option="-LC:\temp\vcpkg\installed\x64-windows\lib"
+
+dumpbin /dependents .\sqlcipher.dll
+
+Get-Command    WS2_32.dll
+Get-Command    ADVAPI32.dll
+Get-Command    CRYPT32.dll
+Get-Command    USER32.dll
+Get-Command    KERNEL32.dll
+Get-Command    VCRUNTIME140.dll
+Get-Command    api-ms-win-crt-string-l1-1-0.dll
+Get-Command    api-ms-win-crt-stdio-l1-1-0.dll
+Get-Command    api-ms-win-crt-convert-l1-1-0.dll
+Get-Command    api-ms-win-crt-time-l1-1-0.dll
+Get-Command    api-ms-win-crt-utility-l1-1-0.dll
+Get-Command    api-ms-win-crt-heap-l1-1-0.dll
+Get-Command    api-ms-win-crt-runtime-l1-1-0.dll
+Get-Command    api-ms-win-crt-filesystem-l1-1-0.dll
+Get-Command    api-ms-win-crt-environment-l1-1-0.dll
+
+Get-Command    libcrypto-3-x64.dll
+Get-Command    KERNEL32.dll
+Get-Command    VCRUNTIME140.dll
+Get-Command    api-ms-win-crt-heap-l1-1-0.dll
+Get-Command    api-ms-win-crt-stdio-l1-1-0.dll
+Get-Command    api-ms-win-crt-convert-l1-1-0.dll
+Get-Command    api-ms-win-crt-string-l1-1-0.dll
+Get-Command    api-ms-win-crt-time-l1-1-0.dll
+Get-Command    api-ms-win-crt-runtime-l1-1-0.dll

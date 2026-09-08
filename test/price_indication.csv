@@ -1,0 +1,23 @@
+﻿Product Family;Product Name;Product Item Name;Price List;Article Number;License Type;Currency;Quantity;Unit Price;Valid From;License Group Number;Total Price
+EB tresos 9;EB tresos 9 AutoCore Generic 9 (ACG9);EB tresos 9 - AutoCore Generic Base Package;Euro;159-9510-107;Product Line License;EUR;1;696040.00;2025-08-01;1;696040.00
+EB tresos 9;EB tresos 9 AutoCore Generic 9 (ACG9);EB tresos 9 - AutoCore Generic Multicore Package;Euro;159-9515-107;Product Line License;EUR;1;126790.00;2025-08-01;1;126790.00
+EB tresos 9;EB tresos 9 AutoCore Generic 9 (ACG9);EB tresos 9 - AutoCore Generic Safety A/B Package;Euro;159-9511-107;Product Line License;EUR;1;327060.00;2025-08-01;1;327060.00
+EB tresos 9;EB tresos 9 AutoCore Generic 9 (ACG9);EB tresos 9 - AutoCore Generic Safety C/D Package;Euro;159-9512-107;Product Line License;EUR;1;186300.00;2025-08-01;1;186300.00
+EB tresos 9;EB tresos 9 AutoCore Generic 9 (ACG9);EB tresos 9 - AutoCore Generic Security Package;Euro;159-9514-107;Product Line License;EUR;1;178540.00;2025-08-01;1;178540.00
+EB tresos 9;EB tresos 9 AutoCore OEM Extensions for Essentials;EB tresos 9 - AutoCore OEM Extension Bootloader Package for Essentials;Euro;159-9550-107;Product Line License;EUR;1;168190.00;2025-08-01;1;168190.00
+EB tresos 9;EB tresos 9 Safety OS;EB tresos 9 - Safety OS (up to ASIL-D) Package;Euro;159-9541-107;Product Line License;EUR;1;279450.00;2025-08-01;1;279450.00
+EB zentur;EB zentur HSM Firmware;EB zentur - HSM Firmware;Euro;159-6501-107;Product Line License;EUR;1;285760.00;2025-08-01;1;285760.00
+EB zoneo;EB zoneo ACM8;EB zoneo - ACM8 CanTrcv <HW>;Euro;159-5745-107;Product Line License;EUR;1;38300.00;2025-08-01;1;38300.00
+EB zoneo;EB zoneo ACM8;EB zoneo - ACM8 CanTrcv <HW> Partial Networking;Euro;159-5755-107;Product Line License;EUR;1;15430.00;2025-08-01;1;15430.00
+EB tresos 9;EB tresos Studio for ACG9;EB tresos 9 - EB tresos Studio;Euro;159-9500-483;Floating License - Subscription;EUR;1;14490.00;2025-08-01;2;14490.00
+EB tresos 9;EB tresos 9 Board Support Package;EB tresos 9 - Board Support Package Code Flash Driver;Euro;159-9574-507;BSP - standard µC;EUR;1;5180.00;2025-08-01;3;5180.00
+EB tresos 9;EB tresos 9 Board Support Package;EB tresos 9 - Board Support Package MCAL;Euro;159-9570-507;BSP - standard µC;EUR;1;12420.00;2025-08-01;3;12420.00
+EB tresos 9;EB tresos 9 Board Support Package;EB tresos 9 - Board Support Package Platform;Euro;159-9576-507;BSP - standard µC;EUR;1;15530.00;2025-08-01;3;15530.00
+EB tresos 9;EB tresos 9 Board Support Package;EB tresos 9 - Board Support Package Safety OS;Euro;159-9573-507;BSP - standard µC;EUR;1;51750.00;2025-08-01;3;51750.00
+EB tresos 9;EB tresos 9 SOP Qualification;EB tresos 9 - SOP Qualification Package for AutoCore Generic Base;Euro;159-9560-367;QP;EUR;1;5180.00;2025-08-01;4;5180.00
+EB tresos 9;EB tresos 9 SOP Qualification;EB tresos 9 - SOP Qualification Package for AutoCore Generic Multi-Core;Euro;159-9565-367;QP;EUR;1;5180.00;2025-08-01;4;5180.00
+EB tresos 9;EB tresos 9 SOP Qualification;EB tresos 9 - SOP Qualification Package for AutoCore Generic Security;Euro;159-9564-367;QP;EUR;1;5180.00;2025-08-01;4;5180.00
+EB tresos 9;EB tresos 9 SOP Qualification;EB tresos 9 - SOP Qualification Package for Bootloader for Essentials;Euro;159-9568-367;QP;EUR;1;10350.00;2025-08-01;4;10350.00
+EB tresos 9;EB tresos 9 SOP Qualification;EB tresos 9 - Safety Approval Package (OS);Euro;159-9578-367;QP;EUR;1;31050.00;2025-08-01;4;31050.00
+EB tresos 9;EB tresos 9 SOP Qualification;EB tresos 9 - Safety Approval Package (RTE, E2E, TimE);Euro;159-9579-367;QP;EUR;1;10350.00;2025-08-01;4;10350.00
+EB zentur;EB zentur HSM Firmware;EB zentur - HSM Firmware;Euro;159-6501-468;Qualification Package;EUR;1;18630.00;2025-08-01;5;18630.00

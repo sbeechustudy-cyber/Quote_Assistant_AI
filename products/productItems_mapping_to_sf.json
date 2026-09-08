@@ -1,0 +1,891 @@
+{
+  "eb-tresos-9---autocore-generic-base-package": {
+    "id": "eb-tresos-9---autocore-generic-base-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic Base Package",
+    "sf_product_name": "EB tresos AutoCore Generic 9 Base Package"
+  },
+  "eb-tresos-9---autocore-generic-ethernet-package": {
+    "id": "eb-tresos-9---autocore-generic-ethernet-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic Ethernet Package",
+    "sf_product_name": "EB tresos AutoCore Generic 9 Ethernet Package"
+  },
+  "eb-tresos-9---autocore-generic-flexray-package": {
+    "id": "eb-tresos-9---autocore-generic-flexray-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic FlexRay Package",
+    "sf_product_name": "EB tresos 9 ARFlex*"
+  },
+  "eb-tresos-9---autocore-generic-multicore-package": {
+    "id": "eb-tresos-9---autocore-generic-multicore-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic Multicore Package",
+    "sf_product_name": "EB tresos AutoCore Generic 9 Multi-Core Package"
+  },
+  "eb-tresos-9---autocore-generic-safety-a-b-package": {
+    "id": "eb-tresos-9---autocore-generic-safety-a-b-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic Safety A/B Package",
+    "sf_product_name": "EB tresos AutoCore Generic 9 Safety A/B or C/D Package"
+  },
+  "eb-tresos-9---autocore-generic-safety-c-d-package": {
+    "id": "eb-tresos-9---autocore-generic-safety-c-d-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic Safety C/D Package",
+    "sf_product_name": "EB tresos AutoCore Generic 9 Safety A/B or C/D Package"
+  },
+  "eb-tresos-9---autocore-generic-safety-fail-op-execution-package": {
+    "id": "eb-tresos-9---autocore-generic-safety-fail-op-execution-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic Safety Fail-Op Execution Package",
+    "sf_product_name": "EB tresos 9 - Fail-Op -*"
+  },
+  "eb-tresos-9---autocore-generic-security-package": {
+    "id": "eb-tresos-9---autocore-generic-security-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic Security Package",
+    "sf_product_name": "EB tresos AutoCore Generic 9 Security Package"
+  },
+  "eb-tresos-9---autocore-generic-v2g-chargein-asian-standards-package": {
+    "id": "eb-tresos-9---autocore-generic-v2g-chargein-asian-standards-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic V2G ChargeIn Asian Standards Package",
+    "sf_product_name": "EB tresos 9 - V2G"
+  },
+  "eb-tresos-9---autocore-generic-v2g-chargein-iso-15118-package": {
+    "id": "eb-tresos-9---autocore-generic-v2g-chargein-iso-15118-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore Generic 9 (ACG9)",
+    "Product_Item_Name": "EB tresos 9 - AutoCore Generic V2G ChargeIn ISO 15118 Package",
+    "sf_product_name": "EB tresos 9 - V2G"
+  },
+  "eb-tresos-9---autocore-oem-extension-application-package-for-bmw": {
+    "id": "eb-tresos-9---autocore-oem-extension-application-package-for-bmw",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OEM Extensions for BMW",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OEM Extension Application Package for BMW",
+    "sf_product_name": "EB tresos Solutions for BMW / SP2021 (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-9---autocore-oem-extension-startup-package-bootloader-for-bmw": {
+    "id": "eb-tresos-9---autocore-oem-extension-startup-package-bootloader-for-bmw",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OEM Extensions for BMW",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OEM Extension Startup Package Bootloader for BMW",
+    "sf_product_name": "EB tresos Solutions for BMW / SP2021 (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-9---autocore-oem-extension-startup-package-application-for-bmw": {
+    "id": "eb-tresos-9---autocore-oem-extension-startup-package-application-for-bmw",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OEM Extensions for BMW",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OEM Extension Startup Package Application for BMW",
+    "sf_product_name": "EB tresos Solutions for BMW / SP2021 (Start-up)"
+  },
+  "eb-tresos-9---autocore-oem-extension-bootloader-package-for-essentials": {
+    "id": "eb-tresos-9---autocore-oem-extension-bootloader-package-for-essentials",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OEM Extensions for Essentials",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OEM Extension Bootloader Package for Essentials",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  },
+  "eb-tresos-9---autocore-oem-extension-fota-handler-package-for-essentials": {
+    "id": "eb-tresos-9---autocore-oem-extension-fota-handler-package-for-essentials",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OEM Extensions for Essentials",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OEM Extension FOTA Handler Package for Essentials",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  },  
+  "eb-tresos-9---autocore-oem-extension-startup-package-application-for-essentials": {
+    "id": "eb-tresos-9---autocore-oem-extension-startup-package-application-for-essentials",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OEM Extensions for Essentials",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OEM Extension Startup Package Application for Essentials",
+    "sf_product_name": "EB tresos Solutions for Essentials (Start-up)"
+  },
+  "eb-tresos-9---autocore-oem-extension-startup-package-bootloader-for-essentials": {
+    "id": "eb-tresos-9---autocore-oem-extension-startup-package-bootloader-for-essentials",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OEM Extensions for Essentials",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OEM Extension Startup Package Bootloader for Essentials",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  },
+  "eb-tresos-9---autocore-oem-extension-startup-package-fota-handler-for-essentials": {
+    "id": "eb-tresos-9---autocore-oem-extension-startup-package-fota-handler-for-essentials",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OEM Extensions for Essentials",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OEM Extension Startup Package FOTA Handler for Essentials",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  },  
+  "eb-tresos-9---autocore-os-multicore-package": {
+    "id": "eb-tresos-9---autocore-os-multicore-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OS",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OS (Multicore) Package",
+    "sf_product_name": "EB tresos 9 AutoCore OS (Single-Core)/(Multi-Core) Package"
+  },
+  "eb-tresos-9---autocore-os-single-core-package": {
+    "id": "eb-tresos-9---autocore-os-single-core-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 AutoCore OS",
+    "Product_Item_Name": "EB tresos 9 - AutoCore OS (Single-Core) Package",
+    "sf_product_name": "EB tresos 9 AutoCore OS (Single-Core)/(Multi-Core) Package"
+  },
+  "eb-tresos-9---board-support-package-autocore-os": {
+    "id": "eb-tresos-9---board-support-package-autocore-os",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Board Support Package",
+    "Product_Item_Name": "EB tresos 9 - Board Support Package AutoCore OS",
+    "sf_product_name": "EB tresos Board Support Package - ACG9"
+  },
+  "eb-tresos-9---board-support-package-code-flash-driver": {
+    "id": "eb-tresos-9---board-support-package-code-flash-driver",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Board Support Package",
+    "Product_Item_Name": "EB tresos 9 - Board Support Package Code Flash Driver",
+    "sf_product_name": "EB tresos Board Support Package - ACG9"
+  },
+  "eb-tresos-9---board-support-package-hypervisor": {
+    "id": "eb-tresos-9---board-support-package-hypervisor",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Board Support Package",
+    "Product_Item_Name": "EB tresos 9 - Board Support Package Hypervisor",
+    "sf_product_name": "EB tresos Board Support Package - ACG9"
+  },
+  "eb-tresos-9---board-support-package-mcal": {
+    "id": "eb-tresos-9---board-support-package-mcal",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Board Support Package",
+    "Product_Item_Name": "EB tresos 9 - Board Support Package MCAL",
+    "sf_product_name": "EB tresos Board Support Package - ACG9"
+  },
+  "eb-tresos-9---board-support-package-platform": {
+    "id": "eb-tresos-9---board-support-package-platform",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Board Support Package",
+    "Product_Item_Name": "EB tresos 9 - Board Support Package Platform",
+    "sf_product_name": "EB tresos Board Support Package - ACG9"
+  },
+  "eb-tresos-9---board-support-package-safety-fail-op-communication-can": {
+    "id": "eb-tresos-9---board-support-package-safety-fail-op-communication-can",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Board Support Package",
+    "Product_Item_Name": "EB tresos 9 - Board Support Package Safety Fail-Op Communication CAN",
+    "sf_product_name": "EB tresos Board Support Package - ACG9"
+  },
+  "eb-tresos-9---board-support-package-safety-os": {
+    "id": "eb-tresos-9---board-support-package-safety-os",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Board Support Package",
+    "Product_Item_Name": "EB tresos 9 - Board Support Package Safety OS",
+    "sf_product_name": "EB tresos Board Support Package - ACG9"
+  },
+  "eb-tresos-9---embedded-hypervisor-package": {
+    "id": "eb-tresos-9---embedded-hypervisor-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Embedded Hypervisor",
+    "Product_Item_Name": "EB tresos 9 - Embedded Hypervisor Package",
+    "sf_product_name": "EB tresos 9 Embedded Hypervisor Package"
+  },
+  "eb-tresos-9---safety-approval-package-fail-op-communication-can": {
+    "id": "eb-tresos-9---safety-approval-package-fail-op-communication-can",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - Safety Approval Package (Fail-Op Communication CAN)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---safety-approval-package-fail-op-execution": {
+    "id": "eb-tresos-9---safety-approval-package-fail-op-execution",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - Safety Approval Package (Fail-Op Execution)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---safety-approval-package-os": {
+    "id": "eb-tresos-9---safety-approval-package-os",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - Safety Approval Package (OS)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---safety-approval-package-rte-e2e-time": {
+    "id": "eb-tresos-9---safety-approval-package-rte-e2e-time",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - Safety Approval Package (RTE, E2E, TimE)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-autocore-generic-base": {
+    "id": "eb-tresos-9---sop-qualification-package-for-autocore-generic-base",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for AutoCore Generic Base",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-autocore-generic-ethernet": {
+    "id": "eb-tresos-9---sop-qualification-package-for-autocore-generic-ethernet",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for AutoCore Generic Ethernet",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-autocore-generic-multi-core": {
+    "id": "eb-tresos-9---sop-qualification-package-for-autocore-generic-multi-core",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for AutoCore Generic Multi-Core",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-autocore-generic-security": {
+    "id": "eb-tresos-9---sop-qualification-package-for-autocore-generic-security",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for AutoCore Generic Security",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-autocore-os-multi-core": {
+    "id": "eb-tresos-9---sop-qualification-package-for-autocore-os-multi-core",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for AutoCore OS (Multi-Core)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-autocore-os-single-core": {
+    "id": "eb-tresos-9---sop-qualification-package-for-autocore-os-single-core",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for AutoCore OS (Single-Core)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-bootloader-for-essentials": {
+    "id": "eb-tresos-9---sop-qualification-package-for-bootloader-for-essentials",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for Bootloader for Essentials",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-fota-handler-for-essentials": {
+    "id": "eb-tresos-9---sop-qualification-package-for-fota-handler-for-essentials",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for FOTA Handler for Essentials",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },  
+  "eb-tresos-9---sop-qualification-package-for-embedded-hypervisor": {
+    "id": "eb-tresos-9---sop-qualification-package-for-embedded-hypervisor",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for Embedded Hypervisor",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-fail-op-can-paravirtualization-client": {
+    "id": "eb-tresos-9---sop-qualification-package-for-fail-op-can-paravirtualization-client",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for Fail-op CAN Paravirtualization Client",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---sop-qualification-package-for-v2g": {
+    "id": "eb-tresos-9---sop-qualification-package-for-v2g",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 SOP Qualification",
+    "Product_Item_Name": "EB tresos 9 - SOP Qualification Package for V2G",
+    "sf_product_name": "EB tresos SOP Qualification - ACG9"
+  },
+  "eb-tresos-9---fail-op-can-paravirtualization-client": {
+    "id": "eb-tresos-9---fail-op-can-paravirtualization-client",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Safety Fail-Operational Communication",
+    "Product_Item_Name": "EB tresos 9 - Fail-op CAN Paravirtualization Client",
+    "sf_product_name": "EB tresos 9 - Fail-Op -*"
+  },
+  "eb-tresos-9---safety-fail-op-communication-can": {
+    "id": "eb-tresos-9---safety-fail-op-communication-can",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Safety Fail-Operational Communication",
+    "Product_Item_Name": "EB tresos 9 - Safety Fail-Op Communication CAN",
+    "sf_product_name": "EB tresos 9 - Fail-Op -*"
+  },
+  "eb-tresos-9---safety-os-up-to-asil-b-package": {
+    "id": "eb-tresos-9---safety-os-up-to-asil-b-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Safety OS",
+    "Product_Item_Name": "EB tresos 9 - Safety OS (up to ASIL-B) Package",
+    "sf_product_name": "EB tresos 9 Safety OS (up to ASIL-B)/(up to ASIL-D) Package"
+  },
+  "eb-tresos-9---safety-os-up-to-asil-d-package": {
+    "id": "eb-tresos-9---safety-os-up-to-asil-d-package",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos 9 Safety OS",
+    "Product_Item_Name": "EB tresos 9 - Safety OS (up to ASIL-D) Package",
+    "sf_product_name": "EB tresos 9 Safety OS (up to ASIL-B)/(up to ASIL-D) Package"
+  },
+  "eb-tresos-9---eb-tresos-studio": {
+    "id": "eb-tresos-9---eb-tresos-studio",
+    "Major_Version_Name": "EB tresos 9",
+    "Product_Name": "EB tresos Studio for ACG9",
+    "Product_Item_Name": "EB tresos 9 - EB tresos Studio",
+    "sf_product_name": "EB tresos Studio for ACG9"
+  },
+  "eb-tresos-8---autocore-generic-base-package": {
+    "id": "eb-tresos-8---autocore-generic-base-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore Generic 8 (ACG8)",
+    "Product_Item_Name": "EB tresos 8 - AutoCore Generic Base Package",
+    "sf_product_name": "EB tresos AutoCore Generic 8 Base Package"
+  },
+  "eb-tresos-8---autocore-generic-ethernet-package": {
+    "id": "eb-tresos-8---autocore-generic-ethernet-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore Generic 8 (ACG8)",
+    "Product_Item_Name": "EB tresos 8 - AutoCore Generic Ethernet Package",
+    "sf_product_name": "EB tresos AutoCore Generic 8 Ethernet Package"
+  },
+  "eb-tresos-8---autocore-generic-flexray-package": {
+    "id": "eb-tresos-8---autocore-generic-flexray-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore Generic 8 (ACG8)",
+    "Product_Item_Name": "EB tresos 8 - AutoCore Generic FlexRay Package",
+    "sf_product_name": "EB tresos 8 ARFlex*"
+  },
+  "eb-tresos-8---autocore-generic-multicore-package": {
+    "id": "eb-tresos-8---autocore-generic-multicore-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore Generic 8 (ACG8)",
+    "Product_Item_Name": "EB tresos 8 - AutoCore Generic Multicore Package",
+    "sf_product_name": "EB tresos AutoCore Generic 8 Multi-Core Package"
+  },
+  "eb-tresos-8---autocore-generic-safety-a-b-package": {
+    "id": "eb-tresos-8---autocore-generic-safety-a-b-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore Generic 8 (ACG8)",
+    "Product_Item_Name": "EB tresos 8 - AutoCore Generic Safety A/B Package",
+    "sf_product_name": "EB tresos AutoCore Generic 8 Safety A/B or C/D Package"
+  },
+  "eb-tresos-8---autocore-generic-safety-c-d-package": {
+    "id": "eb-tresos-8---autocore-generic-safety-c-d-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore Generic 8 (ACG8)",
+    "Product_Item_Name": "EB tresos 8 - AutoCore Generic Safety C/D Package",
+    "sf_product_name": "EB tresos AutoCore Generic 8 Safety A/B or C/D Package"
+  },
+  "eb-tresos-8---autocore-generic-security-package": {
+    "id": "eb-tresos-8---autocore-generic-security-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore Generic 8 (ACG8)",
+    "Product_Item_Name": "EB tresos 8 - AutoCore Generic Security Package",
+    "sf_product_name": "EB tresos AutoCore Generic 8 Security Package"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-essentials": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-essentials",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for Essentials",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for Essentials",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  },
+  "eb-tresos-8---autocore-oem-extension-fota-handler-package-for-essentials": {
+    "id": "eb-tresos-8---autocore-oem-extension-fota-handler-package-for-essentials",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for Essentials",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension FOTA Handler Package for Essentials",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  },
+  "eb-tresos-8---autocore-oem-extension-application-package-for-fca": {
+    "id": "eb-tresos-8---autocore-oem-extension-application-package-for-fca",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for FCA",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Application Package for FCA",
+    "sf_product_name": "EB tresos Solutions for FCA Atlantis (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-fca-atlantis-high": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-fca-atlantis-high",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for FCA",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for FCA Atlantis High",
+    "sf_product_name": "EB tresos Solutions for FCA Atlantis (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-fca-atlantis-mid": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-fca-atlantis-mid",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for FCA",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for FCA Atlantis Mid",
+    "sf_product_name": "EB tresos Solutions for FCA Atlantis (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-ford": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-ford",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for Ford",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for Ford",
+    "sf_product_name": "EB tresos Solutions for Ford (Bootloader)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-gm": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-gm",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for GM",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for GM",
+    "sf_product_name": "EB tresos Solutions for GM Global B (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-application-package-for-honda": {
+    "id": "eb-tresos-8---autocore-oem-extension-application-package-for-honda",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for Honda",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Application Package for Honda",
+    "sf_product_name": "EB tresos Solutions for Honda (Start-up)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-honda": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-honda",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for Honda",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for Honda",
+    "sf_product_name": "EB tresos Solutions for Honda (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-jlr": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-jlr",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for JLR",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for JLR",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  },
+  "eb-tresos-8---autocore-oem-extension-fota-handler-package-for-jlr": {
+    "id": "eb-tresos-8---autocore-oem-extension-fota-handler-package-for-jlr",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for JLR",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension FOTA Handler Package for JLR",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  },
+  "eb-tresos-8---autocore-oem-extension-application-package-for-psa": {
+    "id": "eb-tresos-8---autocore-oem-extension-application-package-for-psa",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for PSA",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Application Package for PSA",
+    "sf_product_name": "EB tresos Solutions for PSA NEA2020 (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-psa": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-psa",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for PSA",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for PSA",
+    "sf_product_name": "EB tresos Solutions for PSA NEA2020 (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-renault-nissan": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-renault-nissan",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for Renault-Nissan",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for Renault-Nissan",
+    "sf_product_name": "EB tresos Solutions for Renault-Nissan Sweet400 (Bootloader/FOTA/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-fota-handler-package-for-renault-nissan": {
+    "id": "eb-tresos-8---autocore-oem-extension-fota-handler-package-for-renault-nissan",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for Renault-Nissan",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension FOTA Handler Package for Renault-Nissan",
+    "sf_product_name": "EB tresos Solutions for Renault-Nissan Sweet400 (Bootloader/FOTA/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-application-package-for-vcc": {
+    "id": "eb-tresos-8---autocore-oem-extension-application-package-for-vcc",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for VCC",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Application Package for VCC",
+    "sf_product_name": "EB tresos Solutions for VCC / SPA2 (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-vcc": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-vcc",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for VCC",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for VCC",
+    "sf_product_name": "EB tresos Solutions for VCC / SPA2 (Bootloader/Tools/Modules)"
+  },
+  "eb-tresos-8---autocore-oem-extension-bootloader-package-for-vw": {
+    "id": "eb-tresos-8---autocore-oem-extension-bootloader-package-for-vw",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OEM Extensions for VWAG",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OEM Extension Bootloader Package for VW",
+    "sf_product_name": "EB tresos Solutions for VWAG*"
+  },
+  "eb-tresos-8---autocore-os-multicore-package": {
+    "id": "eb-tresos-8---autocore-os-multicore-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OS",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OS (Multicore) Package",
+    "sf_product_name": "EB tresos 8 AutoCore OS (Single-Core)/(Multi-Core) Package"
+  },
+  "eb-tresos-8---autocore-os-single-core-package": {
+    "id": "eb-tresos-8---autocore-os-single-core-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 AutoCore OS",
+    "Product_Item_Name": "EB tresos 8 - AutoCore OS (Single-Core) Package",
+    "sf_product_name": "EB tresos 8 AutoCore OS (Single-Core)/(Multi-Core) Package"
+  },
+  "eb-tresos-8---board-support-package-autocore-os": {
+    "id": "eb-tresos-8---board-support-package-autocore-os",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Board Support Package",
+    "Product_Item_Name": "EB tresos 8 - Board Support Package AutoCore OS",
+    "sf_product_name": "EB tresos 8 OS Porting Product Service (up to ACG8) (PJ)"
+  },
+  "eb-tresos-8---board-support-package-code-flash-driver": {
+    "id": "eb-tresos-8---board-support-package-code-flash-driver",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Board Support Package",
+    "Product_Item_Name": "EB tresos 8 - Board Support Package Code Flash Driver",
+    "sf_product_name": "EB tresos Board Support Package - ACG8"
+  },
+  "eb-tresos-8---board-support-package-hypervisor": {
+    "id": "eb-tresos-8---board-support-package-hypervisor",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Board Support Package",
+    "Product_Item_Name": "EB tresos 8 - Board Support Package Hypervisor",
+    "sf_product_name": "EB tresos Board Support Package - ACG8"
+  },
+  "eb-tresos-8---board-support-package-mcal": {
+    "id": "eb-tresos-8---board-support-package-mcal",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Board Support Package",
+    "Product_Item_Name": "EB tresos 8 - Board Support Package MCAL",
+    "sf_product_name": "EB tresos Board Support Package - ACG8"
+  },
+  "eb-tresos-8---board-support-package-platform": {
+    "id": "eb-tresos-8---board-support-package-platform",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Board Support Package",
+    "Product_Item_Name": "EB tresos 8 - Board Support Package Platform",
+    "sf_product_name": "EB tresos Board Support Package - ACG8"
+  },
+  "eb-tresos-8---board-support-package-safety-os": {
+    "id": "eb-tresos-8---board-support-package-safety-os",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Board Support Package",
+    "Product_Item_Name": "EB tresos 8 - Board Support Package Safety OS",
+    "sf_product_name": "EB tresos Board Support Package - ACG8"
+  },
+  "eb-tresos-8---embedded-hypervisor-package": {
+    "id": "eb-tresos-8---embedded-hypervisor-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Embedded Hypervisor",
+    "Product_Item_Name": "EB tresos 8 - Embedded Hypervisor Package",
+    "sf_product_name": "EB tresos 8 Embedded Hypervisor Package"
+  },
+  "eb-tresos-8---safety-approval-package-os": {
+    "id": "eb-tresos-8---safety-approval-package-os",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - Safety Approval Package (OS)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---safety-approval-package-rte-e2e-time": {
+    "id": "eb-tresos-8---safety-approval-package-rte-e2e-time",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - Safety Approval Package (RTE, E2E, TimE)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-autocore-generic-base": {
+    "id": "eb-tresos-8---sop-qualification-package-for-autocore-generic-base",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for AutoCore Generic Base",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-autocore-generic-ethernet": {
+    "id": "eb-tresos-8---sop-qualification-package-for-autocore-generic-ethernet",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for AutoCore Generic Ethernet",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-autocore-generic-multicore": {
+    "id": "eb-tresos-8---sop-qualification-package-for-autocore-generic-multicore",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for AutoCore Generic Multicore",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-autocore-generic-security": {
+    "id": "eb-tresos-8---sop-qualification-package-for-autocore-generic-security",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for AutoCore Generic Security",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-autocore-os-multicore": {
+    "id": "eb-tresos-8---sop-qualification-package-for-autocore-os-multicore",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for AutoCore OS (Multicore)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-autocore-os-single-core": {
+    "id": "eb-tresos-8---sop-qualification-package-for-autocore-os-single-core",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for AutoCore OS (Single-Core)",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-essentials": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-essentials",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for Essentials",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-fca": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-fca",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for FCA",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-ford": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-ford",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for FORD",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-gm": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-gm",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for GM",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-honda": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-honda",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for Honda",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-psa": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-psa",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for PSA",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-renault-nissan": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-renault-nissan",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for Renault-Nissan",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-vcc": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-vcc",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for VCC",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-bootloader-for-vw": {
+    "id": "eb-tresos-8---sop-qualification-package-for-bootloader-for-vw",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Bootloader for VW",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-embedded-hypervisor": {
+    "id": "eb-tresos-8---sop-qualification-package-for-embedded-hypervisor",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for Embedded Hypervisor",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-fota-for-renault-nissan": {
+    "id": "eb-tresos-8---sop-qualification-package-for-fota-for-renault-nissan",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for FOTA for Renault-Nissan",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-fota-handler-for-essentials": {
+    "id": "eb-tresos-8---sop-qualification-package-for-fota-handler-for-essentials",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for FOTA Handler for Essentials",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-fota-handler-for-jlr": {
+    "id": "eb-tresos-8---sop-qualification-package-for-fota-handler-for-jlr",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for FOTA Handler for JLR",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---sop-qualification-package-for-j1939": {
+    "id": "eb-tresos-8---sop-qualification-package-for-j1939",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 SOP Qualification",
+    "Product_Item_Name": "EB tresos 8 - SOP Qualification Package for J1939",
+    "sf_product_name": "EB tresos SOP Qualification - ACG8"
+  },
+  "eb-tresos-8---safety-os-up-to-asil-b-package": {
+    "id": "eb-tresos-8---safety-os-up-to-asil-b-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Safety OS",
+    "Product_Item_Name": "EB tresos 8 - Safety OS (up to ASIL-B) Package",
+    "sf_product_name": "EB tresos 8 Safety OS (up to ASIL-B)/(up to ASIL-D)Package"
+  },
+  "eb-tresos-8---safety-os-up-to-asil-d-package": {
+    "id": "eb-tresos-8---safety-os-up-to-asil-d-package",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos 8 Safety OS",
+    "Product_Item_Name": "EB tresos 8 - Safety OS (up to ASIL-D) Package",
+    "sf_product_name": "EB tresos 8 Safety OS (up to ASIL-B)/(up to ASIL-D)Package"
+  },
+  "eb-tresos-8---eb-tresos-studio": {
+    "id": "eb-tresos-8---eb-tresos-studio",
+    "Major_Version_Name": "EB tresos 8",
+    "Product_Name": "EB tresos Studio for ACG8",
+    "Product_Item_Name": "EB tresos 8 - EB tresos Studio",
+    "sf_product_name": "EB tresos Studio for ACG8"
+  },
+  "eb-zoneo---acm-avtplst": {
+    "id": "eb-zoneo---acm-avtplst",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM AvtpLst",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-lintrcv-<hw>": {
+    "id": "eb-zoneo---acm-lintrcv-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM LinTrcv <HW>",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-cantrcv-<hw>": {
+    "id": "eb-zoneo---acm-cantrcv-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM CanTrcv <HW>",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-cantrcv-<hw>-partial-networking": {
+    "id": "eb-zoneo---acm-cantrcv-<hw>-partial-networking",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM CanTrcv <HW> Partial Networking",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-eth-<hw>": {
+    "id": "eb-zoneo---acm-eth-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM Eth <HW>",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-eth-<hw>-qos": {
+    "id": "eb-zoneo---acm-eth-<hw>-qos",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM Eth <HW> QoS",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-ethswt-<hw>": {
+    "id": "eb-zoneo---acm-ethswt-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM EthSwt <HW>",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM"
+  },
+  "eb-zoneo---acm-ethtrcv-<hw>": {
+    "id": "eb-zoneo---acm-ethtrcv-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM EthTrcv <HW>",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-fr-<hw>": {
+    "id": "eb-zoneo---acm-fr-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM Fr <HW>",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-frtrcv-<hw>": {
+    "id": "eb-zoneo---acm-frtrcv-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM FrTrcv <HW>",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo---acm-rtptlk": {
+    "id": "eb-zoneo---acm-rtptlk",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo ACM",
+    "Product_Item_Name": "EB zoneo - ACM RtpTlk",
+    "sf_product_name": "EB zoneo (formerly EB tresos) ACM8"
+  },
+  "eb-zoneo-gatewaycore-<hw>": {
+    "id": "eb-zoneo-gatewaycore-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo GatewayCore",
+    "Product_Item_Name": "EB zoneo GatewayCore <HW>",
+    "sf_product_name": "EB zoneo GatewayCore*"
+  },
+  "eb-zoneo---switchcore-<hw>": {
+    "id": "eb-zoneo---switchcore-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo SwitchCore",
+    "Product_Item_Name": "EB zoneo - SwitchCore <HW>",
+    "sf_product_name": "EB zoneo SwitchCore -*"
+  },
+  "eb-zoneo---switchcore-shield-<hw>": {
+    "id": "eb-zoneo---switchcore-shield-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo SwitchCore Shield",
+    "Product_Item_Name": "EB zoneo - SwitchCore Shield <HW>",
+    "sf_product_name": "EB zoneo SwitchCore Shield*"
+  },
+  "eb-zoneo---vswitch-<hw>": {
+    "id": "eb-zoneo---vswitch-<hw>",
+    "Major_Version_Name": "EB zoneo",
+    "Product_Name": "EB zoneo VSwitch",
+    "Product_Item_Name": "EB zoneo - VSwitch <HW>",
+    "sf_product_name": "EB zoneo VSwitch*"
+  },
+  "eb-zentur---crypto-driver-hardware": {
+    "id": "eb-zentur---crypto-driver-hardware",
+    "Major_Version_Name": "EB zentur",
+    "Product_Name": "EB zentur Crypto Driver",
+    "Product_Item_Name": "EB zentur - Crypto Driver Hardware",
+    "sf_product_name": "EB zentur*"
+  },
+  "eb-zentur---cryshe": {
+    "id": "eb-zentur---cryshe",
+    "Major_Version_Name": "EB zentur",
+    "Product_Name": "EB zentur Crypto Driver",
+    "Product_Item_Name": "EB zentur - CRYSHE",
+    "sf_product_name": "EB zentur*"
+  },
+  "eb-zentur---hsm-firmware": {
+    "id": "eb-zentur---hsm-firmware",
+    "Major_Version_Name": "EB zentur",
+    "Product_Name": "EB zentur HSM Firmware",
+    "Product_Item_Name": "EB zentur - HSM Firmware",
+    "sf_product_name": "EB zentur*"
+  },
+  "eb-zentur---hsm-firmware-oem-extension---vw---vkms": {
+    "id": "eb-zentur---hsm-firmware-oem-extension---vw---vkms",
+    "Major_Version_Name": "EB zentur",
+    "Product_Name": "EB zentur HSM Firmware",
+    "Product_Item_Name": "EB zentur - HSM Firmware (OEM extension - VW - VKMS)",
+    "sf_product_name": "EB zentur*"
+  },
+  "eb-tresos-bootloader---automotive-spice-gap-analysis-level-2-one-process-area": {
+    "id": "eb-tresos-bootloader---automotive-spice-gap-analysis-level-2-one-process-area",
+    "Major_Version_Name": "EB tresos Bootloader",
+    "Product_Name": "EB tresos Bootloader for Essentials",
+    "Product_Item_Name": "EB tresos Bootloader - Automotive SPICE Gap Analysis Level 2 One Process Area",
+    "sf_product_name": "EB tresos Solutions for Essentials (Bootloader)"
+  }
+}
